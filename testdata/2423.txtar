@@ -1,0 +1,12 @@
+exec cue vet .:p
+exec cue fmt .:p
+exec cue vet .:p
+
+-- file.cue --
+package p
+
+#X: {a?: int}
+
+foo: #X & {
+  // a: 5
+}

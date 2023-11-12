@@ -1,0 +1,34 @@
+# Verify the file is initially valid
+exec cue vet file.cue
+
+# Format the file. This should not ever make it invalid.
+exec cue fmt file.cue
+
+# For the reader, compare the formatted result with a golden file as part of
+# the test to make clear the problem that fmt introduces.
+# Remove this line when attempting to fix the bug.
+cmp file.cue file.cue.formatted
+
+# Check the file is still valid after fmt
+exec cue vet file.cue
+
+-- file.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two, // comment
+  3,
+]
+-- file.cue.formatted --
+package p
+
+#Number: two: 2
+
+aList: [
+	1,
+	#Number.two // comment,
+	3,
+]

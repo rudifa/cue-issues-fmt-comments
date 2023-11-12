@@ -1,0 +1,15 @@
+exec cat file.cue
+exec cue vet file.cue
+exec cue fmt file.cue
+exec cat file.cue
+exec cue vet file.cue
+-- file.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two, // comment
+  3,
+]

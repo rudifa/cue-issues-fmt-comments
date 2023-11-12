@@ -8,12 +8,12 @@
 
 ### misplaced comments
 
-- [#720 # Cue fmt drags comments into import block](https://github.com/cue-lang/cue/issues/720)
+- [#720 # Cue fmt drags comments into import block](https://github.com/cue-lang/cue/issues/720) closed
 - [#1447 # cmd/fmt: single import and comment combined](https://github.com/cue-lang/cue/issues/1447)
-- [#1478 # cmd/fmt: comma appended to comment instead of list element](https://github.com/cue-lang/cue/issues/1478)
-- [#2274 # cmd/fmt: fmt emits invalid CUE when commenting struct references in lists](https://github.com/cue-lang/cue/issues/2274)
-- [#2423 # cmd/fmt: invalid CUE emitted when all fields are commented inside struct](https://github.com/cue-lang/cue/issues/2423)
-- [#2567 # Cue fmt destroys working code](https://github.com/cue-lang/cue/issues/2567)
+- [#1478 # cmd/fmt: comma appended to comment instead of list element](https://github.com/cue-lang/cue/issues/1478) - can't reproduce
+- [#2274 # cmd/fmt: fmt emits invalid CUE when commenting struct references in lists](https://github.com/cue-lang/cue/issues/2274) - can reproduce
+- [#2423 # cmd/fmt: invalid CUE emitted when all fields are commented inside struct](https://github.com/cue-lang/cue/issues/2423) - can reproduce
+- [#2567 # Cue fmt destroys working code](https://github.com/cue-lang/cue/issues/2567) - can reproduce
 
 ### tabs and indent
 

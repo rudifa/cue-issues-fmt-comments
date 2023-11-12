@@ -1,0 +1,19 @@
+# show original in.cue before cue fmt
+exec cat in.cue
+exec cue fmt in.cue
+
+# show modified (badly) in.cue
+exec cat in.cue
+
+# the original in.cue fails eval
+exec cue vet -c in2.cue 
+
+-- in.cue --
+foo: [
+	bar["baz"], //some comment
+]
+-- in2.cue --
+foo: [
+	bar["baz"], //some comment
+]
+
