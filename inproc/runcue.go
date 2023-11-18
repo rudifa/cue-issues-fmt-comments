@@ -21,7 +21,7 @@ import (
 )
 
 // RunCue runs a cue command with its arguments, e.g.
-// err := inproc.RunCue([]string{"eval", "testdata/sample.cue"}...)
+// err := inproc.RunCue("eval", "testdata/sample.cue")
 func RunCue(args ...string) error {
 	c, _ := cmd.New(args)
 	return c.Run(context.Background())
