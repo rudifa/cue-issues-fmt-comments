@@ -1,6 +1,9 @@
 exec cue vet .:p
+exec cat file.cue
 exec cue fmt .:p
+exec cat file.cue
 exec cue vet .:p
+
 
 -- file.cue --
 package p

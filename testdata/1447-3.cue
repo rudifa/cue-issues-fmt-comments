@@ -1,6 +1,7 @@
 import "strings"
+// comment a
 
-// comment
+// comment b
 
 s: string
 u: strings.ToUpper(s)

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/rudifa/cue-issue2567/inproc"
+	"github.com/rudifa/cue-issues-fmt-comments/inproc"
 )
 
 func main() {
