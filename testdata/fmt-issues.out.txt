@@ -1,9 +1,25 @@
-# show many fmt bugs, please run with `testscript -continue many.txtar` (0.000s)
+# show many fmt bugs: run with `testscript -continue fmt-issues.txtar` (0.070s)
 > force-verbose
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:2: unknown command "force-verbose"
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:2: unknown command "force-verbose"
 > env CUEDO_FMT_DEBUGSTR=1
+> exec cue version
+[stdout]
+cue version v0.0.0-20231118133415-b3a417b28fad
+
+go version go1.21.0
+      -buildmode exe
+       -compiler gc
+  DefaultGODEBUG panicnil=1
+     CGO_ENABLED 1
+          GOARCH amd64
+            GOOS darwin
+         GOAMD64 v1
+             vcs git
+    vcs.revision b3a417b28fad23eec87bda1cf90a6278506761b1
+        vcs.time 2023-11-18T13:34:15Z
+    vcs.modified true
 #
-# issue #720 ---------------------------------------------- (0.133s)
+# issue #720 ---------------------------------------------- (0.072s)
 > exec cat 720B.cue
 [stdout]
 import "encoding/base64"
@@ -39,11 +55,11 @@ diff expected/720B.cue 720B.cue
  #A: {}
 -
 
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:11: expected/720B.cue and 720B.cue differ
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:12: expected/720B.cue and 720B.cue differ
 #
 # issue #1447 is a duplicate of #720 ----------------------
 #
-# issue #2274 --------------------------------------------- (0.088s)
+# issue #2274 --------------------------------------------- (0.104s)
 > exec cat 2274B.cue
 [stdout]
 #Number: two: 2
@@ -77,9 +93,9 @@ missing ',' before newline in list literal:
 missing ',' in list literal:
     ./2274B.cue:9:3
 [exit status 1]
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:22: unexpected command failure
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:23: unexpected command failure
 #
-# issue #2423 --------------------------------------------- (0.193s)
+# issue #2423 --------------------------------------------- (0.196s)
 > exec cat 2423.cue
 [stdout]
 #X: {a?: int}
@@ -104,7 +120,7 @@ foo: #X
 expected operand, found '&':
     ./2423.cue:5:2
 [exit status 1]
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:30: unexpected command failure
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:31: unexpected command failure
 > exec cat 2423-2.cue
 [stdout]
 example: {} & {
@@ -125,7 +141,7 @@ example: {}
 expected operand, found '&':
     ./2423-2.cue:3:2
 [exit status 1]
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:36: unexpected command failure
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:37: unexpected command failure
 #
 # issue #2567 --------------------------------------------- (0.182s)
 > exec cat 2567.cue
@@ -149,7 +165,7 @@ bar: baz: 43
 expected ']', found newline:
     ./2567.cue:2:12
 [exit status 1]
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:44: unexpected command failure
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:45: unexpected command failure
 > exec cat 2567-2.cue
 [stdout]
 [
@@ -168,6 +184,6 @@ file: 2567-2.cue decoded ast DebugStr:[<[l2// inline comment] if true {}>]
 expected ']', found 'EOF':
     ./2567-2.cue:2:32
 [exit status 1]
-FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript1071227613/fmt-issues.txtar/script.txtar:50: unexpected command failure
+FAIL: /var/folders/3_/1_3zy7k92qndm5jfysbdrkrr0000gn/T/testscript3740367828/fmt-issues.txtar/script.txtar:51: unexpected command failure
 #
 # files --------------------------------------------------- (0.000s)

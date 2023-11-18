@@ -1,6 +1,7 @@
-# show many fmt bugs, please run with `testscript -continue many.txtar`
+# show many fmt bugs: run with `testscript -continue fmt-issues.txtar`
 force-verbose
 env CUEDO_FMT_DEBUGSTR=1
+exec cue version
 
 #
 # issue #720 ----------------------------------------------

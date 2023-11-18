@@ -10,8 +10,8 @@
 
 - [#720 # Cue fmt drags comments into import block](https://github.com/cue-lang/cue/issues/720) - can reproduce
 - [#1447 # cmd/fmt: single import and comment combined](https://github.com/cue-lang/cue/issues/1447) - can reproduce
-- [#1478 # cmd/fmt: comma appended to comment instead of list element](https://github.com/cue-lang/cue/issues/1478) - cannot reproduce
-- [#1553 # Every time format, a comma is added.](https://github.com/cue-lang/cue/issues/1553) - fixed closed
+- [#1478 # cmd/fmt: comma appended to comment instead of list element](https://github.com/cue-lang/cue/issues/1478) - cannot reproduce - closed
+- [#1553 # Every time format, a comma is added.](https://github.com/cue-lang/cue/issues/1553) - fixed - closed
 - [#2274 # cmd/fmt: fmt emits invalid CUE when commenting struct references in lists](https://github.com/cue-lang/cue/issues/2274) - can reproduce
 - [#2423 # cmd/fmt: invalid CUE emitted when all fields are commented inside struct](https://github.com/cue-lang/cue/issues/2423) - can reproduce
 - [#2567 # Cue fmt destroys working code](https://github.com/cue-lang/cue/issues/2567) - can reproduce
