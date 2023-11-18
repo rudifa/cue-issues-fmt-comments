@@ -1,3 +1,4 @@
 [
 	if true // inline comment
-	{}]
+	{}
+]

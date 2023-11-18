@@ -1,0 +1,34 @@
+
+exec cat fmt-bad.cue
+exec cue vet fmt-bad.cue
+exec cue fmt fmt-bad.cue
+exec cat fmt-bad.cue
+
+exec cat fmt-good.cue
+exec cue vet fmt-good.cue
+exec cue fmt fmt-good.cue
+exec cat fmt-good.cue
+
+-- fmt-bad.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two,
+  // comment
+
+  3,
+]
+-- fmt-good.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two,
+  // comment
+  3,
+]

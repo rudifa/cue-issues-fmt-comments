@@ -1,0 +1,106 @@
+# show many fmt bugs, please run with `testscript -continue many.txtar`
+force-verbose
+env CUEDO_FMT_DEBUGSTR=1
+
+#
+# issue #720 ----------------------------------------------
+exec cat 720B.cue
+exec cue fmt 720B.cue    ### fmt hoists the comment into the import block
+exec cat 720B.cue
+exec cue vet 720B.cue    ### vet passes nevertheless
+cmp expected/720B.cue 720B.cue
+
+#
+# issue #1447 is a duplicate of #720 ----------------------
+
+#
+# issue #2274 ---------------------------------------------
+exec cat 2274B.cue
+exec cue vet 2274B.cue
+exec cue fmt 2274B.cue    ### fmt misplaces comma onto the comment line
+exec cat 2274B.cue
+exec cue vet 2274B.cue    ### vet fails
+
+#
+# issue #2423 ---------------------------------------------
+exec cat 2423.cue
+exec cue vet 2423.cue
+exec cue fmt 2423.cue     ### fmt misplaces a comment line
+exec cat 2423.cue
+exec cue vet 2423.cue     ### vet fails
+
+exec cat 2423-2.cue
+exec cue vet 2423-2.cue
+exec cue fmt 2423-2.cue   ### fmt misplaces a comment line
+exec cat 2423-2.cue
+exec cue vet 2423-2.cue   ### vet fails
+
+#
+# issue #2567 ---------------------------------------------
+exec cat 2567.cue
+exec cue vet 2567.cue
+exec cue fmt 2567.cue     ### fmt misplaces the comment inside the brackets
+exec cat 2567.cue
+exec cue vet 2567.cue     ### vet fails
+
+exec cat 2567-2.cue
+exec cue vet 2567-2.cue
+exec cue fmt 2567-2.cue   ### fmt misplaces the comment inside the brackets
+exec cat 2567-2.cue
+exec cue vet 2567-2.cue   ### vet fails
+
+#
+# files ---------------------------------------------------
+
+-- 720B.cue --
+import "encoding/base64"
+
+// comment
+
+#A: {}
+-- expected/720B.cue --
+import "encoding/base64"
+
+// comment
+
+#A: {}
+
+-- 1478G.cue --
+l: [
+	{},
+	// comment
+]
+-- expected/1478G.cue --
+l: [
+	{},
+	// comment
+]
+-- 2274B.cue --
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two,
+  // comment
+
+  3,
+]
+-- 2423.cue --
+#X: {a?: int}
+
+foo: #X & {
+  // a: 5
+}
+-- 2423-2.cue --
+example: {} & {
+    // This is a comment
+}
+-- 2567.cue --
+foo: [
+	bar["baz"], //some comment
+]
+bar: baz: 43
+-- 2567-2.cue --
+[
+	if true // inline comment
+	{}]

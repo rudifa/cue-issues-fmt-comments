@@ -1,14 +1,14 @@
-# show original in.cue before cue fmt
-exec cat in.cue
-exec cue fmt in.cue
+# show original 2567.cue before cue fmt
+exec cat 2567.cue
+exec cue fmt 2567.cue
 
-# show modified (badly) in.cue
-exec cat in.cue
+# show modified (badly) 2567.cue
+exec cat 2567.cue
 
-# the original in.cue fails eval
-exec cue vet -c in2.cue 
+# the original 2567.cue fails eval
+exec cue vet -c in2.cue
 
--- in.cue --
+-- 2567.cue --
 foo: [
 	bar["baz"], //some comment
 ]
