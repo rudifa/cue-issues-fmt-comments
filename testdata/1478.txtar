@@ -1,0 +1,17 @@
+# issue #1478 is not reproducible as of cue v0.6.0---------
+exec cat 1478G.cue
+exec cue fmt 1478G.cue    ### fmt works
+exec cat 1478G.cue
+exec cue vet 1478G.cue    ### vet passes
+cmp expected/1478G.cue 1478G.cue
+
+-- 1478G.cue --
+l: [
+	{},
+	// comment
+]
+-- expected/1478G.cue --
+l: [
+	{},
+	// comment
+]

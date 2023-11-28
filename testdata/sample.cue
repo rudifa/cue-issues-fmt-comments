@@ -1,1 +1,1 @@
-foo: bar: "baz"
+sample: bar: "baz"

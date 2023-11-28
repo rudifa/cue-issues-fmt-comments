@@ -1,0 +1,56 @@
+# show the`cue export` handling of comments: run with `testscript -continue 722-4.txtar
+force-verbose
+env CUEDO_FMT_DEBUGSTR=1
+exec cue version
+
+# 3 commands have the same behavior with c.cue
+# they preserve the comment but indent it
+
+exec cat c.cue
+
+#A ------------------------------------
+exec cue export --out cue c.cue
+cmp stdout want.cue         ### fail - indents
+
+#B ------------------------------------
+exec cue def c.cue
+cmp stdout want.cue         ### fail - indents
+
+#C ------------------------------------
+exec cue fmt c.cue          ### fmt is the last because it modifies c.cue in place
+cmp c.cue want.cue          ### fail - indents
+
+# 2 commands have the same behavior with 722-2.cue
+# they drop the comment
+
+#D ------------------------------------
+exec cue export --out cue 722-2.cue
+cmp stdout 722-2.cue                    ### fail - drops comment and newline
+
+#E ------------------------------------
+exec cue def 722-2.cue
+cmp stdout 722-2.cue                    ### fail - drops comment and newline
+
+# cue fmt preserves all unchanged
+
+#F ------------------------------------
+exec cue fmt 722-2.cue  ### fmt is the last because it modifies 722-2.cue in place
+cmp 722-2.cue 722-2-want-maybe.cue      ### pass - unchanged
+
+# files -------------------------------
+
+-- c.cue --
+// Comment
+foo: 1
+-- want.cue --
+// Comment
+foo: 1
+-- 722-2.cue --
+// comment
+
+hello: "world"
+-- 722-2-want-maybe.cue --
+// comment
+
+hello: "world"
+-- end --

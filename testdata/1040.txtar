@@ -1,0 +1,28 @@
+# issue #1006: run with `testscript -continue 1006.txtar
+fail-to-force-verbose
+env CUEDO_FMT_DEBUGSTR=1
+
+# issue #1040 ---------------------------------------------
+# 1 -------------------------------------------------------
+exec cat 1040-1.cue
+exec cue eval --out text 1040-1.cue
+cp stdout fmt-1.cue
+cp fmt-1.cue fmt-1.cue.golden
+exec cue fmt fmt-1.cue
+exec cat fmt-1.cue
+cmp fmt-1.cue fmt-1.cue.golden      ### pass
+
+# 2 -------------------------------------------------------
+exec cat 1040-2.cue
+# exec cue eval --out text 1040-2.cue
+cp 1040-2.cue 1040-2.cue.golden
+exec cue fmt 1040-2.cue
+exec cat 1040-2.cue
+cmp 1040-2.cue 1040-2.cue.golden    ### pass
+
+# files ---------------------------------------------------
+-- 1040-1.cue --
+"// this\tis\ta\tcomment"
+-- 1040-2.cue --
+//	s	o	m	e	indented comment
+-- end --

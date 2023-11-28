@@ -1,0 +1,8 @@
+exec cue export --out cue c.cue
+cmp stdout want.cue
+-- c.cue --
+// Comment
+foo: 1
+-- want.cue --
+// Comment
+foo: 1

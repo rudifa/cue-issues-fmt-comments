@@ -19,7 +19,7 @@ func Test2567(t *testing.T) {
 }
 
 func Test2567_2(t *testing.T) {
-	const file = "testdata/2567-3.cue"
+	const file = "testdata/2567-3a.cue"
 	err := inproc.RunCue("fmt", file)
 	if err != nil {
 		t.Errorf("Error running cue: %v", err)
