@@ -20,7 +20,8 @@
 
 - [#722 # cue fmt indents top-level comments ](https://github.com/cue-lang/cue/issues/722)
 - [#1006 # cue fix tries to align comments inside braces with those outside, causing weird field indentation](https://github.com/cue-lang/cue/issues/1006)
-- [#1040 # cmd/cue: fmt converts tabs to spaces in comments ](https://github.com/cue-lang/cue/issues/1040)
+- [#1040 # cmd/cue: fmt converts tabs to spaces in comments ](https://github.com/cue-lang/cue/issues/1040) - cueckoo closed this as completed in dac4917 on May 30, 2022
+- [#1629 # improve strategy for comment output](https://github.com/cue-lang/cue/issues/1629) - Most of these are to do with comment formatting, but there's a deeper issue here: what should happen to comments when we apply unification to CUE values?
 
 ### commented error message
 
@@ -200,7 +201,7 @@ if true {} // inline comment,
 
 Above is marked `l2` which makes sense wrt the input file, but it seems that `{}` was moved to the same line afterwards.
 
-## compare 2274 case variations
+### compare 2274 case variations
 
 What is the meaninng of `l2` and `l3`?
 
@@ -316,7 +317,9 @@ cue % grep.go '\.Line =' [issues-fmt-comments L|✚2…1]
 
 ```
 
-## meaning of position codes in DebugStr
+## testing and debugging notes
+
+### meaning of position codes in DebugStr
 
 ```
 
@@ -391,6 +394,164 @@ cue % grep.go 'func Walk' [issues-fmt-comments L|…1]
 func Walk(node Node, before func(Node) bool, after func(Node)) {
 walk(&inspector{before: before, after: after}, node)
 }
+
+```
+
+## notes and observations
+
+###
+
+[#722](https://github.com/cue-lang/cue/issues/722)
+```
+
+@rogpepe Unrelated but seen here: documenting the `cue export` <ins>handling of comments</ins>
+
+Your testscript of Feb 25, 2022, shows that, given the option `--out cue`, `cue export` reproduces the comments found in the input (badly indented, in this case) and thus behaves just like `cue fmt`.
+
+I observed that `cue def c.cue` also has the same `fmt`-like behavior.
+
+This does not appear to be documented anywhere. I think it should be documented in `cue export -h` and `cue def -h`, as a minimum.
+
+### patch to add debug prints
+
+```
+diff --git a/cmd/cue/cmd/fmt.go b/cmd/cue/cmd/fmt.go
+index 85333afb..8572be22 100644
+--- a/cmd/cue/cmd/fmt.go
++++ b/cmd/cue/cmd/fmt.go
+@@ -15,6 +15,8 @@
+ package cmd
+
+ import (
++       "os"
++
+        "github.com/spf13/cobra"
+
+        "cuelang.org/go/cue/ast"
+@@ -23,6 +25,7 @@ import (
+        "cuelang.org/go/cue/format"
+        "cuelang.org/go/cue/load"
+        "cuelang.org/go/cue/token"
++       "cuelang.org/go/internal/astinternal"
+        "cuelang.org/go/internal/encoding"
+        "cuelang.org/go/tools/fix"
+ )
+@@ -73,10 +76,14 @@ func newFmtCmd(c *Command) *cobra.Command {
+                                                f := d.File()
+
+                                                if file.Encoding == build.CUE {
++                                                       // astinternal.DebugStrToStdErr("before fix", f)
+                                                        f = fix.File(f)
+                                                }
+
+                                                files = append(files, f)
++                                               if os.Getenv("CUEDO_FMT_DEBUGSTR") != "" {
++                                                       astinternal.DebugStrToStdErr("decoded ast", f)
++                                               }
+                                        }
+                                        // Do not defer this Close call, as we are looping over builds,
+                                        // and otherwise we would hold all of their files open at once.
+diff --git a/internal/astinternal/debugstr.go b/internal/astinternal/debugstr.go
+index 81cba966..4f5f63be 100644
+--- a/internal/astinternal/debugstr.go
++++ b/internal/astinternal/debugstr.go
+@@ -16,6 +16,8 @@ package astinternal
+
+ import (
+        "fmt"
++       "os"
++       "path/filepath"
+        "strconv"
+        "strings"
+
+@@ -283,3 +285,11 @@ func DebugStr(x interface{}) (out string) {
+ }
+
+ const sep = ", "
++
++// TEMPORARY
++// DebugStrToStdErr prints DebugStr for `f`
++func DebugStrToStdErr(msg string, f *ast.File) {
++       fmt.Fprintf(os.Stderr, "file: %s %s DebugStr:%s\n", filepath.Base(f.Filename), msg, DebugStr(f))
++}
++
++// END TEMPORARY
+diff --git a/internal/encoding/encoding.go b/internal/encoding/encoding.go
+index 53020fac..b015adc5 100644
+--- a/internal/encoding/encoding.go
++++ b/internal/encoding/encoding.go
+@@ -232,7 +232,11 @@ func NewDecoder(f *build.File, cfg *Config) *Decoder {
+        switch f.Encoding {
+        case build.CUE:
+                if cfg.ParseFile == nil {
+-                       i.file, i.err = parser.ParseFile(path, r, parser.ParseComments)
++                       if os.Getenv("CUEDO_PARSER_TRACE") != "" {
++                               i.file, i.err = parser.ParseFile(path, r, parser.ParseComments, parser.Trace) // TEMPORARY
++                       } else {
++                               i.file, i.err = parser.ParseFile(path, r, parser.ParseComments)
++                       }
+                } else {
+                        i.file, i.err = cfg.ParseFile(path, r)
+                }
+cue %                                                                                                 [issues-fmt-comments L|…1]
+```
+
+#### To create the patch in the root of the cue repo clone:
+
+```
+cue % pwd
+/Users/rudifarkas/GitHub/golang/src/cue
+cue % git lg 2
+
+- 64a14f90(HEAD -> issues-fmt-comments)(2023-11-18 18:14:43 +0100)(Rudi Farkas)cmd/cue/cmd/fmt.go - instrument for debugging \_
+- 7a4ea866 (tag: base)(2023-11-10 17:26:18 +0000)(Daniel Martí)CONTRIBUTING: fix repo reference rendering
+
+```
+
+... then run commands:
+`
+
+```
+
+git diff base HEAD > cuedo.patch
+
+```
+
+or
+
+```
+
+git diff 7a4ea866 64a14f90 > cuedo.patch
+
+```
+
+#### To apply the patch on a different branch or repo clone, run in the root of the repo (`$GOPATH/src`):
+
+```
+
+git apply cuedo.patch
+
+```
+
+... and build and install the modified cue, in the `$GOPATH/src/cue/cmd/cue`:
+
+```
+
+cue % go install .
+
+```
+
+This will install the modified cue as `$GOPATH/bin/cue`.
+
+Make sure that this is found in your `$PATH` before the system `cue` binary.
+
+```
+
+```
+
+```
+
+```
 
 ```
 

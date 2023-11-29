@@ -2,15 +2,21 @@ module github.com/rudifa/cue-issues-fmt-comments
 
 go 1.21.0
 
-require cuelang.org/go v0.6.0
+require (
+	cuelang.org/go v0.6.0
+	github.com/davecgh/go-spew v1.1.1
+	github.com/rudifa/goutil v0.0.0-20230818180930-2ed982730a30
+)
 
 replace cuelang.org/go => ../cue
+
+replace github.com/rudifa/goutil => ../goutil
 
 require (
 	cuelabs.dev/go/oci/ociregistry v0.0.0-20231103182354-93e78c079a13 // indirect
 	github.com/cockroachdb/apd/v3 v3.2.1 // indirect
 	github.com/emicklei/proto v1.10.0 // indirect
-	github.com/google/uuid v1.2.0 // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect

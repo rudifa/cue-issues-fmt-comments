@@ -16,13 +16,15 @@ package inproc
 
 import (
 	"context"
+	"log"
 
 	"cuelang.org/go/cmd/cue/cmd"
 )
 
 // RunCue runs a cue command with its arguments, e.g.
-// err := inproc.RunCue("eval", "testdata/sample.cue")
-func RunCue(args ...string) error {
+// inproc.RunCue("eval", "testdata/sample.cue")
+func RunCue(args ...string) {
+	log.Printf("RunCue: %v\n", args)
 	c, _ := cmd.New(args)
-	return c.Run(context.Background())
+	c.Run(context.Background())
 }

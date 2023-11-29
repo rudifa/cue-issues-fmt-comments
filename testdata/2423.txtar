@@ -1,15 +1,32 @@
-exec cue vet .:p
-exec cat file.cue
-exec cue fmt .:p
-exec cat file.cue
-exec cue vet .:p
+# issue 2423: run with `testscript -continue 2423.txtar`
+force-verbose
+env CUEDO_FMT_DEBUGSTR=1
+
+# ---------------------------------------------------------
+exec cue vet file.f.cue
+exec cat file.f.cue
+exec cue fmt file.f.cue
+exec cat file.f.cue
+exec cue vet file.f.cue
+
+# ---------------------------------------------------------
+exec cue vet file.p.cue
+exec cat file.p.cue
+exec cue fmt file.p.cue
+exec cat file.p.cue
+exec cue vet file.p.cue
 
 
--- file.cue --
-package p
-
+-- file.f.cue --
 #X: {a?: int}
 
 foo: #X & {
-  // a: 5
+  // comment a: 5
+}
+-- file.p.cue --
+#X: {a?: int}
+
+foo: #X & {
+  // comment
+  a: 5
 }

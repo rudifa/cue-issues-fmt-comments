@@ -1,0 +1,96 @@
+# show many fmt tab bugs: run with `testscript -continue fmt-issues.txtar`
+force-verbose
+env CUEDO_FMT_DEBUGSTR=1
+exec cue version
+
+
+# issue #722 ----------------------------------------------
+# 0 -------------------------------------------------------
+exec cat 722-1.cue
+exec cue fmt 722-1.cue              ### fmt indents the comment
+exec cat 722-1.cue
+exec cue vet 722-1.cue
+cmp expected/722-1.cue 722-1.cue    ### cmp fail
+
+# 1 -------------------------------------------------------
+exec cat 722-2.cue
+exec cue fmt 722-2.cue              ### fmt does not indent the comment
+exec cat 722-2.cue
+exec cue vet 722-2.cue
+cmp expected/722-2.cue 722-2.cue    ### cmp pass
+
+# 2 -------------------------------------------------------
+exec cat 722-3.cue
+exec cue fmt 722-3.cue              ### fmt indents the comment
+exec cat 722-3.cue
+exec cue vet 722-3.cue
+cmp expected/722-3.cue 722-3.cue    ### cmp fail
+
+#
+# issue #1006 ---------------------------------------------
+# x -------------------------------------------------------
+cp x.cue x.cue.golden
+exec cue fmt x.cue
+cmp x.cue x.cue.golden
+
+# y -------------------------------------------------------
+cp y.cue y.cue.golden
+exec cue fmt y.cue
+cmp y.cue y.cue.golden
+
+# z -------------------------------------------------------
+cp z.cue z.cue.golden
+exec cue fmt z.cue
+cmp z.cue z.cue.golden
+
+#
+# issue #1040 ---------------------------------------------
+exec cue eval --out text 1040.cue
+cp stdout fmt.cue
+cp fmt.cue fmt.cue.golden
+exec cue fmt fmt.cue
+cmp fmt.cue fmt.cue.golden
+
+#
+# files ---------------------------------------------------
+
+-- 722-1.cue --
+// comment
+hello: "world"
+-- expected/722-1.cue --
+// comment
+hello: "world"
+-- 722-2.cue --
+// comment
+
+hello: "world"
+-- expected/722-2.cue --
+// comment
+
+hello: "world"
+-- 722-3.cue --
+// comment
+foo: 1
+-- expected/722-3.cue --
+// comment
+foo: 1
+-- x.cue --
+x: {
+	y: string
+
+	// Comment 4
+	z: string
+} | "long_string_to_push_out_the_comment_on_this_line" // Comment 5
+-- y.cue --
+x: {
+	y: string
+
+	z: string
+} | "long_string_to_push_out_the_comment_on_this_line" // Comment 5
+-- z.cue --
+x: {
+	y: string
+	z: string
+} | "long_string_to_push_out_the_comment_on_this_line" // Comment 5
+-- 1040.cue --
+"// this\tis\ta\tcomment"
