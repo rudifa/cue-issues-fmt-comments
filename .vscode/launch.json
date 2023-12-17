@@ -5,21 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch main.go",
+            "name": "CUEDO_AST_DEBUGSTR",
             "type": "go",
             "request": "launch",
             "mode": "debug",
             "program": "main.go",
-            "env": {},
+            "env": {
+                "CUEDO_AST_DEBUGSTR": "1"
+            }
             "args": []
         },
         {
-            "name": "Launch current file",
+            "name": "CUEDO_AST_PRINTER_HEXDUMP",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${file}",
-            "env": {},
+            "program": "main.go",
+            "env": {
+                "CUEDO_AST_PRINTER_HEXDUMP": "1"
+            },
             "args": []
         },
     ]

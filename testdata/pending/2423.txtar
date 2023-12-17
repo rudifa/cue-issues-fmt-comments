@@ -1,4 +1,5 @@
 # issue 2423: run with `testscript -continue 2423.txtar`
+# cmd/fmt: invalid CUE emitted when all fields are commented inside struct #2423
 force-verbose
 env CUEDO_FMT_DEBUGSTR=1
 

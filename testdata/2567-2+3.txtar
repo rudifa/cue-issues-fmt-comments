@@ -1,0 +1,30 @@
+# issue #2567 - compare 2 similar inputs to fmt
+
+# show original 2567-2.cue before cue fmt
+exec cat 2567-2.cue               # original cue
+exec cue vet 2567-2.cue           # pass
+exec cue fmt 2567-2.cue           # modified cue
+exec cat 2567-2.cue               #
+exec cue vet 2567-2.cue           # pass
+
+# show original 2567-3.cue before cue fmt
+exec cat 2567-3.cue               # original cue
+exec cue vet 2567-3.cue           # pass
+exec cue fmt 2567-3.cue           # mangled cue
+exec cat 2567-3.cue               #
+exec cue vet 2567-3.cue           # fail
+
+
+-- 2567-2.cue --
+[
+	if true // inline comment
+	{}
+]
+-- 2567-3.cue --
+[
+	if true // inline comment
+	{}]
+-- end --
+
+
+

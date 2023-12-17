@@ -1,6 +1,0 @@
-[
-	if true 
-	// inline comment
-	
-	{}
-]

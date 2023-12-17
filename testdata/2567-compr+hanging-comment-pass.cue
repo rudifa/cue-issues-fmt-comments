@@ -1,0 +1,4 @@
+[
+	if true {}
+	// hanging comment,
+]

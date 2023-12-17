@@ -16,18 +16,91 @@
 - [#2423 # cmd/fmt: invalid CUE emitted when all fields are commented inside struct](https://github.com/cue-lang/cue/issues/2423) - can reproduce
 - [#2567 # Cue fmt destroys working code](https://github.com/cue-lang/cue/issues/2567) - can reproduce
 
+- [#2672 cmd/cue: fmt -s does not preserve the scope of comments which is important for tool files](<https://github.com/cue-lang/cue/issues/2672>)
+
 ### tabs and indent
 
-- [#722 # cue fmt indents top-level comments ](https://github.com/cue-lang/cue/issues/722)
+- [#722 # cue fmt indents top-level comments](https://github.com/cue-lang/cue/issues/722)
 - [#1006 # cue fix tries to align comments inside braces with those outside, causing weird field indentation](https://github.com/cue-lang/cue/issues/1006)
-- [#1040 # cmd/cue: fmt converts tabs to spaces in comments ](https://github.com/cue-lang/cue/issues/1040) - cueckoo closed this as completed in dac4917 on May 30, 2022
+- [#1040 # cmd/cue: fmt converts tabs to spaces in comments](https://github.com/cue-lang/cue/issues/1040) - cueckoo closed this as completed in dac4917 on May 30, 2022
 - [#1629 # improve strategy for comment output](https://github.com/cue-lang/cue/issues/1629) - Most of these are to do with comment formatting, but there's a deeper issue here: what should happen to comments when we apply unification to CUE values?
 
 ### commented error message
 
 - [#2646 # cmd/cue: def sometimes inserts CUE comments for errors](https://github.com/cue-lang/cue/issues/2646)
 
-## test cases
+## tasks and tools
+
+### work in progress
+
+[rudifa/cue-issues-fmt-comments @ main](https://github.com/rudifa/cue-issues-fmt-comments) -  test files and programs
+
+[rudifa/cue @ issues-fmt-comments](https://github.com/rudifa/cue/tree/issues-fmt-comments) - fork of cue with debug prints
+
+### identify main actors
+
+`parser.ParseFile` is called by `cue fmt` and `cue def` via `NewDecoder`.
+
+- input: incoming CUE file
+- output: ast.File
+
+`formatter.Node` is called by `cue fmt` via `NewEncoder`.
+
+- input: ast.File
+- output: string ready to be written to file
+
+### identify observation / debuging tools and positions
+
+- parser: `parser.Trace` option
+
+- parser output in fmt.go:
+
+    `CUE_DEBUG_AST_STR=1` => `DebugStr(f)` with variant DebugStrLong
+
+    `CUE_DEBUG_AST_SPEW=1` => `spew.Dump(f)`
+
+- formatter:
+
+    `CUE_DEBUG_AST_FMT=1` => `log.Printf("p.output (%s):\n%s\n", msg, hexdump(p.output))`
+
+### identify test cases already in cue
+
+1. break the formmatter
+
+```
+ func (f *formatter) file(file *ast.File) {
++       f.print("###")
+        f.before(file)
+        f.walkDeclList(file.Decls)
+        f.after(file)
+```
+
+2. run tests
+
+```
+cue % go test ./cmd/cue/... | grep 'testdata' > broken-formatter-failures.txt
+```
+
+3. look at the results
+
+```
+cue % wc -l broken-formatter-failures.txt                               [issues-fmt-comments|✚3…1]
+      74 broken-formatter-failures.txt
+```
+
+4. fix the formatter
+
+```
+cue % git restore cue/format/node.go
+```
+
+### questions to ask the cue team
+
+...
+
+# miscellanea
+
+## investigating test cases
 
 ### 1447 - single import and comment combined
 
@@ -496,7 +569,7 @@ index 53020fac..b015adc5 100644
 cue %                                                                                                 [issues-fmt-comments L|…1]
 ```
 
-#### To create the patch in the root of the cue repo clone:
+#### To create the patch in the root of the cue repo clone
 
 ```
 cue % pwd
@@ -525,7 +598,7 @@ git diff 7a4ea866 64a14f90 > cuedo.patch
 
 ```
 
-#### To apply the patch on a different branch or repo clone, run in the root of the repo (`$GOPATH/src`):
+#### To apply the patch on a different branch or repo clone, run in the root of the repo (`$GOPATH/src`)
 
 ```
 
@@ -545,26 +618,60 @@ This will install the modified cue as `$GOPATH/bin/cue`.
 
 Make sure that this is found in your `$PATH` before the system `cue` binary.
 
+## contact @uhthomas?
+
+_Perhaps worth putting you in touch with @Thomas, who made some fixes to the cue/format package recently._
+
+[recent commits by @uhthomas](https://github.com/cue-lang/cue/commits?author=uhthomas)
+
+These are files (excluding txtar files) that were modified by @uhthomas in the last 2 months, in 9 commits:
+
+```
+cmd/cue/cmd/eval.go
+cmd/cue/cmd/get_go.go
+cmd/cue/cmd/orphans.go
+cmd/cue/cmd/root.go
+cue/ast/astutil/resolve_test.go
+cue/format/node.go
+cue/format/testdata/expressions.golden
+cue/format/testdata/expressions.input
+cue/parser/parser_test.go
+doc/ref/spec.md
+doc/tutorial/kubernetes/README.md
+doc/tutorial/kubernetes/manual/services/cloud.cue
+doc/tutorial/kubernetes/manual/services/k8s.cue
+doc/tutorial/kubernetes/manual/services/kube_tool.cue
+doc/tutorial/kubernetes/quick/services/infra/etcd/kube.cue
+doc/tutorial/kubernetes/quick/services/infra/events/kube.cue
+doc/tutorial/kubernetes/quick/services/kube_tool.cue
+doc/tutorial/kubernetes/quick/services/mon/prometheus/configmap.cue
+internal/ci/base/codereview.cue
+internal/ci/base/github.cue
+internal/ci/ci_tool.cue
+internal/encoding/json/encode_test.go
+internal/encoding/yaml/encode_test.go
+internal/filetypes/types.go
+internal/third_party/yaml/decode.go
+internal/third_party/yaml/scannerc.go
+pkg/internal/builtintest/testing.go
+pkg/list/list.go
+pkg/tool/exec/exec_test.go
+pkg/tool/exec/pkg.go
+tools/fix/fixall_test.go
 ```
 
 ```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
+// Node formats node in canonical cue fmt style and writes the result to dst.
+//
+// The node type must be *ast.File, []syntax.Decl, syntax.Expr, syntax.Decl, or
+// syntax.Spec. Node does not modify node. Imports are not sorted for nodes
+// representing partial source files (for instance, if the node is not an
+// *ast.File).
+//
+// The function may return early (before the entire result is written) and
+// return a formatting error, for instance due to an incorrect AST.
+func Node(node ast.Node, opt ...Option) ([]byte, error) {
+ cfg := newConfig(opt)
+ return cfg.fprint(node)
+}
 ```
