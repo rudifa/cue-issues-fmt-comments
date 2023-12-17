@@ -13,7 +13,7 @@ replace cuelang.org/go => ../cue
 replace github.com/rudifa/goutil => ../goutil
 
 require (
-	cuelabs.dev/go/oci/ociregistry v0.0.0-20231103182354-93e78c079a13 // indirect
+	cuelabs.dev/go/oci/ociregistry v0.0.0-20231205091233-3bb0ee105e4a // indirect
 	github.com/cockroachdb/apd/v3 v3.2.1 // indirect
 	github.com/emicklei/proto v1.10.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect

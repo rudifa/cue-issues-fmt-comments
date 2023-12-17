@@ -1,19 +1,17 @@
+# issue #2567
+
 # show original 2567.cue before cue fmt
-exec cat 2567.cue
-exec cue fmt 2567.cue
+exec cat 2567.cue               # original cue
+exec cue vet 2567.cue           # pass
+exec cue fmt 2567.cue           # mangled cue
+exec cat 2567.cue               # as seen here
+exec cue vet 2567.cue           # fail
 
-# show modified (badly) 2567.cue
-exec cat 2567.cue
-
-# the original 2567.cue fails eval
-exec cue vet -c in2.cue
 
 -- 2567.cue --
 foo: [
 	bar["baz"], //some comment
 ]
--- in2.cue --
-foo: [
-	bar["baz"], //some comment
-]
+bar: baz: 41
+-- end --
 

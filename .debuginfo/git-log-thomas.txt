@@ -1,0 +1,209 @@
+commit b36b4775e6a890899c460f62f8e59b4182d63c2a
+Author: Thomas Way <thomas@6f.io>
+Date:   Sun Dec 3 23:22:45 2023 +0000
+
+    cmd/cue: fix panic when importing empty files as a list
+    
+    Empty files are represented as nil when parsed, which causes cue to
+    panic as the condition is not considered when asked to import as a list.
+    
+    Fixes #2721
+    
+    Change-Id: I20f3b49eb66661f156c06e036579ce6beddfe0d8
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1173072
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+
+commit d97b0c3bc6e57a7e0409c0fdf5f4508a6ed6ce1e
+Author: Thomas Way <thomas@6f.io>
+Date:   Fri Nov 10 17:51:37 2023 +0000
+
+    cmd/cue: fix incorrect position in yaml import
+    
+    Position information of the CUE AST is represented with bytes, whereas
+    the YAML decoder represents position information with characters. The
+    mismatch could result in incorrect and strange positions in the CUE AST
+    from decoded YAML files.
+    
+    The simplest thing to do is to change the YAML decoder to represent
+    position information as bytes. Other solutions may be complex or
+    computationally expensive. I do not see the character index used in any
+    meaningful way when decoding, so I believe this to be a safe change.
+    
+    In addition, it seems position information for decoded YAML documents
+    may have been off by one, which has also been addressed. Position
+    information for sequence end tokens were also invalid (or missing) and
+    is now correctly set to the starting position of the sequence end event.
+    
+    The Kubernetes tutorial files have been updated to match the changes as
+    a result of the corrected position information.
+    
+            CUE_LONG=true CUE_UPDATE=true go test ./doc/tutorial/kubernetes
+    
+    Fixes #826
+    
+    Change-Id: Ie139708698296660b2396bc696e7b753a004a132
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1172017
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+
+commit 67ea9cf9c39a6cc55da357541019886b1ed0beaa
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Nov 9 21:17:54 2023 +0000
+
+    cmd/cue: support optional comments in get go
+    
+    The Kuberentes ecosystem use comments to denote whether a field is
+    optional or required. The comment has a direct effect on the produced
+    OpenAPI schema, and often means otherwise correct Go "schemas" will be
+    represented incorrectly with CUE.
+    
+    https://github.com/kubernetes/community/blob/e977e6ea355f26130ca555d1e8704893727ee024/contributors/devel/sig-architecture/api-conventions.md#optional-vs-required
+    
+    In addition to the heuristics of the "omitempty" struct tag, the
+    "// +optional" comment will now also mark a field as optional. The
+    behaviour from the Kubernetes project which parses this comment as a
+    key/value pair (tag) is also preserved.
+    
+    https://pkg.go.dev/k8s.io/gengo/types#ExtractCommentTags
+    
+    Fixes #2679
+    
+    Change-Id: Ieeb2e7bee61e16ed9910ea46e68cb1a3eaa47197
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171971
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+commit 112b0b28a888e2a74016adc1704e0aef7b362870
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Oct 26 21:48:10 2023 +0100
+
+    cmd/cue: ignore complex types in get go
+    
+    Complex numbers have no opaque representation in Go. The real and
+    imaginary parts of a complex number are only accessible using the
+    inbuilt functions real and imag. There is also no agreed upon standard
+    for representing complex numbers in other data formats like JSON or
+    YAML. Most encoders will simply write strings in the form "1+2i". I
+    think the safest thing to do for now is to represent complex numbers
+    with top, and adjust this in future if needed.
+    
+    Fixes #2661
+    
+    Change-Id: Ibdcbf04a535490a4936323b37c79eec12bbd822c
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1170115
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+
+commit 8b32c491294c895394d38eeb67c8f7ab366c4a78
+Author: Thomas Way <thomas@6f.io>
+Date:   Fri Oct 27 19:08:47 2023 +0100
+
+    pkg/internal/builtintest: don't print superfluous newlines
+    
+    The additional newline from Fprintln meant the test expected two
+    newlines rather than just one, which is incorrect.
+    
+    Change-Id: I6da82454f0f4d331cf40f953ed52f62164ddcb7b
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171356
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+commit d70007c116281516ed051982a9897013119df417
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Oct 26 22:48:53 2023 +0100
+
+    cmd/format: be consistent with whitespace in lists
+    
+    Leading whitespace is not strictly enforced, but is incorrectly present
+    when the formatting of a list is fixed. The behaviour can be made
+    consistent by requesting no blanks at the start of a list.
+    
+            ```diff
+            -[ 1]
+            -[ for x in y {}]
+            +[1]
+            + [for x in y {}]
+            ```
+    
+    Fixes #1023
+    
+    Change-Id: I8a57461d99cf6fd67105ab01283906e8ee60fac8
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171302
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+
+commit 3b4e03d597532c90c34cee5c3c17b5e109999d35
+Author: Thomas Way <thomas@6f.io>
+Date:   Sat Oct 21 00:01:44 2023 +0100
+
+    cmd/cue: support type parameters in get go
+    
+    Go type parameters are represented as their basic types in most cases, but
+    there are some more complicated areas which are not handled yet. These
+    cases are documented clearly as TODOs and may be good candidates for
+    improvement work in future. For now, this should unblock importing some
+    packages.
+    
+    Fixes #2217
+    
+    Change-Id: I5b4660ed3b8c6a11a1f135fe68ed55e966e371b1
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171015
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+commit 05ceba661e39f78c91a35977abd54418c75a2148
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Oct 26 20:54:16 2023 +0100
+
+    cmd/cue: support unsafe pointer in get go
+    
+    Fixes #2641
+    
+    Change-Id: Ie77cc7d326cdcc5980d0432e0caf3a6bb0de2c8e
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171292
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+commit eddccfc72316a648971d9684ac5dcd003ee26385
+Author: Thomas Way <thomas@6f.io>
+Date:   Wed Oct 11 01:18:46 2023 +0100
+
+    cue/format: indent list elements correctly
+    
+    Vertical tabs are used when printing some struct fields
+    for the sake of vertical alignment of the values.
+    This does not happen for fields where the value needs a form feed,
+    for the sake of not aligning every single struct field.
+    For example, we don't align those with struct and list values
+    since they tend to be complex or take multiple lines.
+    
+    The logic to detect whether a field value needs a form feed was brittle
+    since it only looked for a struct or list directly in the expression,
+    entirely missing one if it was behind a unary or binary expression.
+    Fix up that logic and update the tests.
+    
+    Fixes #2314.
+    
+    Closes #2645 as merged as of commit cff4c1a1.
+    
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Change-Id: Ie543e41ebf15d724632bc9a0dd1d9df28032ddc4
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1170966
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    Reviewed-by: Paul Jolly <paul@myitcv.io>

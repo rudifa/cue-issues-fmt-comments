@@ -1,0 +1,920 @@
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00035ee40?, 0x1, 0x11a2d25?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x18ce568, 0x1}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18d1550?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:662 +0x9b6
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c1e67, 0x4}, {0xc00035ea68?, 0x1, 0x0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeByte(0xc000391360, 0xa, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:394 +0x6d
+cuelang.org/go/cue/format.(*printer).writeWhitespace(0xc000391360, 0x90a)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:283 +0x21a
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x179f080?, 0xc0004cbe70?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:235 +0x66a
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:695 +0x713
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c620c, 0x8}, {0xc00035ea68?, 0x1, 0x0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeByte(0xc000391360, 0xa, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:406 +0x105
+cuelang.org/go/cue/format.(*printer).writeWhitespace(0xc000391360, 0x90a)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:283 +0x21a
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x179f080?, 0xc0004cbe70?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:235 +0x66a
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:695 +0x713
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c81c1, 0xa}, {0xc00035eab8?, 0x1, 0x0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x17c1839, 0x2}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:361 +0x78
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x16d1940?, 0x18d21c0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:695 +0x713
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00035eab8?, 0x1, 0x0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x17c1839, 0x2}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x16d1940?, 0x18d21c0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:695 +0x713
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c81c1, 0xa}, {0xc00035eab8?, 0x1, 0x0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x17c1839, 0x2}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:369 +0x111
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x16d1940?, 0x18d21c0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:695 +0x713
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c1e67, 0x4}, {0xc00035e4e8?, 0x1, 0x8?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeByte(0xc000391360, 0x20, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:394 +0x6d
+cuelang.org/go/cue/format.(*printer).writeWhitespace(0xc000391360, 0x802)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:295 +0x257
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x179f080?, 0xc0004cbe90?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:235 +0x66a
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e0498?, 0xc000522e00?}, 0x100e4e5?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:566 +0x21dd
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e0498?, 0xc000522e00}, 0x0?, 0x1104280?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:697 +0x8cc
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c81c1, 0xa}, {0xc00035e538?, 0x1, 0xc0000061a0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0xc0004974fc, 0x4}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:361 +0x78
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x177eee0?, 0xc000522e00?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e0498?, 0xc000522e00?}, 0x100e4e5?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:566 +0x21dd
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e0498?, 0xc000522e00}, 0x0?, 0x1104280?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:697 +0x8cc
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00035e538?, 0x1, 0xc0000061a0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0xc0004974fc, 0x4}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x177eee0?, 0xc000522e00?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e0498?, 0xc000522e00?}, 0x100e4e5?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:566 +0x21dd
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e0498?, 0xc000522e00}, 0x0?, 0x1104280?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).clause(0xc00035fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:697 +0x8cc
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00035fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00035fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00035fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00035fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00035fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00035fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c81c1, 0xa}, {0xc00061e538?, 0x1, 0xc0000061a0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0xc0004974fc, 0x4}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:369 +0x111
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x177eee0?, 0xc000522e00?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e0498?, 0xc000522e00?}, 0x100e4e5?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:566 +0x21dd
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e0498?, 0xc000522e00}, 0x0?, 0x1104280?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).clause(0xc00061fc18, {0x18df0e8?, 0xc000520ae0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:697 +0x8cc
+cuelang.org/go/cue/format.(*formatter).walkClauseList(0xc00061fc18, {0xc0004cbdf0, 0x1, 0x11a2d25?}, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:181 +0x4f
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:193 +0x107
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c1e67, 0x4}, {0xc00061e788?, 0x1, 0xc00061e7a8?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeByte(0xc000391360, 0x20, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:394 +0x6d
+cuelang.org/go/cue/format.(*printer).writeWhitespace(0xc000391360, 0x12)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:295 +0x257
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18d14d0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:248 +0x7c5
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?}, 0x2?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:647 +0xe9b
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00061e7d8?, 0x1, 0x11a2d25?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x18d1450, 0x1}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18d14d0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?}, 0x2?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:647 +0xe9b
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00061e7d8?, 0x1, 0x11a2d25?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x0, 0x0}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x16ba620?, 0xc000496008?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?}, 0x2?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:647 +0xe9b
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00061e7d8?, 0x1, 0x11a2d25?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x18d1454, 0x1}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18d1560?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?}, 0x2?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:659 +0x1085
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c1e67, 0x4}, {0xc00061ebf8?, 0x1, 0xc00035ebf0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeByte(0xc000391360, 0xb, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:394 +0x6d
+cuelang.org/go/cue/format.(*printer).writeWhitespace(0xc000391360, 0x6)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:292 +0x274
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x179f080?, 0xc0004ca040?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:235 +0x66a
+cuelang.org/go/cue/format.(*formatter).printComment(0xc00061fc18, 0xc000520b10)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:345 +0x153
+cuelang.org/go/cue/format.(*formatter).visitComments(0xc00061fc18, 0x2)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:324 +0x85
+cuelang.org/go/cue/format.(*formatter).after(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:312 +0xda
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:524 +0x97
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c81c1, 0xa}, {0xc00061ec48?, 0x1, 0x4?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0xc000375700, 0x1e}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:361 +0x78
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1749ce0?, 0xc0005155c0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).printComment(0xc00061fc18, 0xc000520b10)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:346 +0x16c
+cuelang.org/go/cue/format.(*formatter).visitComments(0xc00061fc18, 0x2)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:324 +0x85
+cuelang.org/go/cue/format.(*formatter).after(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:312 +0xda
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:524 +0x97
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00061ec48?, 0x1, 0x4?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0xc000375700, 0x1e}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1749ce0?, 0xc0005155c0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).printComment(0xc00061fc18, 0xc000520b10)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:346 +0x16c
+cuelang.org/go/cue/format.(*formatter).visitComments(0xc00061fc18, 0x2)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:324 +0x85
+cuelang.org/go/cue/format.(*formatter).after(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:312 +0xda
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:524 +0x97
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c81c1, 0xa}, {0xc00061ec48?, 0x1, 0x4?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0xc000375700, 0x1e}, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:369 +0x111
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1749ce0?, 0xc0005155c0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).printComment(0xc00061fc18, 0xc000520b10)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:346 +0x16c
+cuelang.org/go/cue/format.(*formatter).visitComments(0xc00061fc18, 0x2)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:324 +0x85
+cuelang.org/go/cue/format.(*formatter).after(0xc00061fc18, {0x18e02e0?, 0xc0004574f0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:312 +0xda
+cuelang.org/go/cue/format.(*formatter).expr1(0xc000391360?, {0x18e02e0?, 0xc0004574f0}, 0x11a2d25?, 0x16d1940?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:524 +0x97
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).walkListElems(0xc00061fc18, {0xc0004cbe00, 0x1, 0xc00051a850?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:195 +0x5fa
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:663 +0xa66
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00061ee40?, 0x1, 0x11a2d25?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x18ce558, 0x1}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18ce490?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).exprRaw(0xc00061fc18, {0x18e06a8?, 0xc000457540?}, 0x0?, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:667 +0xcbd
+cuelang.org/go/cue/format.(*formatter).expr1(0xc00035fc18?, {0x18e06a8?, 0xc000457540}, 0xc00035f5b8?, 0x1174797?)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:522 +0x70
+cuelang.org/go/cue/format.(*formatter).expr(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:513
+cuelang.org/go/cue/format.(*formatter).decl(0xc00061fc18, {0x18df408, 0xc0005155e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:382 +0x8cb
+cuelang.org/go/cue/format.(*formatter).walkDeclList(0xc00061fc18, {0xc0004cbe20, 0x1, 0xc00035fb01?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:134 +0x32b
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:229 +0x46
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c1e67, 0x4}, {0xc00061fa18?, 0x1, 0xc00061f700?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeByte(0xc000391360, 0xa, 0x1)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:394 +0x6d
+cuelang.org/go/cue/format.(*printer).writeWhitespace(0xc000391360, 0x100)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:283 +0x21a
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18ce3e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:248 +0x7c5
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:231 +0xc7
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+
+printer.go:502: Stack trace:
+goroutine 1 [running]:
+cuelang.org/go/cue/format.LogStackTrace()
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:501 +0x3a
+cuelang.org/go/cue/format.(*printer).append(0xc000391360, {0x17c376c, 0x6}, {0xc00061fa68?, 0x1, 0x11a2d25?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:456 +0x4c5
+cuelang.org/go/cue/format.(*printer).writeString(0xc000391360, {0x0, 0x0}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:365 +0xc7
+cuelang.org/go/cue/format.(*printer).Print(0xc000391360, {0x1735e80?, 0x18ce3e0?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/printer.go:251 +0x7e6
+cuelang.org/go/cue/format.(*formatter).print(...)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:257
+cuelang.org/go/cue/format.(*formatter).file(0xc00061fc18, 0xc000524780)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:231 +0xc7
+cuelang.org/go/cue/format.printNode({0x177f2e0?, 0xc000524780?}, 0xc000391360)
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/node.go:39 +0x13a
+cuelang.org/go/cue/format.(*config).fprint(0xc000375740, {0x177f2e0, 0xc000524780})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:147 +0xa5
+cuelang.org/go/cue/format.Node({0x18dce28?, 0xc000524780}, {0x0, 0x0, 0xc00035fe20?})
+	/Users/rudifarkas/GitHub/golang/src/cue/cue/format/format.go:94 +0x96
+main.runParseAndFormat({0x17cf29c, 0x13}, 0x0)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:104 +0x2aa
+main.runParseAndFormat_2567(...)
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:38
+main.main()
+	/Users/rudifarkas/GitHub/golang/src/cue-issues-fmt-comments/main.go:26 +0x65
+

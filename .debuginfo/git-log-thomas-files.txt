@@ -1,0 +1,364 @@
+commit b36b4775e6a890899c460f62f8e59b4182d63c2a
+Author: Thomas Way <thomas@6f.io>
+Date:   Sun Dec 3 23:22:45 2023 +0000
+
+    cmd/cue: fix panic when importing empty files as a list
+    
+    Empty files are represented as nil when parsed, which causes cue to
+    panic as the condition is not considered when asked to import as a list.
+    
+    Fixes #2721
+    
+    Change-Id: I20f3b49eb66661f156c06e036579ce6beddfe0d8
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1173072
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+
+cmd/cue/cmd/orphans.go
+cmd/cue/cmd/testdata/script/import_list.txtar
+
+commit d97b0c3bc6e57a7e0409c0fdf5f4508a6ed6ce1e
+Author: Thomas Way <thomas@6f.io>
+Date:   Fri Nov 10 17:51:37 2023 +0000
+
+    cmd/cue: fix incorrect position in yaml import
+    
+    Position information of the CUE AST is represented with bytes, whereas
+    the YAML decoder represents position information with characters. The
+    mismatch could result in incorrect and strange positions in the CUE AST
+    from decoded YAML files.
+    
+    The simplest thing to do is to change the YAML decoder to represent
+    position information as bytes. Other solutions may be complex or
+    computationally expensive. I do not see the character index used in any
+    meaningful way when decoding, so I believe this to be a safe change.
+    
+    In addition, it seems position information for decoded YAML documents
+    may have been off by one, which has also been addressed. Position
+    information for sequence end tokens were also invalid (or missing) and
+    is now correctly set to the starting position of the sequence end event.
+    
+    The Kubernetes tutorial files have been updated to match the changes as
+    a result of the corrected position information.
+    
+            CUE_LONG=true CUE_UPDATE=true go test ./doc/tutorial/kubernetes
+    
+    Fixes #826
+    
+    Change-Id: Ie139708698296660b2396bc696e7b753a004a132
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1172017
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+
+cmd/cue/cmd/testdata/script/def_jsonschema.txtar
+cmd/cue/cmd/testdata/script/issue826.txtar
+cmd/cue/cmd/testdata/script/vet_data.txtar
+cmd/cue/cmd/testdata/script/vet_embed.txtar
+doc/tutorial/basics/0_intro/47_validation.txtar
+doc/tutorial/kubernetes/quick/services/infra/etcd/kube.cue
+doc/tutorial/kubernetes/quick/services/infra/events/kube.cue
+doc/tutorial/kubernetes/quick/services/mon/prometheus/configmap.cue
+internal/third_party/yaml/decode.go
+internal/third_party/yaml/scannerc.go
+pkg/encoding/yaml/testdata/gen.txtar
+
+commit 67ea9cf9c39a6cc55da357541019886b1ed0beaa
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Nov 9 21:17:54 2023 +0000
+
+    cmd/cue: support optional comments in get go
+    
+    The Kuberentes ecosystem use comments to denote whether a field is
+    optional or required. The comment has a direct effect on the produced
+    OpenAPI schema, and often means otherwise correct Go "schemas" will be
+    represented incorrectly with CUE.
+    
+    https://github.com/kubernetes/community/blob/e977e6ea355f26130ca555d1e8704893727ee024/contributors/devel/sig-architecture/api-conventions.md#optional-vs-required
+    
+    In addition to the heuristics of the "omitempty" struct tag, the
+    "// +optional" comment will now also mark a field as optional. The
+    behaviour from the Kubernetes project which parses this comment as a
+    key/value pair (tag) is also preserved.
+    
+    https://pkg.go.dev/k8s.io/gengo/types#ExtractCommentTags
+    
+    Fixes #2679
+    
+    Change-Id: Ieeb2e7bee61e16ed9910ea46e68cb1a3eaa47197
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171971
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+cmd/cue/cmd/get_go.go
+cmd/cue/cmd/testdata/script/get_go_types.txtar
+
+commit 112b0b28a888e2a74016adc1704e0aef7b362870
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Oct 26 21:48:10 2023 +0100
+
+    cmd/cue: ignore complex types in get go
+    
+    Complex numbers have no opaque representation in Go. The real and
+    imaginary parts of a complex number are only accessible using the
+    inbuilt functions real and imag. There is also no agreed upon standard
+    for representing complex numbers in other data formats like JSON or
+    YAML. Most encoders will simply write strings in the form "1+2i". I
+    think the safest thing to do for now is to represent complex numbers
+    with top, and adjust this in future if needed.
+    
+    Fixes #2661
+    
+    Change-Id: Ibdcbf04a535490a4936323b37c79eec12bbd822c
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1170115
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+
+cmd/cue/cmd/get_go.go
+cmd/cue/cmd/testdata/script/get_go_types.txtar
+
+commit 8b32c491294c895394d38eeb67c8f7ab366c4a78
+Author: Thomas Way <thomas@6f.io>
+Date:   Fri Oct 27 19:08:47 2023 +0100
+
+    pkg/internal/builtintest: don't print superfluous newlines
+    
+    The additional newline from Fprintln meant the test expected two
+    newlines rather than just one, which is incorrect.
+    
+    Change-Id: I6da82454f0f4d331cf40f953ed52f62164ddcb7b
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171356
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+cmd/cue/cmd/testdata/script/eval_errs.txtar
+cmd/cue/cmd/testdata/script/eval_expr.txtar
+cmd/cue/cmd/testdata/script/eval_import.txtar
+cmd/cue/cmd/testdata/script/go_cmd.txtar
+cmd/cue/cmd/testdata/script/vet_yaml.txtar
+cue/ast/astutil/resolve_test.go
+cue/ast/astutil/testdata/resolve/comprehensions.txtar
+cue/ast/astutil/testdata/resolve/fieldalias.txtar
+cue/ast/astutil/testdata/resolve/labels.txtar
+cue/ast/astutil/testdata/resolve/let.txtar
+cue/ast/astutil/testdata/resolve/value.txtar
+pkg/crypto/ed25519/testdata/gen.txtar
+pkg/crypto/hmac/testdata/hmac.txtar
+pkg/crypto/md5/testdata/gen.txtar
+pkg/crypto/sha1/testdata/gen.txtar
+pkg/crypto/sha256/testdata/gen.txtar
+pkg/crypto/sha512/testdata/gen.txtar
+pkg/encoding/base64/testdata/gen.txtar
+pkg/encoding/csv/testdata/gen.txtar
+pkg/encoding/hex/testdata/gen.txtar
+pkg/encoding/json/testdata/gen.txtar
+pkg/encoding/yaml/testdata/gen.txtar
+pkg/internal/builtintest/testing.go
+pkg/list/testdata/gen.txtar
+pkg/list/testdata/issues.txtar
+pkg/list/testdata/list.txtar
+pkg/list/testdata/sort.txtar
+pkg/math/bits/testdata/gen.txtar
+pkg/math/testdata/consts.txtar
+pkg/math/testdata/gen.txtar
+pkg/math/testdata/issue418.txtar
+pkg/math/testdata/round.txtar
+pkg/net/testdata/gen.txtar
+pkg/path/testdata/error.txtar
+pkg/path/testdata/issues.txtar
+pkg/path/testdata/join.txtar
+pkg/path/testdata/os.txtar
+pkg/regexp/testdata/gen.txtar
+pkg/strconv/testdata/gen.txtar
+pkg/strings/testdata/gen.txtar
+pkg/struct/testdata/gen.txtar
+pkg/struct/testdata/struct.txtar
+pkg/text/tabwriter/testdata/gen.txtar
+pkg/text/template/testdata/gen.txtar
+pkg/time/testdata/duration.txtar
+pkg/time/testdata/gen.txtar
+pkg/uuid/testdata/uuid.txtar
+tools/fix/fixall_test.go
+
+commit d70007c116281516ed051982a9897013119df417
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Oct 26 22:48:53 2023 +0100
+
+    cmd/format: be consistent with whitespace in lists
+    
+    Leading whitespace is not strictly enforced, but is incorrectly present
+    when the formatting of a list is fixed. The behaviour can be made
+    consistent by requesting no blanks at the start of a list.
+    
+            ```diff
+            -[ 1]
+            -[ for x in y {}]
+            +[1]
+            + [for x in y {}]
+            ```
+    
+    Fixes #1023
+    
+    Change-Id: I8a57461d99cf6fd67105ab01283906e8ee60fac8
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171302
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+
+cmd/cue/cmd/eval.go
+cmd/cue/cmd/root.go
+cmd/cue/cmd/testdata/script/cmd_cycle.txtar
+cmd/cue/cmd/testdata/script/cmd_func.txtar
+cmd/cue/cmd/testdata/script/cmd_issue2060.txtar
+cmd/cue/cmd/testdata/script/eval_mixedfiletypes.txtar
+cmd/cue/cmd/testdata/script/help.txtar
+cmd/cue/cmd/testdata/script/issue473.txtar
+cmd/cue/cmd/testdata/script/load_pkg.txtar
+cmd/cue/cmd/testdata/script/merge_interaction.txtar
+cue/format/node.go
+cue/format/testdata/expressions.golden
+cue/format/testdata/expressions.input
+cue/parser/parser_test.go
+cue/testdata/benchmarks/issue2176.txtar
+cue/testdata/builtins/incomplete.txtar
+cue/testdata/compile/labels.txtar
+cue/testdata/comprehensions/015_list_comprehension.txtar
+cue/testdata/comprehensions/checkdefined.txtar
+cue/testdata/comprehensions/incomplete.txtar
+cue/testdata/comprehensions/lists.txtar
+cue/testdata/cycle/chain.txtar
+cue/testdata/cycle/comprehension.txtar
+cue/testdata/cycle/evaluate.txtar
+cue/testdata/cycle/issue1960.txtar
+cue/testdata/cycle/structural.txtar
+cue/testdata/definitions/issue317.txtar
+cue/testdata/definitions/issue491.txtar
+cue/testdata/disjunctions/elimination.txtar
+cue/testdata/eval/conjuncts.txtar
+cue/testdata/eval/discontinuous.txtar
+cue/testdata/eval/issue2146.txtar
+cue/testdata/eval/let.txtar
+cue/testdata/eval/lists.txtar
+cue/testdata/export/018.txtar
+cue/testdata/fulleval/012_disjunctions_of_lists.txtar
+cue/testdata/fulleval/016_struct_comprehension_with_template.txtar
+cue/testdata/fulleval/020_complex_interaction_of_groundness.txtar
+cue/testdata/fulleval/032_or_builtin_should_not_fail_on_non-concrete_empty_list.txtar
+cue/testdata/fulleval/049_alias_reuse_in_nested_scope.txtar
+cue/testdata/references/let.txtar
+cue/testdata/resolve/017_disjunctions_of_lists.txtar
+doc/ref/spec.md
+doc/tutorial/basics/6_expressions/40_listcomp.txtar
+doc/tutorial/basics/6_expressions/50_fieldcomp.txtar
+doc/tutorial/basics/6_expressions/80_coalesce.txtar
+doc/tutorial/kubernetes/README.md
+doc/tutorial/kubernetes/manual/services/cloud.cue
+doc/tutorial/kubernetes/manual/services/k8s.cue
+doc/tutorial/kubernetes/manual/services/kube_tool.cue
+doc/tutorial/kubernetes/quick/services/kube_tool.cue
+encoding/protobuf/textproto/testdata/decoder/list.txtar
+internal/ci/base/codereview.cue
+internal/ci/base/github.cue
+internal/ci/ci_tool.cue
+internal/core/dep/testdata/dynamic.txtar
+internal/core/dep/testdata/listcomprehension.txtar
+internal/core/export/testdata/main/let.txtar
+internal/encoding/json/encode_test.go
+internal/encoding/yaml/encode_test.go
+pkg/list/list.go
+pkg/tool/exec/exec_test.go
+tools/flow/testdata/dep.txtar
+tools/flow/testdata/dynamic.txtar
+tools/flow/testdata/issue2416b.txtar
+tools/trim/testdata/defaults.txtar
+
+commit 3b4e03d597532c90c34cee5c3c17b5e109999d35
+Author: Thomas Way <thomas@6f.io>
+Date:   Sat Oct 21 00:01:44 2023 +0100
+
+    cmd/cue: support type parameters in get go
+    
+    Go type parameters are represented as their basic types in most cases, but
+    there are some more complicated areas which are not handled yet. These
+    cases are documented clearly as TODOs and may be good candidates for
+    improvement work in future. For now, this should unblock importing some
+    packages.
+    
+    Fixes #2217
+    
+    Change-Id: I5b4660ed3b8c6a11a1f135fe68ed55e966e371b1
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171015
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+cmd/cue/cmd/get_go.go
+cmd/cue/cmd/testdata/script/get_go_types.txtar
+
+commit 05ceba661e39f78c91a35977abd54418c75a2148
+Author: Thomas Way <thomas@6f.io>
+Date:   Thu Oct 26 20:54:16 2023 +0100
+
+    cmd/cue: support unsafe pointer in get go
+    
+    Fixes #2641
+    
+    Change-Id: Ie77cc7d326cdcc5980d0432e0caf3a6bb0de2c8e
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1171292
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Unity-Result: CUE porcuepine <cue.porcuepine@gmail.com>
+
+cmd/cue/cmd/get_go.go
+cmd/cue/cmd/testdata/script/get_go_types.txtar
+
+commit eddccfc72316a648971d9684ac5dcd003ee26385
+Author: Thomas Way <thomas@6f.io>
+Date:   Wed Oct 11 01:18:46 2023 +0100
+
+    cue/format: indent list elements correctly
+    
+    Vertical tabs are used when printing some struct fields
+    for the sake of vertical alignment of the values.
+    This does not happen for fields where the value needs a form feed,
+    for the sake of not aligning every single struct field.
+    For example, we don't align those with struct and list values
+    since they tend to be complex or take multiple lines.
+    
+    The logic to detect whether a field value needs a form feed was brittle
+    since it only looked for a struct or list directly in the expression,
+    entirely missing one if it was behind a unary or binary expression.
+    Fix up that logic and update the tests.
+    
+    Fixes #2314.
+    
+    Closes #2645 as merged as of commit cff4c1a1.
+    
+    Signed-off-by: Thomas Way <thomas@6f.io>
+    Change-Id: Ie543e41ebf15d724632bc9a0dd1d9df28032ddc4
+    Reviewed-on: https://review.gerrithub.io/c/cue-lang/cue/+/1170966
+    TryBot-Result: CUEcueckoo <cueckoo@cuelang.org>
+    Reviewed-by: Daniel Martí <mvdan@mvdan.cc>
+    Reviewed-by: Paul Jolly <paul@myitcv.io>
+
+cmd/cue/cmd/testdata/script/get_go_types.txtar
+cue/format/node.go
+cue/format/testdata/expressions.golden
+cue/format/testdata/expressions.input
+encoding/jsonschema/testdata/list.txtar
+encoding/jsonschema/testdata/type.txtar
+internal/core/export/testdata/main/adt.txtar
+internal/filetypes/types.go
+pkg/list/testdata/list.txtar
+pkg/struct/testdata/struct.txtar
+pkg/tool/exec/pkg.go

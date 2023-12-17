@@ -1,0 +1,156 @@
+# issue #2567
+
+exec cue fmt 2567.cue
+cmp 2567.cue 2567.got.cue
+
+exec cue fmt 2567.0.cue
+cmp 2567.0.cue 2567.0.got.cue
+
+exec cue fmt 2567.1.cue
+cmp 2567.1.cue 2567.1.got.cue
+
+exec cue fmt 2567.2.cue
+cmp 2567.2.cue 2567.2.got.cue
+
+exec cue fmt 2567.2b.cue
+cmp 2567.2b.cue 2567.2b.got.cue
+
+exec cue fmt 2567.3.cue
+cmp 2567.3.cue 2567.3.got.cue
+
+exec cue fmt 2567.1.2.cue
+cmp 2567.1.2.cue 2567.1.2.got.cue
+
+exec cue fmt 2567.1.3.cue
+cmp 2567.1.3.cue 2567.1.3.got.cue
+
+exec cue fmt 2567.2.3.cue
+cmp 2567.2.3.cue 2567.2.3.got.cue
+
+exec cue fmt 2567.1.2.3.cue
+cmp 2567.1.2.3.cue 2567.1.2.3.got.cue
+
+exec cue fmt 2567.22.cue
+cmp 2567.22.cue 2567.22.got.cue
+
+exec cue fmt 2567.22.3.cue
+cmp 2567.22.3.cue 2567.22.3.got.cue
+
+-- 2567.cue --
+foo: [
+    bar["baz"], //some comment
+]
+bar: baz: 41
+-- 2567.got.cue --
+foo: [
+	bar["baz" //some comment],
+]
+bar: baz: 41
+-- 2567.0.cue --
+[
+    if true
+        {}]
+-- 2567.0.got.cue --
+[
+	if true {}]
+-- 2567.1.cue --
+[
+    // about this clause
+    if true
+        {}]
+-- 2567.1.got.cue --
+[
+	// about this clause
+	if true {}]
+-- 2567.2.cue --
+[
+    if true // about this condition
+        {}]
+-- 2567.2.got.cue --
+[
+	if true {} // about this condition]
+-- 2567.2b.cue --
+[
+    if true // about this condition
+        {}
+]
+-- 2567.2b.got.cue --
+[
+	if true {} // about this condition,
+]
+-- 2567.3.cue --
+[
+    if true
+        {} // about this value
+]
+-- 2567.3.got.cue --
+[
+	if true {}, // about this value
+]
+-- 2567.1.2.cue --
+[
+    // about this clause
+    if true // about this condition
+        {}]
+-- 2567.1.2.got.cue --
+[
+	// about this clause
+	if true {} // about this condition]
+-- 2567.1.2.got.cue --
+[
+	// about this clause
+	if true {} // about this condition]
+-- 2567.1.3.cue --
+[
+    // about this clause
+    if true
+        {} // about this value
+]
+-- 2567.1.3.got.cue --
+[
+	// about this clause
+	if true {}, // about this value
+]
+-- 2567.2.3.cue --
+[
+    if true // about this condition
+        {} // about this value
+]
+-- 2567.2.3.got.cue --
+[
+	if true {} // about this condition, // about this value
+]
+-- 2567.1.2.3.cue --
+[
+    // about this clause
+    if true // about this condition
+        {} // about this value
+]
+-- 2567.1.2.3.got.cue --
+[
+	// about this clause
+	if true {} // about this condition, // about this value
+]
+-- 2567.22.cue --
+[
+	if true // about this condition
+		{}
+	if false // about that condition
+		{}]
+-- 2567.22.got.cue --
+[
+	if true {}  // about this condition,
+	if false {} // about that condition]
+-- 2567.22.3.cue --
+[
+	if true // about this condition
+		{} // about this value
+	if false // about that condition
+		{} // about that value
+]
+-- 2567.22.3.got.cue --
+[
+	if true {}  // about this condition, // about this value
+	if false {} // about that condition, // about that value
+]
+-- end --
