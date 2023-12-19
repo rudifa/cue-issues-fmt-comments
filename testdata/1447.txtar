@@ -1,5 +1,7 @@
 # cmd/fmt: single import and comment combined #1447
 
+exec cue-ast-print 1447.cue
+cmp stdout 1447.ast
 exec cue fmt 1447.cue
 cmp 1447.cue 1447.got.cue
 
@@ -18,8 +20,7 @@ import ( "strings"
 
 s: string
 u: strings.ToUpper(s)
--- print_tool.got --
-pending % print_tool 1447.cue                                                                                           [add-txtar-files|…4]
+-- 1447.ast --
 *ast.File{
    Filename: "1447.cue"
    Decls: []ast.Decl{
@@ -103,5 +104,27 @@ pending % print_tool 1447.cue                                                   
    }
    Imports: []*ast.ImportSpec{
       *ast.ImportSpec{
-         Name: panic: encountered a cycle; stopping
+         Name: nil
+         Path: *ast.BasicLit{
+            ValuePos: token.Pos("1447.cue:1:8")
+            Kind: token.Token("STRING")
+            Value: "\"strings\""
+         }
+         EndPos: token.Pos("-")
+         Comments: []*ast.CommentGroup{
+            *ast.CommentGroup{
+               Doc: false
+               Line: false
+               Position: 2
+               List: []*ast.Comment{
+                  *ast.Comment{
+                     Slash: token.Pos("1447.cue:3:1")
+                     Text: "// comment"
+                  }
+               }
+            }
+         }
+      }
+   }
+}
 -- end --

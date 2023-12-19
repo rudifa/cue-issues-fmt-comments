@@ -1,0 +1,905 @@
+# issue #2567
+
+exec cue-ast-print 2567.cue
+cmp stdout 2567.ast
+exec cue fmt 2567.cue
+cmp 2567.cue 2567.got.cue
+
+exec cue-ast-print 2567.0.cue
+cmp stdout 2567.0.ast
+exec cue fmt 2567.0.cue
+cmp 2567.0.cue 2567.0.got.cue
+
+exec cue-ast-print 2567.1.cue
+cmp stdout 2567.1.ast
+exec cue fmt 2567.1.cue
+cmp 2567.1.cue 2567.1.got.cue
+
+exec cue-ast-print 2567.2.cue
+cmp stdout 2567.2.ast
+exec cue fmt 2567.2.cue
+cmp 2567.2.cue 2567.2.got.cue
+
+exec cue-ast-print 2567.2b.cue
+cmp stdout 2567.2b.ast
+exec cue fmt 2567.2b.cue
+cmp 2567.2b.cue 2567.2b.got.cue
+
+exec cue-ast-print 2567.3.cue
+cmp stdout 2567.3.ast
+exec cue fmt 2567.3.cue
+cmp 2567.3.cue 2567.3.got.cue
+
+exec cue-ast-print 2567.1.2.cue
+cmp stdout 2567.1.2.ast
+exec cue fmt 2567.1.2.cue
+cmp 2567.1.2.cue 2567.1.2.got.cue
+
+exec cue-ast-print 2567.1.3.cue
+cmp stdout 2567.1.3.ast
+exec cue fmt 2567.1.3.cue
+cmp 2567.1.3.cue 2567.1.3.got.cue
+
+exec cue-ast-print 2567.2.3.cue
+cmp stdout 2567.2.3.ast
+exec cue fmt 2567.2.3.cue
+cmp 2567.2.3.cue 2567.2.3.got.cue
+
+exec cue-ast-print 2567.1.2.3.cue
+cmp stdout 2567.1.2.3.ast
+exec cue fmt 2567.1.2.3.cue
+cmp 2567.1.2.3.cue 2567.1.2.3.got.cue
+
+exec cue-ast-print 2567.22.cue
+cmp stdout 2567.22.ast
+exec cue fmt 2567.22.cue
+cmp 2567.22.cue 2567.22.got.cue
+
+exec cue-ast-print 2567.22.3.cue
+cmp stdout 2567.22.3.ast
+exec cue fmt 2567.22.3.cue
+cmp 2567.22.3.cue 2567.22.3.got.cue
+-- 2567.cue --
+foo: [
+    bar["baz"], //some comment
+]
+bar: baz: 41
+-- 2567.got.cue --
+foo: [
+	bar["baz" //some comment],
+]
+bar: baz: 41
+-- 2567.ast --
+*ast.File{
+   Filename: "2567.cue"
+   Decls: []ast.Decl{
+      *ast.Field{
+         Label: *ast.Ident{
+            NamePos: token.Pos("2567.cue:1:1")
+            Name: "foo"
+         }
+         Optional: token.Pos("-")
+         Constraint: token.Token("ILLEGAL")
+         TokenPos: token.Pos("2567.cue:1:4")
+         Token: token.Token(":")
+         Value: *ast.ListLit{
+            Lbrack: token.Pos("2567.cue:1:6")
+            Elts: []ast.Expr{
+               *ast.IndexExpr{
+                  X: *ast.Ident{
+                     NamePos: token.Pos("2567.cue:2:5")
+                     Name: "bar"
+                  }
+                  Lbrack: token.Pos("2567.cue:2:8")
+                  Index: *ast.BasicLit{
+                     ValuePos: token.Pos("2567.cue:2:9")
+                     Kind: token.Token("STRING")
+                     Value: "\"baz\""
+                  }
+                  Rbrack: token.Pos("2567.cue:2:14")
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 3
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.cue:2:17")
+                              Text: "//some comment"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.cue:3:1")
+         }
+         Attrs: []*ast.Attribute{
+         }
+      }
+      *ast.Field{
+         Label: *ast.Ident{
+            NamePos: token.Pos("2567.cue:4:1")
+            Name: "bar"
+         }
+         Optional: token.Pos("-")
+         Constraint: token.Token("ILLEGAL")
+         TokenPos: token.Pos("2567.cue:4:4")
+         Token: token.Token(":")
+         Value: *ast.StructLit{
+            Lbrace: token.Pos("-")
+            Elts: []ast.Decl{
+               *ast.Field{
+                  Label: *ast.Ident{
+                     NamePos: token.Pos("2567.cue:4:6")
+                     Name: "baz"
+                  }
+                  Optional: token.Pos("-")
+                  Constraint: token.Token("ILLEGAL")
+                  TokenPos: token.Pos("2567.cue:4:9")
+                  Token: token.Token(":")
+                  Value: *ast.BasicLit{
+                     ValuePos: token.Pos("2567.cue:4:11")
+                     Kind: token.Token("INT")
+                     Value: "41"
+                  }
+                  Attrs: []*ast.Attribute{
+                  }
+               }
+            }
+            Rbrace: token.Pos("-")
+         }
+         Attrs: []*ast.Attribute{
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.0.cue --
+[
+    if true
+        {}]
+-- 2567.0.got.cue --
+[
+	if true {}]
+-- 2567.0.ast --
+*ast.File{
+   Filename: "2567.0.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.0.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.0.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.0.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.0.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.0.cue:3:10")
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.0.cue:3:11")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.1.cue --
+[
+    // about this clause
+    if true
+        {}]
+-- 2567.1.got.cue --
+[
+	// about this clause
+	if true {}]
+-- 2567.1.ast --
+*ast.File{
+   Filename: "2567.1.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.1.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.1.cue:3:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.1.cue:3:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.1.cue:4:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.1.cue:4:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: true
+                        Line: false
+                        Position: 0
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.cue:2:5")
+                              Text: "// about this clause"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.1.cue:4:11")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.2.cue --
+[
+    if true // about this condition
+        {}]
+-- 2567.2.got.cue --
+[
+	if true {} // about this condition]
+-- 2567.2.ast --
+*ast.File{
+   Filename: "2567.2.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.2.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.2.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.2.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.2.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.2.cue:3:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.2.cue:2:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.2.cue:3:11")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.2b.cue --
+[
+    if true // about this condition
+        {}
+]
+-- 2567.2b.got.cue --
+[
+	if true {} // about this condition,
+]
+-- 2567.2b.ast --
+*ast.File{
+   Filename: "2567.2b.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.2b.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.2b.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.2b.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.2b.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.2b.cue:3:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.2b.cue:2:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.2b.cue:4:1")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.3.cue --
+[
+    if true
+        {} // about this value
+]
+-- 2567.3.got.cue --
+[
+	if true {}, // about this value
+]
+-- 2567.3.ast --
+*ast.File{
+   Filename: "2567.3.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.3.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.3.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.3.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.3.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.3.cue:3:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 4
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.3.cue:3:12")
+                              Text: "// about this value"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.3.cue:4:1")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.1.2.cue --
+[
+    // about this clause
+    if true // about this condition
+        {}]
+-- 2567.1.2.got.cue --
+[
+	// about this clause
+	if true {} // about this condition]
+-- 2567.1.2.ast --
+*ast.File{
+   Filename: "2567.1.2.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.1.2.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.1.2.cue:3:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.1.2.cue:3:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.1.2.cue:4:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.1.2.cue:4:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: true
+                        Line: false
+                        Position: 0
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.2.cue:2:5")
+                              Text: "// about this clause"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.2.cue:3:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.1.2.cue:4:11")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.1.3.cue --
+[
+    // about this clause
+    if true
+        {} // about this value
+]
+-- 2567.1.3.got.cue --
+[
+	// about this clause
+	if true {}, // about this value
+]
+-- 2567.1.3.ast --
+*ast.File{
+   Filename: "2567.1.3.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.1.3.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.1.3.cue:3:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.1.3.cue:3:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.1.3.cue:4:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.1.3.cue:4:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: true
+                        Line: false
+                        Position: 0
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.3.cue:2:5")
+                              Text: "// about this clause"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 4
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.3.cue:4:12")
+                              Text: "// about this value"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.1.3.cue:5:1")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.2.3.cue --
+[
+    if true // about this condition
+        {} // about this value
+]
+-- 2567.2.3.got.cue --
+[
+	if true {} // about this condition, // about this value
+]
+-- 2567.2.3.ast --
+*ast.File{
+   Filename: "2567.2.3.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.2.3.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.2.3.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.2.3.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.2.3.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.2.3.cue:3:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.2.3.cue:2:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 4
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.2.3.cue:3:12")
+                              Text: "// about this value"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.2.3.cue:4:1")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.1.2.3.cue --
+[
+    // about this clause
+    if true // about this condition
+        {} // about this value
+]
+-- 2567.1.2.3.got.cue --
+[
+	// about this clause
+	if true {} // about this condition, // about this value
+]
+-- 2567.1.2.3.ast --
+*ast.File{
+   Filename: "2567.1.2.3.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.1.2.3.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.1.2.3.cue:3:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.1.2.3.cue:3:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.1.2.3.cue:4:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.1.2.3.cue:4:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: true
+                        Line: false
+                        Position: 0
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.2.3.cue:2:5")
+                              Text: "// about this clause"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.2.3.cue:3:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 4
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.1.2.3.cue:4:12")
+                              Text: "// about this value"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.1.2.3.cue:5:1")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.22.cue --
+[
+    if true // about this condition
+        {}
+    if false // about that condition
+        {}]
+-- 2567.22.got.cue --
+[
+	if true {}  // about this condition,
+	if false {} // about that condition]
+-- 2567.22.ast --
+*ast.File{
+   Filename: "2567.22.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.22.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.22.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.22.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.22.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.22.cue:3:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.22.cue:2:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                  }
+               }
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.22.cue:4:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.22.cue:4:8")
+                           Kind: token.Token("false")
+                           Value: "false"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.22.cue:5:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.22.cue:5:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.22.cue:4:14")
+                              Text: "// about that condition"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.22.cue:5:11")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- 2567.22.3.cue --
+[
+    if true // about this condition
+        {} // about this value
+    if false // about that condition
+        {} // about that value
+]
+-- 2567.22.3.got.cue --
+[
+	if true {}  // about this condition, // about this value
+	if false {} // about that condition, // about that value
+]
+-- 2567.22.3.ast --
+*ast.File{
+   Filename: "2567.22.3.cue"
+   Decls: []ast.Decl{
+      *ast.EmbedDecl{
+         Expr: *ast.ListLit{
+            Lbrack: token.Pos("2567.22.3.cue:1:1")
+            Elts: []ast.Expr{
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.22.3.cue:2:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.22.3.cue:2:8")
+                           Kind: token.Token("true")
+                           Value: "true"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.22.3.cue:3:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.22.3.cue:3:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.22.3.cue:2:13")
+                              Text: "// about this condition"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 4
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.22.3.cue:3:12")
+                              Text: "// about this value"
+                           }
+                        }
+                     }
+                  }
+               }
+               *ast.Comprehension{
+                  Clauses: []ast.Clause{
+                     *ast.IfClause{
+                        If: token.Pos("2567.22.3.cue:4:5")
+                        Condition: *ast.BasicLit{
+                           ValuePos: token.Pos("2567.22.3.cue:4:8")
+                           Kind: token.Token("false")
+                           Value: "false"
+                        }
+                     }
+                  }
+                  Value: *ast.StructLit{
+                     Lbrace: token.Pos("2567.22.3.cue:5:9")
+                     Elts: []ast.Decl{
+                     }
+                     Rbrace: token.Pos("2567.22.3.cue:5:10")
+                  }
+                  Comments: []*ast.CommentGroup{
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 2
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.22.3.cue:4:14")
+                              Text: "// about that condition"
+                           }
+                        }
+                     }
+                     *ast.CommentGroup{
+                        Doc: false
+                        Line: true
+                        Position: 4
+                        List: []*ast.Comment{
+                           *ast.Comment{
+                              Slash: token.Pos("2567.22.3.cue:5:12")
+                              Text: "// about that value"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            Rbrack: token.Pos("2567.22.3.cue:6:1")
+         }
+      }
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- end --
