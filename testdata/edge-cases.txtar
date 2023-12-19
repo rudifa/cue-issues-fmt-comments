@@ -1,0 +1,49 @@
+# formatting issues: investigate edge cases
+
+exec cue-ast-print empty.cue
+cmp stdout empty.ast
+exec cue fmt empty.cue
+cmp empty.cue empty.got.cue
+
+exec cue-ast-print singlecomment.cue
+cmp stdout singlecomment.ast
+exec cue fmt singlecomment.cue
+cmp empty.cue singlecomment.got.cue
+
+-- empty.cue --
+-- empty.got.cue --
+
+-- empty.ast --
+*ast.File{
+   Filename: "empty.cue"
+   Decls: []ast.Decl{
+   }
+   Imports: []*ast.ImportSpec{
+   }
+}
+-- singlecomment.cue --
+// no cue elements here
+-- singlecomment.got.cue --
+
+-- singlecomment.ast --
+*ast.File{
+   Filename: "singlecomment.cue"
+   Decls: []ast.Decl{
+   }
+   Imports: []*ast.ImportSpec{
+   }
+   Comments: []*ast.CommentGroup{
+      *ast.CommentGroup{
+         Doc: false
+         Line: false
+         Position: 0
+         List: []*ast.Comment{
+            *ast.Comment{
+               Slash: token.Pos("singlecomment.cue:1:1")
+               Text: "// no cue elements here"
+            }
+         }
+      }
+   }
+}
+-- end --
