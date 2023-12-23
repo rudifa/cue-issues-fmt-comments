@@ -1,0 +1,23 @@
+# issue #2738
+
+
+exec cue fmt 2738.cue
+cmp 2738.cue 2738.got.cue       # the 'opening' comment was moved to after the first element
+! exec cue fmt 2738.cue         # currently expected to fail
+cmp stderr 2738.stderr.cue
+
+-- 2738.cue --
+bar[ // opening the list
+    "baz"] // closed the list
+-- 2738.got.cue --
+bar[
+"baz" // opening the list
+]// closed the list
+-- 2738.stderr.cue --
+expected ']', found newline:
+    ./2738.cue:2:7
+missing ',' in struct literal:
+    ./2738.cue:3:1
+-- end --
+
+

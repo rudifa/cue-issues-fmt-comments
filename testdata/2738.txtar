@@ -1,0 +1,18 @@
+# issue #2738
+
+
+exec cue fmt 2738.cue
+cmp 2738.cue 2738.got.cue
+exec cue fmt 2738.cue         # currently expected to pass
+cmp stderr 2738.stderr.cue
+
+-- 2738.cue --
+bar[
+    "baz"]
+-- 2738.got.cue --
+bar[
+"baz"]
+-- 2738.stderr.cue --
+-- end --
+
+
