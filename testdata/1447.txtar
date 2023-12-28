@@ -4,127 +4,146 @@ exec cue-ast-print 1447.cue
 cmp stdout 1447.ast
 exec cue fmt 1447.cue
 cmp 1447.cue 1447.got.cue
+exec cue vet 1447.cue           # pass
 
 -- 1447.cue --
+// the purpose of this file is ...
+
 import "strings"
 
-// comment
+// section 1 is about strings
 
-s: string
-u: strings.ToUpper(s)
+u: strings.ToUpper("cue rules")
+
+// section 2 will be added here
+
 -- 1447.got.cue --
+// the purpose of this file is ...
+
 import ( "strings"
 
-	// comment
+	// section 1 is about strings
 )
 
-s: string
-u: strings.ToUpper(s)
+u: strings.ToUpper("cue rules")
+
+// section 2 will be added here
 -- 1447.ast --
 *ast.File{
-   Filename: "1447.cue"
-   Decls: []ast.Decl{
-      *ast.ImportDecl{
-         Import: token.Pos("1447.cue:1:1")
-         Lparen: token.Pos("-")
-         Specs: []*ast.ImportSpec{
-            *ast.ImportSpec{
-               Name: nil
-               Path: *ast.BasicLit{
-                  ValuePos: token.Pos("1447.cue:1:8")
-                  Kind: token.Token("STRING")
-                  Value: "\"strings\""
-               }
-               EndPos: token.Pos("-")
-               Comments: []*ast.CommentGroup{
-                  *ast.CommentGroup{
-                     Doc: false
-                     Line: false
-                     Position: 2
-                     List: []*ast.Comment{
-                        *ast.Comment{
-                           Slash: token.Pos("1447.cue:3:1")
-                           Text: "// comment"
-                        }
-                     }
-                  }
-               }
-            }
-         }
-         Rparen: token.Pos("-")
-      }
-      *ast.Field{
-         Label: *ast.Ident{
-            NamePos: token.Pos("1447.cue:5:1")
-            Name: "s"
-         }
-         Optional: token.Pos("-")
-         Constraint: token.Token("ILLEGAL")
-         TokenPos: token.Pos("1447.cue:5:2")
-         Token: token.Token(":")
-         Value: *ast.Ident{
-            NamePos: token.Pos("1447.cue:5:4")
-            Name: "string"
-         }
-         Attrs: []*ast.Attribute{
-         }
-      }
-      *ast.Field{
-         Label: *ast.Ident{
-            NamePos: token.Pos("1447.cue:6:1")
-            Name: "u"
-         }
-         Optional: token.Pos("-")
-         Constraint: token.Token("ILLEGAL")
-         TokenPos: token.Pos("1447.cue:6:2")
-         Token: token.Token(":")
-         Value: *ast.CallExpr{
-            Fun: *ast.SelectorExpr{
-               X: *ast.Ident{
-                  NamePos: token.Pos("1447.cue:6:4")
-                  Name: "strings"
-               }
-               Sel: *ast.Ident{
-                  NamePos: token.Pos("1447.cue:6:12")
-                  Name: "ToUpper"
-               }
-            }
-            Lparen: token.Pos("1447.cue:6:19")
-            Args: []ast.Expr{
-               *ast.Ident{
-                  NamePos: token.Pos("1447.cue:6:20")
-                  Name: "s"
-               }
-            }
-            Rparen: token.Pos("1447.cue:6:21")
-         }
-         Attrs: []*ast.Attribute{
-         }
-      }
-   }
-   Imports: []*ast.ImportSpec{
-      *ast.ImportSpec{
-         Name: nil
-         Path: *ast.BasicLit{
-            ValuePos: token.Pos("1447.cue:1:8")
-            Kind: token.Token("STRING")
-            Value: "\"strings\""
-         }
-         EndPos: token.Pos("-")
-         Comments: []*ast.CommentGroup{
-            *ast.CommentGroup{
-               Doc: false
-               Line: false
-               Position: 2
-               List: []*ast.Comment{
-                  *ast.Comment{
-                     Slash: token.Pos("1447.cue:3:1")
-                     Text: "// comment"
-                  }
-               }
-            }
-         }
-      }
-   }
+. Filename: "1447.cue"
+. Decls: []ast.Decl{
+. . *ast.ImportDecl{
+. . . Import: token.Pos("1447.cue:3:1")
+. . . Lparen: token.Pos("-")
+. . . Specs: []*ast.ImportSpec{
+. . . . *ast.ImportSpec{
+. . . . . Name: nil
+. . . . . Path: *ast.BasicLit{
+. . . . . . ValuePos: token.Pos("1447.cue:3:8")
+. . . . . . Kind: token.Token("STRING")
+. . . . . . Value: "\"strings\""
+. . . . . }
+. . . . . EndPos: token.Pos("-")
+. . . . . Comments: []*ast.CommentGroup{
+. . . . . . *ast.CommentGroup{
+. . . . . . . Doc: false
+. . . . . . . Line: false
+. . . . . . . Position: 2
+. . . . . . . List: []*ast.Comment{
+. . . . . . . . *ast.Comment{
+. . . . . . . . . Slash: token.Pos("1447.cue:5:1")
+. . . . . . . . . Text: "// section 1 is about strings"
+. . . . . . . . }
+. . . . . . . }
+. . . . . . }
+. . . . . }
+. . . . }
+. . . }
+. . . Rparen: token.Pos("-")
+. . }
+. . *ast.Field{
+. . . Label: *ast.Ident{
+. . . . NamePos: token.Pos("1447.cue:7:1")
+. . . . Name: "u"
+. . . }
+. . . Optional: token.Pos("-")
+. . . Constraint: token.Token("ILLEGAL")
+. . . TokenPos: token.Pos("1447.cue:7:2")
+. . . Token: token.Token(":")
+. . . Value: *ast.CallExpr{
+. . . . Fun: *ast.SelectorExpr{
+. . . . . X: *ast.Ident{
+. . . . . . NamePos: token.Pos("1447.cue:7:4")
+. . . . . . Name: "strings"
+. . . . . }
+. . . . . Sel: *ast.Ident{
+. . . . . . NamePos: token.Pos("1447.cue:7:12")
+. . . . . . Name: "ToUpper"
+. . . . . }
+. . . . }
+. . . . Lparen: token.Pos("1447.cue:7:19")
+. . . . Args: []ast.Expr{
+. . . . . *ast.BasicLit{
+. . . . . . ValuePos: token.Pos("1447.cue:7:20")
+. . . . . . Kind: token.Token("STRING")
+. . . . . . Value: "\"cue rules\""
+. . . . . }
+. . . . }
+. . . . Rparen: token.Pos("1447.cue:7:31")
+. . . }
+. . . Attrs: []*ast.Attribute{
+. . . }
+. . . Comments: []*ast.CommentGroup{
+. . . . *ast.CommentGroup{
+. . . . . Doc: false
+. . . . . Line: false
+. . . . . Position: 5
+. . . . . List: []*ast.Comment{
+. . . . . . *ast.Comment{
+. . . . . . . Slash: token.Pos("1447.cue:9:1")
+. . . . . . . Text: "// section 2 will be added here"
+. . . . . . }
+. . . . . }
+. . . . }
+. . . }
+. . }
+. }
+. Imports: []*ast.ImportSpec{
+. . *ast.ImportSpec{
+. . . Name: nil
+. . . Path: *ast.BasicLit{
+. . . . ValuePos: token.Pos("1447.cue:3:8")
+. . . . Kind: token.Token("STRING")
+. . . . Value: "\"strings\""
+. . . }
+. . . EndPos: token.Pos("-")
+. . . Comments: []*ast.CommentGroup{
+. . . . *ast.CommentGroup{
+. . . . . Doc: false
+. . . . . Line: false
+. . . . . Position: 2
+. . . . . List: []*ast.Comment{
+. . . . . . *ast.Comment{
+. . . . . . . Slash: token.Pos("1447.cue:5:1")
+. . . . . . . Text: "// section 1 is about strings"
+. . . . . . }
+. . . . . }
+. . . . }
+. . . }
+. . }
+. }
+. Comments: []*ast.CommentGroup{
+. . *ast.CommentGroup{
+. . . Doc: false
+. . . Line: false
+. . . Position: 0
+. . . List: []*ast.Comment{
+. . . . *ast.Comment{
+. . . . . Slash: token.Pos("1447.cue:1:1")
+. . . . . Text: "// the purpose of this file is ..."
+. . . . }
+. . . }
+. . }
+. }
 }
 -- end --

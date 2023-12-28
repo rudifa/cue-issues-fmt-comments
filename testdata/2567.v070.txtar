@@ -1,0 +1,25 @@
+# issue #2567
+# tested with cue version v0.7.0
+
+exec cue fmt 2567.cue
+cmp 2567.cue 2567.got.cue       # puts the first bracket behind the comment
+! exec cue fmt 2567.cue         # currently expected to fail
+cmp stderr 2567.stderr.cue
+
+-- 2567.cue --
+foo: [
+	bar["baz"], //some comment
+]
+bar: baz: 41
+-- 2567.got.cue --
+foo: [
+	bar["baz" //some comment],
+]
+bar: baz: 41
+-- 2567.stderr.cue --
+expected ']', found newline:
+    ./2567.cue:2:12
+-- end --
+
+-- end --
+

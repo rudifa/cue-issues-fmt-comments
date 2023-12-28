@@ -35,7 +35,7 @@ func runParseAndFormat_2567() {
 	const dospew = false
 	// runParseAndFormat("testdata/2567.cue", dospew)
 	// runParseAndFormat("testdata/2567-2.cue", dospew)
-	runParseAndFormat("testdata/2567-3.cue", dospew)
+	runParseAndFormat("testdata/2567/2567.cue", dospew)
 }
 
 func runParseAndFormat_2672() {
@@ -109,11 +109,11 @@ func runParseAndFormat(filename string, dospew bool) {
 	// dbs := parser.DebugStrLong("f", f)
 	// fmt.Println("... intermediate parser.DebugStrLong(f):\n", dbs)
 
-	dbs := parser.DebugStrIndent(false, "f", f)
-	fmt.Println("... intermediate parser.DebugStrIndent(f):\n", dbs)
+	// dbs := parser.DebugStrIndent(false, "f", f)
+	// fmt.Println("... intermediate parser.DebugStrIndent(f):\n", dbs)
 
-	dbs = parser.DebugStrIndent(true, "f", f)
-	fmt.Println("... intermediate parser.DebugStrIndent(f):\n", dbs)
+	// dbs = parser.DebugStrIndent(true, "f", f)
+	// fmt.Println("... intermediate parser.DebugStrIndent(f):\n", dbs)
 
 	outstring := string(outbytes)
 	fmt.Println("... output format.Node(f):\n", outstring)
@@ -179,7 +179,7 @@ func runParseFile(filename string) {
 		log.Printf("unexpected error: %v\n", err)
 	}
 
-	fmt.Printf("DebugStrLong: %s\n", parser.DebugStrIndent(false, "test parser", f))
+	// fmt.Printf("DebugStrLong: %s\n", parser.DebugStrIndent(false, "test parser", f))
 	// parser.DebugStrLong("test parser", f)
 
 	vs := fmt.Sprintf("%#v", f)
@@ -203,7 +203,7 @@ func runParseCueString(cuestring string) {
 	if err != nil {
 		log.Printf("unexpected error: %v\n", err)
 	}
-	fmt.Printf("DebugStrIndent: %s\n", parser.DebugStrIndent(false, "test parser", f))
+	// fmt.Printf("DebugStrIndent: %s\n", parser.DebugStrIndent(false, "test parser", f))
 
 	// vs := fmt.Sprintf("%#v", f)
 
