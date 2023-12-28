@@ -1,11 +1,11 @@
 module github.com/rudifa/cue-issues-fmt-comments
 
-go 1.21.0
+go 1.20
 
 require (
 	cuelang.org/go v0.6.0
 	github.com/davecgh/go-spew v1.1.1
-	github.com/rudifa/goutil v0.0.0-20230818180930-2ed982730a30
+	github.com/rudifa/goutil v0.0.0-20231226183918-236d10af38ac
 )
 
 replace cuelang.org/go => ../cue

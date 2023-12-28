@@ -27,156 +27,156 @@ import (
 command: help: show: exec.Run & {cmd: ["sh", "-c", "cue help cmd | grep -A2 'Available Commands:'"]}
 -- 2672.ast --
 *ast.File{
-   Filename: "2672.cue"
-   Decls: []ast.Decl{
-      *ast.Package{
-         PackagePos: token.Pos("2672.cue:1:1")
-         Name: *ast.Ident{
-            NamePos: token.Pos("2672.cue:1:9")
-            Name: "make_tool"
-         }
-      }
-      *ast.ImportDecl{
-         Import: token.Pos("2672.cue:3:1")
-         Lparen: token.Pos("2672.cue:3:8")
-         Specs: []*ast.ImportSpec{
-            *ast.ImportSpec{
-               Name: nil
-               Path: *ast.BasicLit{
-                  ValuePos: token.Pos("2672.cue:4:2")
-                  Kind: token.Token("STRING")
-                  Value: "\"tool/exec\""
-               }
-               EndPos: token.Pos("-")
-            }
-         }
-         Rparen: token.Pos("2672.cue:5:1")
-      }
-      *ast.Field{
-         Label: *ast.Ident{
-            NamePos: token.Pos("2672.cue:8:1")
-            Name: "command"
-         }
-         Optional: token.Pos("-")
-         Constraint: token.Token("ILLEGAL")
-         TokenPos: token.Pos("2672.cue:8:8")
-         Token: token.Token(":")
-         Value: *ast.StructLit{
-            Lbrace: token.Pos("-")
-            Elts: []ast.Decl{
-               *ast.Field{
-                  Label: *ast.Ident{
-                     NamePos: token.Pos("2672.cue:8:10")
-                     Name: "help"
-                  }
-                  Optional: token.Pos("-")
-                  Constraint: token.Token("ILLEGAL")
-                  TokenPos: token.Pos("2672.cue:8:14")
-                  Token: token.Token(":")
-                  Value: *ast.StructLit{
-                     Lbrace: token.Pos("2672.cue:8:16")
-                     Elts: []ast.Decl{
-                        *ast.Field{
-                           Label: *ast.Ident{
-                              NamePos: token.Pos("2672.cue:9:2")
-                              Name: "show"
-                           }
-                           Optional: token.Pos("-")
-                           Constraint: token.Token("ILLEGAL")
-                           TokenPos: token.Pos("2672.cue:9:6")
-                           Token: token.Token(":")
-                           Value: *ast.BinaryExpr{
-                              X: *ast.SelectorExpr{
-                                 X: *ast.Ident{
-                                    NamePos: token.Pos("2672.cue:9:8")
-                                    Name: "exec"
-                                 }
-                                 Sel: *ast.Ident{
-                                    NamePos: token.Pos("2672.cue:9:13")
-                                    Name: "Run"
-                                 }
-                              }
-                              OpPos: token.Pos("2672.cue:9:17")
-                              Op: token.Token("&")
-                              Y: *ast.StructLit{
-                                 Lbrace: token.Pos("2672.cue:9:19")
-                                 Elts: []ast.Decl{
-                                    *ast.Field{
-                                       Label: *ast.Ident{
-                                          NamePos: token.Pos("2672.cue:9:20")
-                                          Name: "cmd"
-                                       }
-                                       Optional: token.Pos("-")
-                                       Constraint: token.Token("ILLEGAL")
-                                       TokenPos: token.Pos("2672.cue:9:23")
-                                       Token: token.Token(":")
-                                       Value: *ast.ListLit{
-                                          Lbrack: token.Pos("2672.cue:9:25")
-                                          Elts: []ast.Expr{
-                                             *ast.BasicLit{
-                                                ValuePos: token.Pos("2672.cue:9:27")
-                                                Kind: token.Token("STRING")
-                                                Value: "\"sh\""
-                                             }
-                                             *ast.BasicLit{
-                                                ValuePos: token.Pos("2672.cue:9:33")
-                                                Kind: token.Token("STRING")
-                                                Value: "\"-c\""
-                                             }
-                                             *ast.BasicLit{
-                                                ValuePos: token.Pos("2672.cue:9:39")
-                                                Kind: token.Token("STRING")
-                                                Value: "\"cue help cmd | grep -A2 'Available Commands:'\""
-                                             }
-                                          }
-                                          Rbrack: token.Pos("2672.cue:9:86")
-                                       }
-                                       Attrs: []*ast.Attribute{
-                                       }
-                                    }
-                                 }
-                                 Rbrace: token.Pos("2672.cue:9:87")
-                              }
-                           }
-                           Attrs: []*ast.Attribute{
-                           }
-                        }
-                     }
-                     Rbrace: token.Pos("2672.cue:10:1")
-                  }
-                  Attrs: []*ast.Attribute{
-                  }
-               }
-            }
-            Rbrace: token.Pos("-")
-         }
-         Attrs: []*ast.Attribute{
-         }
-         Comments: []*ast.CommentGroup{
-            *ast.CommentGroup{
-               Doc: true
-               Line: false
-               Position: 0
-               List: []*ast.Comment{
-                  *ast.Comment{
-                     Slash: token.Pos("2672.cue:7:1")
-                     Text: "// displays help for available commands"
-                  }
-               }
-            }
-         }
-      }
-   }
-   Imports: []*ast.ImportSpec{
-      *ast.ImportSpec{
-         Name: nil
-         Path: *ast.BasicLit{
-            ValuePos: token.Pos("2672.cue:4:2")
-            Kind: token.Token("STRING")
-            Value: "\"tool/exec\""
-         }
-         EndPos: token.Pos("-")
-      }
-   }
+. Filename: "2672.cue"
+. Decls: []ast.Decl{
+. . *ast.Package{
+. . . PackagePos: token.Pos("2672.cue:1:1")
+. . . Name: *ast.Ident{
+. . . . NamePos: token.Pos("2672.cue:1:9")
+. . . . Name: "make_tool"
+. . . }
+. . }
+. . *ast.ImportDecl{
+. . . Import: token.Pos("2672.cue:3:1")
+. . . Lparen: token.Pos("2672.cue:3:8")
+. . . Specs: []*ast.ImportSpec{
+. . . . *ast.ImportSpec{
+. . . . . Name: nil
+. . . . . Path: *ast.BasicLit{
+. . . . . . ValuePos: token.Pos("2672.cue:4:2")
+. . . . . . Kind: token.Token("STRING")
+. . . . . . Value: "\"tool/exec\""
+. . . . . }
+. . . . . EndPos: token.Pos("-")
+. . . . }
+. . . }
+. . . Rparen: token.Pos("2672.cue:5:1")
+. . }
+. . *ast.Field{
+. . . Label: *ast.Ident{
+. . . . NamePos: token.Pos("2672.cue:8:1")
+. . . . Name: "command"
+. . . }
+. . . Optional: token.Pos("-")
+. . . Constraint: token.Token("ILLEGAL")
+. . . TokenPos: token.Pos("2672.cue:8:8")
+. . . Token: token.Token(":")
+. . . Value: *ast.StructLit{
+. . . . Lbrace: token.Pos("-")
+. . . . Elts: []ast.Decl{
+. . . . . *ast.Field{
+. . . . . . Label: *ast.Ident{
+. . . . . . . NamePos: token.Pos("2672.cue:8:10")
+. . . . . . . Name: "help"
+. . . . . . }
+. . . . . . Optional: token.Pos("-")
+. . . . . . Constraint: token.Token("ILLEGAL")
+. . . . . . TokenPos: token.Pos("2672.cue:8:14")
+. . . . . . Token: token.Token(":")
+. . . . . . Value: *ast.StructLit{
+. . . . . . . Lbrace: token.Pos("2672.cue:8:16")
+. . . . . . . Elts: []ast.Decl{
+. . . . . . . . *ast.Field{
+. . . . . . . . . Label: *ast.Ident{
+. . . . . . . . . . NamePos: token.Pos("2672.cue:9:2")
+. . . . . . . . . . Name: "show"
+. . . . . . . . . }
+. . . . . . . . . Optional: token.Pos("-")
+. . . . . . . . . Constraint: token.Token("ILLEGAL")
+. . . . . . . . . TokenPos: token.Pos("2672.cue:9:6")
+. . . . . . . . . Token: token.Token(":")
+. . . . . . . . . Value: *ast.BinaryExpr{
+. . . . . . . . . . X: *ast.SelectorExpr{
+. . . . . . . . . . . X: *ast.Ident{
+. . . . . . . . . . . . NamePos: token.Pos("2672.cue:9:8")
+. . . . . . . . . . . . Name: "exec"
+. . . . . . . . . . . }
+. . . . . . . . . . . Sel: *ast.Ident{
+. . . . . . . . . . . . NamePos: token.Pos("2672.cue:9:13")
+. . . . . . . . . . . . Name: "Run"
+. . . . . . . . . . . }
+. . . . . . . . . . }
+. . . . . . . . . . OpPos: token.Pos("2672.cue:9:17")
+. . . . . . . . . . Op: token.Token("&")
+. . . . . . . . . . Y: *ast.StructLit{
+. . . . . . . . . . . Lbrace: token.Pos("2672.cue:9:19")
+. . . . . . . . . . . Elts: []ast.Decl{
+. . . . . . . . . . . . *ast.Field{
+. . . . . . . . . . . . . Label: *ast.Ident{
+. . . . . . . . . . . . . . NamePos: token.Pos("2672.cue:9:20")
+. . . . . . . . . . . . . . Name: "cmd"
+. . . . . . . . . . . . . }
+. . . . . . . . . . . . . Optional: token.Pos("-")
+. . . . . . . . . . . . . Constraint: token.Token("ILLEGAL")
+. . . . . . . . . . . . . TokenPos: token.Pos("2672.cue:9:23")
+. . . . . . . . . . . . . Token: token.Token(":")
+. . . . . . . . . . . . . Value: *ast.ListLit{
+. . . . . . . . . . . . . . Lbrack: token.Pos("2672.cue:9:25")
+. . . . . . . . . . . . . . Elts: []ast.Expr{
+. . . . . . . . . . . . . . . *ast.BasicLit{
+. . . . . . . . . . . . . . . . ValuePos: token.Pos("2672.cue:9:27")
+. . . . . . . . . . . . . . . . Kind: token.Token("STRING")
+. . . . . . . . . . . . . . . . Value: "\"sh\""
+. . . . . . . . . . . . . . . }
+. . . . . . . . . . . . . . . *ast.BasicLit{
+. . . . . . . . . . . . . . . . ValuePos: token.Pos("2672.cue:9:33")
+. . . . . . . . . . . . . . . . Kind: token.Token("STRING")
+. . . . . . . . . . . . . . . . Value: "\"-c\""
+. . . . . . . . . . . . . . . }
+. . . . . . . . . . . . . . . *ast.BasicLit{
+. . . . . . . . . . . . . . . . ValuePos: token.Pos("2672.cue:9:39")
+. . . . . . . . . . . . . . . . Kind: token.Token("STRING")
+. . . . . . . . . . . . . . . . Value: "\"cue help cmd | grep -A2 'Available Commands:'\""
+. . . . . . . . . . . . . . . }
+. . . . . . . . . . . . . . }
+. . . . . . . . . . . . . . Rbrack: token.Pos("2672.cue:9:86")
+. . . . . . . . . . . . . }
+. . . . . . . . . . . . . Attrs: []*ast.Attribute{
+. . . . . . . . . . . . . }
+. . . . . . . . . . . . }
+. . . . . . . . . . . }
+. . . . . . . . . . . Rbrace: token.Pos("2672.cue:9:87")
+. . . . . . . . . . }
+. . . . . . . . . }
+. . . . . . . . . Attrs: []*ast.Attribute{
+. . . . . . . . . }
+. . . . . . . . }
+. . . . . . . }
+. . . . . . . Rbrace: token.Pos("2672.cue:10:1")
+. . . . . . }
+. . . . . . Attrs: []*ast.Attribute{
+. . . . . . }
+. . . . . }
+. . . . }
+. . . . Rbrace: token.Pos("-")
+. . . }
+. . . Attrs: []*ast.Attribute{
+. . . }
+. . . Comments: []*ast.CommentGroup{
+. . . . *ast.CommentGroup{
+. . . . . Doc: true
+. . . . . Line: false
+. . . . . Position: 0
+. . . . . List: []*ast.Comment{
+. . . . . . *ast.Comment{
+. . . . . . . Slash: token.Pos("2672.cue:7:1")
+. . . . . . . Text: "// displays help for available commands"
+. . . . . . }
+. . . . . }
+. . . . }
+. . . }
+. . }
+. }
+. Imports: []*ast.ImportSpec{
+. . *ast.ImportSpec{
+. . . Name: nil
+. . . Path: *ast.BasicLit{
+. . . . ValuePos: token.Pos("2672.cue:4:2")
+. . . . Kind: token.Token("STRING")
+. . . . Value: "\"tool/exec\""
+. . . }
+. . . EndPos: token.Pos("-")
+. . }
+. }
 }
 -- end --
