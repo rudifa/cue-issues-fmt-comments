@@ -2,9 +2,8 @@ module github.com/rudifa/cuedo
 
 go 1.20
 
-replace cuelang.org/go => ../cue // must use the local patched version of cue
-
-// replace github.com/rudifa/goutil => ../goutil
+// replace cuelang.org/go => ../cue // must use the local patched version of cue
+replace cuelang.org/go => github.com/rudifa/cue v0.0.0-20240108165701-3a9556d56f39 // must be exact - go mod tidy advises
 
 require (
     cuelang.org/go v0.7.0
