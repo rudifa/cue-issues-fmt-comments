@@ -1,7 +1,9 @@
+// Package runner implements functions that call CUE parser dd formatter functions to help in debugging them.
+package runner
+
 /*
 Copyright © 2024 Rudolf Farkas @rudifa rudi.farkas@gmail.com
 */
-package runner
 
 import (
 	"fmt"
@@ -18,10 +20,11 @@ import (
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/parser"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/rudifa/cuedo/inproc"
+	"github.com/rudifa/cuedo/runcue"
 	"github.com/rudifa/goutil/files"
 )
 
+// RunParseAndFormat runs the parser and formatter on the given file
 func RunParseAndFormat(file string) {
 
 	runParseAndFormat(file)
@@ -91,16 +94,16 @@ func runParseAndFormat(filename string) {
 // ----------------------------------------------------------
 // obsolete
 
-func runParseAndFormat_2567(file string) {
+func runParseAndFormat2567(file string) {
 	runParseAndFormat(file)
 }
 
-func runParseAndFormat_2274() {
+func runParseAndFormat2274() {
 	// runParseAndFormat("testdata/2274/2274-3.cue", dospew)
 	runParseAndFormat("testdata/2274/2274-4.cue")
 }
 
-func runParseAndFormat_2672() {
+func runParseAndFormat2672() {
 	runParseAndFormat("testdata/2672/make_tool.cue")
 }
 
@@ -121,7 +124,7 @@ func runParserWithNode1() {
 
 }
 
-func runCueFmt_2567() {
+func runCueFmt2567() {
 
 	sampleFile := "testdata/2567-3.cue"
 
@@ -132,7 +135,7 @@ func runCueFmt_2567() {
 	// runCueFmt(sampleFile)
 }
 
-func runCueFmt_2672() {
+func runCueFmt2672() {
 
 	sampleFile := "testdata/2672/make_tool.cue"
 	runCueFmt(sampleFile)
@@ -146,7 +149,7 @@ func runCueFmt(filename string) {
 	log.Println("before cue fmt")
 	files.CatFile(filename)
 
-	inproc.RunCue("fmt", filename)
+	runcue.RunCue("fmt", filename)
 
 	log.Println("after cue fmt")
 	files.CatFile(filename) // may be  modified
@@ -165,25 +168,25 @@ func runCueCommands(filename string) {
 
 	files.CatFile(filename)
 
-	// inproc.RunCue("version")
+	// runcue.RunCue("version")
 
 	{
 		copyFilename := strings.Replace(filename, ".cue", ".copy.cue", -1)
 		_ = files.CopyFile(filename, copyFilename)
 
-		inproc.RunCue("fmt", copyFilename)
+		runcue.RunCue("fmt", copyFilename)
 
 		files.CatFile(copyFilename) // may be  modified
 		files.RemoveFileIfExists(copyFilename)
 	}
 
-	// inproc.RunCue("vet", filename)
+	// runcue.RunCue("vet", filename)
 
-	// inproc.RunCue("def", filename)
+	// runcue.RunCue("def", filename)
 
-	// inproc.RunCue("eval", filename)
+	// runcue.RunCue("eval", filename)
 
-	// inproc.RunCue("export", filename)
+	// runcue.RunCue("export", filename)
 }
 
 func runParseFile(filename string) {

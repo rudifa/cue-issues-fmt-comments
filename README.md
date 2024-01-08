@@ -33,12 +33,12 @@
 
 ...
 
-## cuedo-fmt cli app
+## cuedo cli app
 
-Various patches and observation tools have been collected under the `cuedo-fmt` cli application (this project).
+Various patches and observation tools have been collected under the `cuedo` cli application (this project).
 
 ```
-cuedo-fmt% cuedo-fmt
+cuedo% cuedo
 Tools for investigation of CUE issues related to formatting.
 
  This evolving set of tools requires a compatible set of patches to the CUE source code (*).
@@ -60,22 +60,22 @@ Tools for investigation of CUE issues related to formatting.
  (*) branch https://github.com/rudifa/cue/tree/change-1173870-cuedo
 
 Usage:
-  cuedo-fmt [command]
+  cuedo [command]
 
 Available Commands:
   format      Parse and format a CUE file, optionally displaying the parser and formatter inner data.
   help        Help about any command
 
 Flags:
-  -h, --help     help for cuedo-fmt
+  -h, --help     help for cuedo
   -t, --toggle   Help message for toggle
 
-Use "cuedo-fmt [command] --help" for more information about a command.
+Use "cuedo [command] --help" for more information about a command.
 
 ```
 
 ```
-cuedo-fmt % ./cuedo-fmt fmt -h                                                                                                                                [investigate-formatter--and-parser L|…1]
+cuedo % ./cuedo fmt -h                                                                                                                                [investigate-formatter--and-parser L|…1]
 Parse and format a CUE file, optionally displaying the parser and formatter inner data.
 
  In the absence of any flags, the command will parse and format the CUE file and print the input and the result.
@@ -85,7 +85,7 @@ Parse and format a CUE file, optionally displaying the parser and formatter inne
  Add flags in any combination to display the inner data.
 
 Usage:
-  cuedo-fmt format [flags]
+  cuedo format [flags]
 
 Aliases:
   format, fmt

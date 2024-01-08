@@ -1,7 +1,9 @@
+// Package cmd implements the cobra command-line interface.
+package cmd
+
 /*
 Copyright © 2024 Rudolf Farkas @rudifa rudi.farkas@gmail.com
 */
-package cmd
 
 import (
 	"os"
@@ -13,7 +15,7 @@ var verbose bool
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cuedo-fmt",
+	Use:   "cuedo",
 	Short: "Tools for investigation of CUE issues related to formatting.",
 	Long: `Tools for investigation of CUE issues related to formatting.
 

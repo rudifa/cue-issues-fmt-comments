@@ -8,31 +8,31 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/rudifa/cuedo/inproc"
+	"github.com/rudifa/cuedo/runcue"
 )
 
 // Test2567 is a test for issue #2567
 func Test2567(t *testing.T) {
 	const file = "testdata/2567-1.cue"
-	inproc.RunCue("fmt", file)
+	runcue.RunCue("fmt", file)
 	restore(file)
 }
 
 func Test2567_2(t *testing.T) {
 	const file = "testdata/2567-3a.cue"
-	inproc.RunCue("fmt", file)
+	runcue.RunCue("fmt", file)
 	restore(file)
 }
 
 func Test2274_01s(t *testing.T) {
 	const file = "testdata/2274-01s.cue"
-	inproc.RunCue("fmt", file)
+	runcue.RunCue("fmt", file)
 	restore(file)
 }
 
 func Test2274_01n(t *testing.T) {
 	const file = "testdata/2274-01n.cue"
-	inproc.RunCue("fmt", file)
+	runcue.RunCue("fmt", file)
 	restore(file)
 }
 

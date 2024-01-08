@@ -1,7 +1,8 @@
+package cmd
+
 /*
 Copyright © 2024 Rudolf Farkas @rudifa rudi.farkas@gmail.com
 */
-package cmd
 
 import (
 	"log"
@@ -56,61 +57,61 @@ func init() {
 
 	// customize the usage message _after_ flags are defined
 	defaultUsage := formatCmd.UsageString()
-	customUsage := strings.Replace(defaultUsage, "cuedo-fmt format", "cuedo-fmt format <inputfile>.cue", -1)
+	customUsage := strings.Replace(defaultUsage, "cuedo format", "cuedo format <inputfile>.cue", -1)
 	formatCmd.SetUsageTemplate(customUsage)
 }
 
 func setEnvironmentVariables(cmd *cobra.Command) {
 
-	fbb_kludge, _ := cmd.Flags().GetBool("fbb_kludge")
-	formatter_hexdump, _ := cmd.Flags().GetBool("formatter_hexdump")
-	formatter_stacktrace, _ := cmd.Flags().GetBool("formatter_stacktrace")
-	full_monty, _ := cmd.Flags().GetBool("full_monty")
-	parser_ast_spew, _ := cmd.Flags().GetBool("parser_ast_spew")
-	parser_ast_tree, _ := cmd.Flags().GetBool("parser_ast_tree")
-	parser_ast_node_type_and_comments, _ := cmd.Flags().GetBool("parser_ast_node_type_and_comments")
-	parser_comments_pos, _ := cmd.Flags().GetBool("parser_comments_pos")
-	parser_debug_str, _ := cmd.Flags().GetBool("parser_debug_str")
-	parser_trace, _ := cmd.Flags().GetBool("parser_trace")
+	fbbKludge, _ := cmd.Flags().GetBool("fbb_kludge")
+	formatterHexdump, _ := cmd.Flags().GetBool("formatter_hexdump")
+	formatterStacktrace, _ := cmd.Flags().GetBool("formatter_stacktrace")
+	fullMonty, _ := cmd.Flags().GetBool("full_monty")
+	parserAstSpew, _ := cmd.Flags().GetBool("parser_ast_spew")
+	parserAstTree, _ := cmd.Flags().GetBool("parser_ast_tree")
+	parserAstNodeTypeAndSomments, _ := cmd.Flags().GetBool("parser_ast_node_type_and_comments")
+	parserCommentsPos, _ := cmd.Flags().GetBool("parser_comments_pos")
+	parserDebugStr, _ := cmd.Flags().GetBool("parser_debug_str")
+	parserTrace, _ := cmd.Flags().GetBool("parser_trace")
 
-	if full_monty {
-		fbb_kludge = true
-		formatter_hexdump = true
-		formatter_stacktrace = true
-		parser_ast_spew = true
-		parser_ast_tree = true
-		parser_ast_node_type_and_comments = true
-		parser_comments_pos = true
-		parser_debug_str = true
-		parser_trace = true
+	if fullMonty {
+		fbbKludge = true
+		formatterHexdump = true
+		formatterStacktrace = true
+		parserAstSpew = true
+		parserAstTree = true
+		parserAstNodeTypeAndSomments = true
+		parserCommentsPos = true
+		parserDebugStr = true
+		parserTrace = true
 	}
 
-	if fbb_kludge {
+	if fbbKludge {
 		os.Setenv("CUEDO_FBB_KLUDGE", "1")
 	}
-	if formatter_hexdump {
+	if formatterHexdump {
 		os.Setenv("CUEDO_FORMATTER_HEXDUMP", "1")
 	}
-	if formatter_stacktrace {
+	if formatterStacktrace {
 		os.Setenv("CUEDO_FORMATTER_STACKTRACE", "1")
 	}
-	if parser_ast_spew {
+	if parserAstSpew {
 		os.Setenv("CUEDO_AST_NODE_SPEW", "1")
 	}
-	if parser_ast_tree {
+	if parserAstTree {
 		os.Setenv("CUEDO_AST_TREE", "1")
 	}
-	if parser_ast_node_type_and_comments {
+	if parserAstNodeTypeAndSomments {
 		os.Setenv("CUEDO_AST_NODE_TYPE_AND_COMMENTS", "1")
 	}
-	if parser_comments_pos {
+	if parserCommentsPos {
 		os.Setenv("CUEDO_PARSER_COMMENTS_POS", "1")
-		parser_trace = true
+		parserTrace = true
 	}
-	if parser_debug_str {
+	if parserDebugStr {
 		os.Setenv("CUEDO_PARSER_DEBUG_STR", "1")
 	}
-	if parser_trace {
+	if parserTrace {
 		os.Setenv("CUEDO_PARSER_TRACE", "1")
 	}
 
@@ -118,35 +119,35 @@ func setEnvironmentVariables(cmd *cobra.Command) {
 
 		// print flags that are set
 		{
-			if fbb_kludge {
-				log.Println("fbb_kludge:", fbb_kludge)
+			if fbbKludge {
+				log.Println("fbb_kludge:", fbbKludge)
 			}
-			if formatter_hexdump {
-				log.Println("formatter_hexdump:", formatter_hexdump)
+			if formatterHexdump {
+				log.Println("formatter_hexdump:", formatterHexdump)
 			}
-			if formatter_stacktrace {
-				log.Println("formatter_stacktrace:", formatter_stacktrace)
+			if formatterStacktrace {
+				log.Println("formatter_stacktrace:", formatterStacktrace)
 			}
-			if full_monty {
-				log.Println("full_monty:", full_monty)
+			if fullMonty {
+				log.Println("full_monty:", fullMonty)
 			}
-			if parser_ast_spew {
-				log.Println("parser_ast_spew:", parser_ast_spew)
+			if parserAstSpew {
+				log.Println("parser_ast_spew:", parserAstSpew)
 			}
-			if parser_ast_tree {
-				log.Println("parser_ast_tree:", parser_ast_tree)
+			if parserAstTree {
+				log.Println("parser_ast_tree:", parserAstTree)
 			}
-			if parser_ast_node_type_and_comments {
-				log.Println("parser_ast_node_type_and_comments:", parser_ast_node_type_and_comments)
+			if parserAstNodeTypeAndSomments {
+				log.Println("parser_ast_node_type_and_comments:", parserAstNodeTypeAndSomments)
 			}
-			if parser_comments_pos {
-				log.Println("parser_comments_pos:", parser_comments_pos)
+			if parserCommentsPos {
+				log.Println("parser_comments_pos:", parserCommentsPos)
 			}
-			if parser_debug_str {
-				log.Println("parser_debug_str:", parser_debug_str)
+			if parserDebugStr {
+				log.Println("parser_debug_str:", parserDebugStr)
 			}
-			if parser_trace {
-				log.Println("parser_trace:", parser_trace)
+			if parserTrace {
+				log.Println("parser_trace:", parserTrace)
 			}
 		}
 		printEnvVars()
