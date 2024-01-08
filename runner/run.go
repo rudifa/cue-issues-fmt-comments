@@ -68,7 +68,7 @@ func runParseAndFormat(filename string) {
 		fmt.Println("••• parser out DebugAstStr(f):\n", debugAstStr)
 	}
 
-	fmt.Printf("••• format.Node(f):\n", filename)
+	fmt.Printf("••• format.Node(f)\n")
 	outbytes, err := format.Node(f)
 	if err != nil {
 		log.Printf("unexpected error: %v\n", err)

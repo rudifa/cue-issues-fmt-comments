@@ -49,7 +49,7 @@ func init() {
 	formatCmd.Flags().BoolP("full_monty", "f", false, "turn on everything")
 	formatCmd.Flags().BoolP("parser_ast_spew", "w", false, "parser: deep pretty print the AST tree, when a node is closed")
 	formatCmd.Flags().BoolP("parser_ast_tree", "a", false, "parser: print the final file AST tree")
-	formatCmd.Flags().BoolP("parser_ast_node_type", "n", false, "parser: print the AST node type, when a node is closed")
+	formatCmd.Flags().BoolP("parser_ast_node_type_and_comments", "n", false, "parser: print the AST node type and comments, when a node is closed")
 	formatCmd.Flags().BoolP("parser_comments_pos", "c", false, "parser: print the comment position and text while creating nodes")
 	formatCmd.Flags().BoolP("parser_debug_str", "d", false, "parser: print the final file AST debug string")
 	formatCmd.Flags().BoolP("parser_trace", "t", false, "parser: print the parser.Trace while creating nodes")
@@ -68,7 +68,7 @@ func setEnvironmentVariables(cmd *cobra.Command) {
 	full_monty, _ := cmd.Flags().GetBool("full_monty")
 	parser_ast_spew, _ := cmd.Flags().GetBool("parser_ast_spew")
 	parser_ast_tree, _ := cmd.Flags().GetBool("parser_ast_tree")
-	parser_ast_node_type, _ := cmd.Flags().GetBool("parser_ast_node_type")
+	parser_ast_node_type_and_comments, _ := cmd.Flags().GetBool("parser_ast_node_type_and_comments")
 	parser_comments_pos, _ := cmd.Flags().GetBool("parser_comments_pos")
 	parser_debug_str, _ := cmd.Flags().GetBool("parser_debug_str")
 	parser_trace, _ := cmd.Flags().GetBool("parser_trace")
@@ -79,7 +79,7 @@ func setEnvironmentVariables(cmd *cobra.Command) {
 		formatter_stacktrace = true
 		parser_ast_spew = true
 		parser_ast_tree = true
-		parser_ast_node_type = true
+		parser_ast_node_type_and_comments = true
 		parser_comments_pos = true
 		parser_debug_str = true
 		parser_trace = true
@@ -100,8 +100,8 @@ func setEnvironmentVariables(cmd *cobra.Command) {
 	if parser_ast_tree {
 		os.Setenv("CUEDO_AST_TREE", "1")
 	}
-	if parser_ast_node_type {
-		os.Setenv("CUEDO_AST_NODE_TYPE", "1")
+	if parser_ast_node_type_and_comments {
+		os.Setenv("CUEDO_AST_NODE_TYPE_AND_COMMENTS", "1")
 	}
 	if parser_comments_pos {
 		os.Setenv("CUEDO_PARSER_COMMENTS_POS", "1")
@@ -136,8 +136,8 @@ func setEnvironmentVariables(cmd *cobra.Command) {
 			if parser_ast_tree {
 				log.Println("parser_ast_tree:", parser_ast_tree)
 			}
-			if parser_ast_node_type {
-				log.Println("parser_ast_node_type:", parser_ast_node_type)
+			if parser_ast_node_type_and_comments {
+				log.Println("parser_ast_node_type_and_comments:", parser_ast_node_type_and_comments)
 			}
 			if parser_comments_pos {
 				log.Println("parser_comments_pos:", parser_comments_pos)
@@ -162,7 +162,7 @@ func printEnvVars() {
 		"CUEDO_PARSER_TRACE",
 		"CUEDO_PARSER_DEBUG_STR",
 		"CUEDO_AST_TREE",
-		"CUEDO_AST_NODE_TYPE",
+		"CUEDO_AST_NODE_TYPE_AND_COMMENTS",
 		"CUEDO_PARSER_COMMENTS_POS",
 		"CUEDO_AST_NODE_SPEW",
 	}
