@@ -1,0 +1,32 @@
+{
+    "Decls": [
+        {
+            "Expr": {
+                "Elts": [
+                    {
+                        "Clauses": [
+                            {
+                                "Condition": {
+                                    "Kind": 56,
+                                    "Value": "true",
+                                    "ValuePos": {}
+                                },
+                                "If": {}
+                            }
+                        ],
+                        "Value": {
+                            "Elts": [],
+                            "Lbrace": {},
+                            "Rbrace": {}
+                        }
+                    }
+                ],
+                "Lbrack": {},
+                "Rbrack": {}
+            }
+        }
+    ],
+    "Filename": "2567/2567-2.cue",
+    "Imports": [],
+    "Unresolved": []
+}

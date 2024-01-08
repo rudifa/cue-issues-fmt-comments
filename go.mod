@@ -1,16 +1,17 @@
-module github.com/rudifa/cue-issues-fmt-comments
+module github.com/rudifa/cuedo-fmt
 
 go 1.20
 
+replace cuelang.org/go => ../cue // must use the local patched version of cue
+
+// replace github.com/rudifa/goutil => ../goutil
+
 require (
-	cuelang.org/go v0.6.0
+	cuelang.org/go v0.7.0
 	github.com/davecgh/go-spew v1.1.1
-	github.com/rudifa/goutil v0.0.0-20231226183918-236d10af38ac
+	github.com/rudifa/goutil v0.4.6
+	github.com/spf13/cobra v1.8.0
 )
-
-replace cuelang.org/go => ../cue
-
-replace github.com/rudifa/goutil => ../goutil
 
 require (
 	cuelabs.dev/go/oci/ociregistry v0.0.0-20231217163254-6feb86eb6e06 // indirect
@@ -24,7 +25,6 @@ require (
 	github.com/opencontainers/image-spec v1.1.0-rc4 // indirect
 	github.com/protocolbuffers/txtpbfmt v0.0.0-20230328191034-3462fbc510c0 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
-	github.com/spf13/cobra v1.8.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/tetratelabs/wazero v1.0.2 // indirect
 	golang.org/x/mod v0.14.0 // indirect

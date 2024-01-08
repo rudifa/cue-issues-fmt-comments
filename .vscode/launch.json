@@ -12,17 +12,17 @@
             "program": "main.go",
             "env": {
                 "CUEDO_AST_DEBUGSTR": "1"
-            }
+            },
             "args": []
         },
         {
-            "name": "CUEDO_AST_PRINTER_HEXDUMP",
+            "name": "CUEDO_FORMATTER_HEXDUMP",
             "type": "go",
             "request": "launch",
             "mode": "debug",
             "program": "main.go",
             "env": {
-                "CUEDO_AST_PRINTER_HEXDUMP": "1"
+                "CUEDO_FORMATTER_HEXDUMP": "1"
             },
             "args": []
         },
@@ -34,6 +34,20 @@
             "program": "main.go",
             "env": {},
             "args": []
+        },
+        {
+            "name": "cuedo-fmt fmt",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "main.go",
+            "env": {},
+            "args": [
+                "fmt",
+                "testdata/2567/2567-fbb+2.cue",
+                "-d",
+                "-v",
+            ]
         },
     ]
 }

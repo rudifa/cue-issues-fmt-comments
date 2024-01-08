@@ -1,0 +1,443 @@
+# parser_test
+# test cases concerning comments extracted from parser-test.go
+# purpose: compare debugstring to ast
+
+exec cuedo ast debugstring 2567.cue
+cmp stdout 2567.dbs.cue
+exec cuedo ast print 2567.cue
+cmp stdout 2567.ast.cue
+exec cue fmt 2567.cue
+cmp 2567.cue 2567.got.cue
+
+exec cuedo ast debugstring file_comments.cue
+cmp stdout file_comments.dbs.cue
+exec cuedo ast print file_comments.cue
+cmp stdout file_comments.ast.cue
+exec cue fmt file_comments.cue
+cmp file_comments.cue file_comments.got.cue
+
+-- 2567.cue --
+foo: [
+	bar["baz"], //some comment
+]
+bar: baz: 41
+-- 2567.got.cue --
+foo: [
+	bar["baz" //some comment],
+]
+bar: baz: 41
+-- 2567.dbs.cue --
+foo: [<[l3//some comment] bar["baz"]>], bar: {baz: 41}
+-- 2567.ast.cue --
+*ast.File{
+.   Filename: "2567.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2567.cue:1:1")
+.   .   .   .   Name: "foo"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2567.cue:1:4")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2567.cue:1:6")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.IndexExpr{
+.   .   .   .   .   .   X: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2567.cue:2:2")
+.   .   .   .   .   .   .   Name: "bar"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Lbrack: token.Pos("2567.cue:2:5")
+.   .   .   .   .   .   Index: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2567.cue:2:6")
+.   .   .   .   .   .   .   Kind: token.Token("STRING")
+.   .   .   .   .   .   .   Value: "\"baz\""
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Rbrack: token.Pos("2567.cue:2:11")
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 3
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2567.cue:2:14")
+.   .   .   .   .   .   .   .   .   .   Text: "//some comment"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2567.cue:3:1")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2567.cue:4:1")
+.   .   .   .   Name: "bar"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2567.cue:4:4")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.StructLit{
+.   .   .   .   Lbrace: token.Pos("-")
+.   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   *ast.Field{
+.   .   .   .   .   .   Label: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2567.cue:4:6")
+.   .   .   .   .   .   .   Name: "baz"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Optional: token.Pos("-")
+.   .   .   .   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   .   .   .   TokenPos: token.Pos("2567.cue:4:9")
+.   .   .   .   .   .   Token: token.Token(":")
+.   .   .   .   .   .   Value: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2567.cue:4:11")
+.   .   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   .   Value: "41"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Attrs: []*ast.Attribute{
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrace: token.Pos("-")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- file_comments.cue --
+
+// about foo
+
+
+// uni
+package foo // uniline
+
+
+// file.1
+// file.2
+
+
+-- file_comments.got.cue --
+// about foo
+
+// uni
+package foo // uniline
+
+// file.1
+// file.2
+-- file_comments.dbs.cue --
+<[0// about foo] <[d0// uni] [l3// uniline] [3// file.1 // file.2] package foo>>
+-- file_comments.ast.cue --
+*ast.File{
+.   Filename: "file_comments.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Package{
+.   .   .   PackagePos: token.Pos("file_comments.cue:6:1")
+.   .   .   Name: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("file_comments.cue:6:9")
+.   .   .   .   Name: "foo"
+.   .   .   }
+.   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   Doc: true
+.   .   .   .   .   Line: false
+.   .   .   .   .   Position: 0
+.   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   Slash: token.Pos("file_comments.cue:5:1")
+.   .   .   .   .   .   .   Text: "// uni"
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   Doc: false
+.   .   .   .   .   Line: true
+.   .   .   .   .   Position: 3
+.   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   Slash: token.Pos("file_comments.cue:6:13")
+.   .   .   .   .   .   .   Text: "// uniline"
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   Doc: false
+.   .   .   .   .   Line: false
+.   .   .   .   .   Position: 3
+.   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   Slash: token.Pos("file_comments.cue:9:1")
+.   .   .   .   .   .   .   Text: "// file.1"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   Slash: token.Pos("file_comments.cue:10:1")
+.   .   .   .   .   .   .   Text: "// file.2"
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+.   Comments: []*ast.CommentGroup{
+.   .   *ast.CommentGroup{
+.   .   .   Doc: false
+.   .   .   Line: false
+.   .   .   Position: 0
+.   .   .   List: []*ast.Comment{
+.   .   .   .   *ast.Comment{
+.   .   .   .   .   Slash: token.Pos("file_comments.cue:2:1")
+.   .   .   .   .   Text: "// about foo"
+.   .   .   .   }
+.   .   .   }
+.   .   }
+.   }
+}
+-- end --
+
+
+-- extracted_from_parser_test.go --
+   }, {
+       "file comments",
+       `// foo
+
+
+       // uni
+       package foo // uniline
+
+
+       // file.1
+       // file.2
+
+
+       `,
+       "<[0// foo] <[d0// uni] [l3// uniline] [3// file.1 // file.2] package foo>>",
+   }, {
+       "line comments",
+       `// doc
+        a: 5 // line
+        b: 6 // lineb
+             // next
+           `, // next is followed by EOF. Ensure it doesn't move to file.
+       "<[d0// doc] [l5// line] a: 5>, " +
+           "<[l5// lineb] [5// next] b: 6>",
+   }, {
+       "alt comments",
+       `// a ...
+       a: 5 // line a
+
+
+       // about a
+
+
+       // b ...
+       b: // lineb
+         6
+
+
+       // about b
+
+
+       c: 7
+
+
+       // about c
+
+
+       // about d
+       d:
+           // about e
+           e: 3
+       `,
+       "<[d0// a ...] [l5// line a] [5// about a] a: 5>, " +
+           "<[d0// b ...] [l2// lineb] [5// about b] b: 6>, " +
+           "<[5// about c] c: 7>, " +
+           "<[d0// about d] d: {<[d0// about e] e>: 3}>",
+   }, {
+       "expr comments",
+       `
+       a: 2 +  // 2 +
+          3 +  // 3 +
+          4    // 4
+          `,
+       "<[l5// 4] a: <[l2// 3 +] <[l2// 2 +] 2+3>+4>>",
+   }, {
+       "composit comments",
+       `a : {
+           a: 1, b: 2, c: 3, d: 4
+           // end
+       }
+       b: [
+           1, 2, 3, 4, 5,
+           // end
+       ]
+       c: [ 1, 2, 3, 4, // here
+           { a: 3 }, // here
+           5, 6, 7, 8 // and here
+       ]
+       d: {
+           a: 1 // Hello
+           // Doc
+           b: 2
+       }
+       e1: [
+           // comment in list body
+       ]
+       e2: {
+           // comment in struct body
+       }
+       `,
+       "a: {a: 1, b: 2, c: 3, <[d5// end] d: 4>}, " +
+           "b: [1, 2, 3, 4, <[d2// end] 5>], " +
+           "c: [1, 2, 3, <[l2// here] 4>, <[l4// here] {a: 3}>, 5, 6, 7, <[l2// and here] 8>], " +
+           "d: {<[l5// Hello] a: 1>, <[d0// Doc] b: 2>}, " +
+           "e1: <[d1// comment in list body] []>, " +
+           "e2: <[d1// comment in struct body] {}>",
+   }, {
+       "attribute comments",
+       `
+       a: 1 @a() @b() // d
+       `,
+       `<[l5// d] a: 1 @a() @b()>`,
+   }, {
+       "attribute declarations",
+       `
+       @foo()
+
+
+       package bar
+
+
+       @bar()
+
+
+       import "strings"
+
+
+       @baz()
+           `,
+       `@foo(), package bar, @bar(), import "strings", @baz()`,
+   }, {
+       "comprehension comments",
+       `
+       if X {
+           // Comment 1
+           Field: 2
+           // Comment 2
+       }
+       `,
+       `if X <[d2// Comment 2] {<[d0// Comment 1] Field: 2>}>`,
+   }, {
+       "let comments",
+       `let X = foo // Comment 1`,
+       `<[5// Comment 1] let X=foo>`,
+   }, {
+       "emit comments",
+       `// a comment at the beginning of the file
+
+
+       // a second comment
+
+
+       // comment
+       a: 5
+
+
+       {}
+
+
+       // a comment at the end of the file
+       `,
+       "<[0// a comment at the beginning of the file] [0// a second comment] <[d0// comment] a: 5>, <[2// a comment at the end of the file] {}>>",
+   }, {
+       "composite comments 2",
+       `
+   {
+// foo
+
+
+// fooo
+foo: 1
+
+
+bar: 2
+   }
+
+
+[
+   {"name": "value"}, // each element has a long
+   {"name": "next"}   // optional next element
+]
+`,
+       `{<[0// foo] [d0// fooo] foo: 1>, bar: 2}, [<[l4// each element has a long] {"name": "value"}>, <[l4// optional next element] {"name": "next"}>]`,
+   }, {
+
+   }, {
+       desc: "struct comments",
+       in: `
+       struct: {
+           // This is a comment
+
+
+           // This is a comment
+
+
+           // Another comment
+           something: {
+           }
+
+
+           // extra comment
+       }`,
+       out: `struct: {<[0// This is a comment] [0// This is a comment] [d0// Another comment] [d5// extra comment] something: {}>}`,
+   }, {
+       desc: "list comments",
+       in: `
+       list: [
+           // Comment1
+
+
+           // Comment2
+
+
+           // Another comment
+           {
+           },
+
+
+           // Comment 3
+       ]`,
+       out: "list: [<[0// Comment1] [0// Comment2] [d0// Another comment] [d3// Comment 3] {}>]",
+   }, {
+       desc: "call comments",
+       in: `
+       funcArg1: foo(
+           {},
+
+
+           // Comment1
+
+
+           // Comment2
+           {}
+
+
+           // Comment3
+       )`,
+       out: "funcArg1: foo(<[1// Comment1] {}>, <[d0// Comment2] [d1// Comment3] {}>)",
+   }, {
+
+
+

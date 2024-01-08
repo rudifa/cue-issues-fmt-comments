@@ -1,3 +1,6 @@
+/*
+Copyright © 2024 Rudolf Farkas @rudifa rudi.farkas@gmail.com
+*/
 package main
 
 import (
@@ -5,7 +8,7 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/rudifa/cue-issues-fmt-comments/inproc"
+	"github.com/rudifa/cuedo-fmt/inproc"
 )
 
 // Test2567 is a test for issue #2567
