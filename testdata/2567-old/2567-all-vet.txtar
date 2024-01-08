@@ -2,39 +2,39 @@
 # please run with testscript -continue -v
 
 exec cue fmt 2567.cue
-cmp 2567.cue 2567.fmt.cue
+cmp 2567.cue 2567.got.cue
 exec cue vet 2567.cue
 
 exec cue fmt 2567.0.cue
-cmp 2567.0.cue 2567.0.fmt.cue
+cmp 2567.0.cue 2567.0.got.cue
 exec cue vet 2567.0.cue
 
 exec cue fmt 2567.1.cue
-cmp 2567.1.cue 2567.1.fmt.cue
+cmp 2567.1.cue 2567.1.got.cue
 exec cue vet 2567.1.cue
 
 exec cue fmt 2567.2.cue
-cmp 2567.2.cue 2567.2.fmt.cue
+cmp 2567.2.cue 2567.2.got.cue
 exec cue vet 2567.2.cue
 
 exec cue fmt 2567.3.cue
-cmp 2567.3.cue 2567.3.fmt.cue
+cmp 2567.3.cue 2567.3.got.cue
 exec cue vet 2567.3.cue
 
 exec cue fmt 2567.1.2.cue
-cmp 2567.1.2.cue 2567.1.2.fmt.cue
+cmp 2567.1.2.cue 2567.1.2.got.cue
 exec cue vet 2567.1.2.cue
 
 exec cue fmt 2567.1.3.cue
-cmp 2567.1.3.cue 2567.1.3.fmt.cue
+cmp 2567.1.3.cue 2567.1.3.got.cue
 exec cue vet 2567.1.3.cue
 
 exec cue fmt 2567.2.3.cue
-cmp 2567.2.3.cue 2567.2.3.fmt.cue
+cmp 2567.2.3.cue 2567.2.3.got.cue
 exec cue vet 2567.2.3.cue
 
 exec cue fmt 2567.1.2.3.cue
-cmp 2567.1.2.3.cue 2567.1.2.3.fmt.cue
+cmp 2567.1.2.3.cue 2567.1.2.3.got.cue
 exec cue vet 2567.1.2.3.cue
 
 
@@ -43,7 +43,7 @@ foo: [
 	bar["baz"], //some comment
 ]
 bar: baz: 41
--- 2567.fmt.cue --
+-- 2567.got.cue --
 foo: [
 	bar["baz" //some comment],
 ]
@@ -52,7 +52,7 @@ bar: baz: 41
 [
 	if true
 	{}]
--- 2567.0.fmt.cue --
+-- 2567.0.got.cue --
 [
 	if true {}]
 -- 2567.1.cue --
@@ -60,7 +60,7 @@ bar: baz: 41
     // about this clause
 	if true
 	{}]
--- 2567.1.fmt.cue --
+-- 2567.1.got.cue --
 [
 	// about this clause
 	if true {}]
@@ -68,7 +68,7 @@ bar: baz: 41
 [
 	if true // about this condition
 	{}]
--- 2567.2.fmt.cue --
+-- 2567.2.got.cue --
 [
 	if true {} // about this condition]
 -- 2567.3.cue --
@@ -76,7 +76,7 @@ bar: baz: 41
 	if true
 	{} // about this value
 ]
--- 2567.3.fmt.cue --
+-- 2567.3.got.cue --
 [
 	if true {}, // about this value
 ]
@@ -85,11 +85,11 @@ bar: baz: 41
 	// about this clause
 	if true // about this condition
     {}]
--- 2567.1.2.fmt.cue --
+-- 2567.1.2.got.cue --
 [
 	// about this clause
 	if true {} // about this condition]
--- 2567.1.2.fmt.cue --
+-- 2567.1.2.got.cue --
 [
 	// about this clause
 	if true {} // about this condition]
@@ -99,7 +99,7 @@ bar: baz: 41
 	if true
     {} // about this value
 ]
--- 2567.1.3.fmt.cue --
+-- 2567.1.3.got.cue --
 [
 	// about this clause
 	if true {}, // about this value
@@ -109,7 +109,7 @@ bar: baz: 41
     if true // about this condition
     {} // about this value
 ]
--- 2567.2.3.fmt.cue --
+-- 2567.2.3.got.cue --
 [
 	if true {} // about this condition, // about this value
 ]
@@ -119,7 +119,7 @@ bar: baz: 41
     if true // about this condition
     {} // about this value
 ]
--- 2567.1.2.3.fmt.cue --
+-- 2567.1.2.3.got.cue --
 [
 	// about this clause
 	if true {} // about this condition, // about this value

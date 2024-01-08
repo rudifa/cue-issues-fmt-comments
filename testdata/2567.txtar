@@ -1,11 +1,34 @@
 # issue #2567
 
-# show original 2567.cue before cue fmt
-exec cat 2567.cue               # original cue
-exec cue vet 2567.cue           # pass
-exec cue fmt 2567.cue           # mangled cue
-exec cat 2567.cue               # as seen here
-exec cue vet 2567.cue           # fail
+exec cue vet 2567.cue
+exec cuedo ast debugstring 2567.cue
+cmp stdout 2567.dbs
+exec cuedo ast print 2567.cue
+cmp stdout 2567.ast
+exec cue fmt 2567.cue
+cmp 2567.cue 2567.got.cue
+! exec cue vet 2567.cue
+cmp stderr 2567.err
+
+exec cue vet 2567-2.cue
+exec cuedo ast debugstring 2567-2.cue
+cmp stdout 2567-2.dbs
+exec cuedo ast print 2567-2.cue
+cmp stdout 2567-2.ast
+exec cue fmt 2567-2.cue
+cmp 2567-2.cue 2567-2.got.cue
+! exec cue vet 2567-2.cue
+cmp stderr 2567-2.err
+
+exec cue vet 2567.1.2.3.cue
+exec cuedo ast debugstring 2567.1.2.3.cue
+cmp stdout 2567.1.2.3.dbs
+exec cuedo ast print 2567.1.2.3.cue
+cmp stdout 2567.1.2.3.ast
+exec cue fmt 2567.1.2.3.cue
+cmp 2567.1.2.3.cue 2567.1.2.3.got.cue
+exec cue vet 2567.1.2.3.cue
+cmp stderr 2567.1.2.3.err
 
 
 -- 2567.cue --
@@ -13,5 +36,244 @@ foo: [
 	bar["baz"], //some comment
 ]
 bar: baz: 41
+-- 2567.got.cue --
+foo: [
+	bar["baz" //some comment],
+]
+bar: baz: 41
+-- 2567.dbs --
+foo: [<[l3//some comment] bar["baz"]>], bar: {baz: 41}
+-- 2567.err --
+expected ']', found newline:
+    ./2567.cue:2:12
+-- 2567-2.cue --
+[
+    if true // about this condition
+    {}]
+-- 2567-2.got.cue --
+[
+	if true {} // about this condition]
+-- 2567-2.dbs --
+[<[l2// about this condition] if true {}>]
+-- 2567-2.err --
+expected ']', found 'EOF':
+    ./2567-2.cue:2:38
+-- 2567.1.2.3.cue --
+[
+    // about this clause
+    if true // about this condition
+        {} // about this value
+]
+-- 2567.1.2.3.got.cue --
+[
+	// about this clause
+	if true {} // about this condition, // about this value
+]
+-- 2567.1.2.3.dbs --
+[<[d0// about this clause] [l2// about this condition] [l4// about this value] if true {}>]
+-- 2567.1.2.3.err --
+-- 2567.ast --
+*ast.File{
+.   Filename: "2567.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2567.cue:1:1")
+.   .   .   .   Name: "foo"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2567.cue:1:4")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2567.cue:1:6")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.IndexExpr{
+.   .   .   .   .   .   X: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2567.cue:2:2")
+.   .   .   .   .   .   .   Name: "bar"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Lbrack: token.Pos("2567.cue:2:5")
+.   .   .   .   .   .   Index: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2567.cue:2:6")
+.   .   .   .   .   .   .   Kind: token.Token("STRING")
+.   .   .   .   .   .   .   Value: "\"baz\""
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Rbrack: token.Pos("2567.cue:2:11")
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 3
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2567.cue:2:14")
+.   .   .   .   .   .   .   .   .   .   Text: "//some comment"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2567.cue:3:1")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2567.cue:4:1")
+.   .   .   .   Name: "bar"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2567.cue:4:4")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.StructLit{
+.   .   .   .   Lbrace: token.Pos("-")
+.   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   *ast.Field{
+.   .   .   .   .   .   Label: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2567.cue:4:6")
+.   .   .   .   .   .   .   Name: "baz"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Optional: token.Pos("-")
+.   .   .   .   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   .   .   .   TokenPos: token.Pos("2567.cue:4:9")
+.   .   .   .   .   .   Token: token.Token(":")
+.   .   .   .   .   .   Value: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2567.cue:4:11")
+.   .   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   .   Value: "41"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Attrs: []*ast.Attribute{
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrace: token.Pos("-")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- 2567-2.ast --
+*ast.File{
+.   Filename: "2567-2.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.EmbedDecl{
+.   .   .   Expr: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2567-2.cue:1:1")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.Comprehension{
+.   .   .   .   .   .   Clauses: []ast.Clause{
+.   .   .   .   .   .   .   *ast.IfClause{
+.   .   .   .   .   .   .   .   If: token.Pos("2567-2.cue:2:5")
+.   .   .   .   .   .   .   .   Condition: *ast.BasicLit{
+.   .   .   .   .   .   .   .   .   ValuePos: token.Pos("2567-2.cue:2:8")
+.   .   .   .   .   .   .   .   .   Kind: token.Token("true")
+.   .   .   .   .   .   .   .   .   Value: "true"
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Value: *ast.StructLit{
+.   .   .   .   .   .   .   Lbrace: token.Pos("2567-2.cue:3:5")
+.   .   .   .   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   Rbrace: token.Pos("2567-2.cue:3:6")
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 2
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2567-2.cue:2:13")
+.   .   .   .   .   .   .   .   .   .   Text: "// about this condition"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2567-2.cue:3:7")
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- 2567.1.2.3.ast --
+*ast.File{
+.   Filename: "2567.1.2.3.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.EmbedDecl{
+.   .   .   Expr: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2567.1.2.3.cue:1:1")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.Comprehension{
+.   .   .   .   .   .   Clauses: []ast.Clause{
+.   .   .   .   .   .   .   *ast.IfClause{
+.   .   .   .   .   .   .   .   If: token.Pos("2567.1.2.3.cue:3:5")
+.   .   .   .   .   .   .   .   Condition: *ast.BasicLit{
+.   .   .   .   .   .   .   .   .   ValuePos: token.Pos("2567.1.2.3.cue:3:8")
+.   .   .   .   .   .   .   .   .   Kind: token.Token("true")
+.   .   .   .   .   .   .   .   .   Value: "true"
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Value: *ast.StructLit{
+.   .   .   .   .   .   .   Lbrace: token.Pos("2567.1.2.3.cue:4:9")
+.   .   .   .   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   Rbrace: token.Pos("2567.1.2.3.cue:4:10")
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: true
+.   .   .   .   .   .   .   .   Line: false
+.   .   .   .   .   .   .   .   Position: 0
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2567.1.2.3.cue:2:5")
+.   .   .   .   .   .   .   .   .   .   Text: "// about this clause"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 2
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2567.1.2.3.cue:3:13")
+.   .   .   .   .   .   .   .   .   .   Text: "// about this condition"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 4
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2567.1.2.3.cue:4:12")
+.   .   .   .   .   .   .   .   .   .   Text: "// about this value"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2567.1.2.3.cue:5:1")
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
 -- end --
 

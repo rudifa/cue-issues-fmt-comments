@@ -1,0 +1,645 @@
+... runParseAndFormat ----------------------------------------
+... input: [testdata/2274/2274-4.cue]
+aList: [
+  1,            // comment one
+  #Number.two,  // comment two
+  [3,],         // comment three
+  {four:4},     // comment four
+]
+#Number: two: 2
+
+printer.go:454: p.output (String esc):
+00000000: ff                                               .
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74                                .aList
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff                             .aList.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a                          .aList.:
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20                       .aList.:
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b                    .aList.: [
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a                 .aList.: [.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte tab):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09              .aList.: [..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff           .aList.: [...
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31        .aList.: [...1
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff     .aList.: [...1.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b                                               .
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff                                            ..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff                                               .
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a                                            ..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte tab):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09                                         ...
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72                    ...#Number
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e                 ...#Number.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f        ...#Number.two
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b     ...#Number.two.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f        // comment two
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff     // comment two.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).selectorExpr => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a                                               .
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte tab):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09                                            ..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b                                         ..[
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff                                      ..[.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33                                   ..[.3
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff                                ..[.3.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d                             ..[.3.]
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c                          ..[.3.],
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b                       ..[.3.],.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff                    ..[.3.],..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65                    ment three
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff                 ment three.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a              ment three..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte tab):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09           ment three...
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b        ment three...{
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b        ment three...{
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff     ment three...{.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72                                         our
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff                                      our.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a                                   our.:
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b                                our.:.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff                             our.:..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34                          our.:..4
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff                       our.:..4.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d                    our.:..4.}
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c                 our.:..4.},
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b              our.:..4.},.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff           our.:..4.},..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72              comment four
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff           comment four.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).walkListElems => format.(*formatter).after => format.(*formatter).visitComments => format.(*formatter).printComment => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a        comment four..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d     comment four..]
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff                                               .
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72                          .#Number
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff                       .#Number.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a                    .#Number.:
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20                 .#Number.:
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff              .#Number.: .
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f     .#Number.: .two
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).label => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a                                               :
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a 0b                                            :.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a 0b ff                                         :..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a 0b ff 32                                      :..2
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String esc):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a 0b ff 32 ff                                   :..2.
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).walkDeclList => format.(*formatter).decl => format.(*formatter).decl => format.(*formatter).expr => format.(*formatter).expr1 => format.(*formatter).exprRaw => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (Byte):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a 0b ff 32 ff 0a                                :..2..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeWhitespace => format.(*printer).writeByte => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+printer.go:454: p.output (String):
+00000000: ff 61 4c 69 73 74 ff 3a 20 5b 0a 09 ff 31 ff 2c  .aList.: [...1.,
+00000010: 0b ff 2f 2f 20 63 6f 6d 6d 65 6e 74 20 6f 6e 65  ..// comment one
+00000020: ff 0a 09 23 4e 75 6d 62 65 72 2e 74 77 6f 0b ff  ...#Number.two..
+00000030: 2f 2f 20 63 6f 6d 6d 65 6e 74 20 74 77 6f ff 2c  // comment two.,
+00000040: 0a 09 5b ff 33 ff 5d 2c 0b ff 2f 2f 20 63 6f 6d  ..[.3.],..// com
+00000050: 6d 65 6e 74 20 74 68 72 65 65 ff 0a 09 7b ff 66  ment three...{.f
+00000060: 6f 75 72 ff 3a 0b ff 34 ff 7d 2c 0b ff 2f 2f 20  our.:..4.},..//
+00000070: 63 6f 6d 6d 65 6e 74 20 66 6f 75 72 ff 0a 5d 0c  comment four..].
+00000080: ff 23 4e 75 6d 62 65 72 ff 3a 20 ff 74 77 6f ff  .#Number.: .two.
+00000090: 3a 0b ff 32 ff 0a                                :..2..
+
+printer.go:464: Stack OnelineString: main.main => main.runParseAndFormat_2274 => main.runParseAndFormat => format.Node => format.(*config).fprint => format.printNode => format.(*formatter).file => format.(*formatter).print => format.(*printer).Print => format.(*printer).writeString => format.(*printer).append => format.LogStackOneline => stacktrace.CapturedStacktrace
+... output format.Node(f):
+ aList: [
+	1,          // comment one
+	#Number.two // comment two,
+	[3],        // comment three
+	{four:      4}, // comment four
+]
+#Number: two: 2

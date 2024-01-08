@@ -1,0 +1,572 @@
+# 2274
+
+exec cue vet 2274.cue
+exec cuedo ast debugstring 2274.cue
+cmp stdout 2274.dbs
+exec cuedo ast print 2274.cue
+cmp stdout 2274.ast
+exec cue fmt 2274.cue
+cmp 2274.cue 2274.got.cue
+! exec cue vet 2274.cue
+cmp stderr 2274.err
+
+exec cue vet 2274-1.cue
+exec cuedo ast debugstring 2274-1.cue
+cmp stdout 2274-1.dbs
+exec cuedo ast print 2274-1.cue
+cmp stdout 2274-1.ast
+exec cue fmt 2274-1.cue
+cmp 2274-1.cue 2274-1.got.cue
+! exec cue vet 2274-1.cue
+cmp stderr 2274-1.err
+
+exec cue vet 2274-2.cue
+exec cuedo ast debugstring 2274-2.cue
+cmp stdout 2274-2.dbs
+exec cuedo ast print 2274-2.cue
+cmp stdout 2274-2.ast
+exec cue fmt 2274-2.cue
+cmp 2274-2.cue 2274-2.got.cue
+exec cue vet 2274-2.cue
+cmp stderr 2274-2.err
+
+exec cue vet 2274-3.cue
+exec cuedo ast debugstring 2274-3.cue
+cmp stdout 2274-3.dbs
+exec cuedo ast print 2274-3.cue
+cmp stdout 2274-3.ast
+exec cue fmt 2274-3.cue
+cmp 2274-3.cue 2274-3.got.cue
+! exec cue vet 2274-3.cue
+cmp stderr 2274-3.err
+
+-- 2274.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two, // comment
+  3,
+]
+-- 2274.got.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+	1,
+	#Number.two // comment,
+	3,
+]
+-- 2274.err --
+missing ',' before newline in list literal:
+    ./2274.cue:8:2
+missing ',' in list literal:
+    ./2274.cue:9:3
+-- 2274.dbs --
+package p, #Number: {two: 2}, aList: [1, <[l3// comment] #Number.two>, 3]
+-- 2274.ast --
+*ast.File{
+.   Filename: "2274.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Package{
+.   .   .   PackagePos: token.Pos("2274.cue:1:1")
+.   .   .   Name: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274.cue:1:9")
+.   .   .   .   Name: "p"
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274.cue:3:1")
+.   .   .   .   Name: "#Number"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274.cue:3:8")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.StructLit{
+.   .   .   .   Lbrace: token.Pos("-")
+.   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   *ast.Field{
+.   .   .   .   .   .   Label: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274.cue:3:10")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Optional: token.Pos("-")
+.   .   .   .   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   .   .   .   TokenPos: token.Pos("2274.cue:3:13")
+.   .   .   .   .   .   Token: token.Token(":")
+.   .   .   .   .   .   Value: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2274.cue:3:15")
+.   .   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   .   Value: "2"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Attrs: []*ast.Attribute{
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrace: token.Pos("-")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274.cue:5:1")
+.   .   .   .   Name: "aList"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274.cue:5:6")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2274.cue:5:8")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274.cue:6:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "1"
+.   .   .   .   .   }
+.   .   .   .   .   *ast.SelectorExpr{
+.   .   .   .   .   .   X: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274.cue:7:3")
+.   .   .   .   .   .   .   Name: "#Number"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Sel: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274.cue:7:11")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 3
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2274.cue:7:16")
+.   .   .   .   .   .   .   .   .   .   Text: "// comment"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274.cue:8:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "3"
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2274.cue:9:1")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- 2274-1.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two,
+  // comment
+
+  3,
+]
+-- 2274-1.got.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+	1,
+	#Number.two
+	// comment,
+
+	3,
+]
+-- 2274-1.err --
+missing ',' before newline in list literal:
+    ./2274-1.cue:10:2
+missing ',' in list literal:
+    ./2274-1.cue:11:3
+-- 2274-1.dbs --
+package p, #Number: {two: 2}, aList: [1, <[3// comment] #Number.two>, 3]
+-- 2274-1.ast --
+*ast.File{
+.   Filename: "2274-1.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Package{
+.   .   .   PackagePos: token.Pos("2274-1.cue:1:1")
+.   .   .   Name: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-1.cue:1:9")
+.   .   .   .   Name: "p"
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-1.cue:3:1")
+.   .   .   .   Name: "#Number"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274-1.cue:3:8")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.StructLit{
+.   .   .   .   Lbrace: token.Pos("-")
+.   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   *ast.Field{
+.   .   .   .   .   .   Label: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-1.cue:3:10")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Optional: token.Pos("-")
+.   .   .   .   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   .   .   .   TokenPos: token.Pos("2274-1.cue:3:13")
+.   .   .   .   .   .   Token: token.Token(":")
+.   .   .   .   .   .   Value: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2274-1.cue:3:15")
+.   .   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   .   Value: "2"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Attrs: []*ast.Attribute{
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrace: token.Pos("-")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-1.cue:5:1")
+.   .   .   .   Name: "aList"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274-1.cue:5:6")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2274-1.cue:5:8")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274-1.cue:6:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "1"
+.   .   .   .   .   }
+.   .   .   .   .   *ast.SelectorExpr{
+.   .   .   .   .   .   X: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-1.cue:7:3")
+.   .   .   .   .   .   .   Name: "#Number"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Sel: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-1.cue:7:11")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: false
+.   .   .   .   .   .   .   .   Position: 3
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2274-1.cue:8:3")
+.   .   .   .   .   .   .   .   .   .   Text: "// comment"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274-1.cue:10:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "3"
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2274-1.cue:11:1")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- 2274-2.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+  1,
+  #Number.two,
+  // comment
+  3,
+]
+-- 2274-2.got.cue --
+package p
+
+#Number: two: 2
+
+aList: [
+	1,
+	#Number.two,
+	// comment
+	3,
+]
+-- 2274-2.err --
+-- 2274-2.dbs --
+package p, #Number: {two: 2}, aList: [1, #Number.two, <[d0// comment] 3>]
+-- 2274-2.ast --
+*ast.File{
+.   Filename: "2274-2.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Package{
+.   .   .   PackagePos: token.Pos("2274-2.cue:1:1")
+.   .   .   Name: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-2.cue:1:9")
+.   .   .   .   Name: "p"
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-2.cue:3:1")
+.   .   .   .   Name: "#Number"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274-2.cue:3:8")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.StructLit{
+.   .   .   .   Lbrace: token.Pos("-")
+.   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   *ast.Field{
+.   .   .   .   .   .   Label: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-2.cue:3:10")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Optional: token.Pos("-")
+.   .   .   .   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   .   .   .   TokenPos: token.Pos("2274-2.cue:3:13")
+.   .   .   .   .   .   Token: token.Token(":")
+.   .   .   .   .   .   Value: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2274-2.cue:3:15")
+.   .   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   .   Value: "2"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Attrs: []*ast.Attribute{
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrace: token.Pos("-")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-2.cue:5:1")
+.   .   .   .   Name: "aList"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274-2.cue:5:6")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2274-2.cue:5:8")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274-2.cue:6:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "1"
+.   .   .   .   .   }
+.   .   .   .   .   *ast.SelectorExpr{
+.   .   .   .   .   .   X: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-2.cue:7:3")
+.   .   .   .   .   .   .   Name: "#Number"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Sel: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-2.cue:7:11")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274-2.cue:9:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "3"
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: true
+.   .   .   .   .   .   .   .   Line: false
+.   .   .   .   .   .   .   .   Position: 0
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2274-2.cue:8:3")
+.   .   .   .   .   .   .   .   .   .   Text: "// comment"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2274-2.cue:10:1")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- 2274-3.cue --
+#Number: two: 2
+
+aList: [
+  1,            // comment one
+  #Number.two,  // comment two
+  3,            // comment three
+]
+-- 2274-3.got.cue --
+#Number: two: 2
+
+aList: [
+	1,          // comment one
+	#Number.two // comment two,
+	3,          // comment three
+]
+-- 2274-3.err --
+missing ',' before newline in list literal:
+    ./2274-3.cue:6:2
+missing ',' in list literal:
+    ./2274-3.cue:7:3
+-- 2274-3.dbs --
+#Number: {two: 2}, aList: [<[l2// comment one] 1>, <[l3// comment two] #Number.two>, <[l2// comment three] 3>]
+-- 2274-3.ast --
+*ast.File{
+.   Filename: "2274-3.cue"
+.   Decls: []ast.Decl{
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-3.cue:1:1")
+.   .   .   .   Name: "#Number"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274-3.cue:1:8")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.StructLit{
+.   .   .   .   Lbrace: token.Pos("-")
+.   .   .   .   Elts: []ast.Decl{
+.   .   .   .   .   *ast.Field{
+.   .   .   .   .   .   Label: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-3.cue:1:10")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Optional: token.Pos("-")
+.   .   .   .   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   .   .   .   TokenPos: token.Pos("2274-3.cue:1:13")
+.   .   .   .   .   .   Token: token.Token(":")
+.   .   .   .   .   .   Value: *ast.BasicLit{
+.   .   .   .   .   .   .   ValuePos: token.Pos("2274-3.cue:1:15")
+.   .   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   .   Value: "2"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Attrs: []*ast.Attribute{
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrace: token.Pos("-")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   .   *ast.Field{
+.   .   .   Label: *ast.Ident{
+.   .   .   .   NamePos: token.Pos("2274-3.cue:3:1")
+.   .   .   .   Name: "aList"
+.   .   .   }
+.   .   .   Optional: token.Pos("-")
+.   .   .   Constraint: token.Token("ILLEGAL")
+.   .   .   TokenPos: token.Pos("2274-3.cue:3:6")
+.   .   .   Token: token.Token(":")
+.   .   .   Value: *ast.ListLit{
+.   .   .   .   Lbrack: token.Pos("2274-3.cue:3:8")
+.   .   .   .   Elts: []ast.Expr{
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274-3.cue:4:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "1"
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 2
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2274-3.cue:4:17")
+.   .   .   .   .   .   .   .   .   .   Text: "// comment one"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   .   *ast.SelectorExpr{
+.   .   .   .   .   .   X: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-3.cue:5:3")
+.   .   .   .   .   .   .   Name: "#Number"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Sel: *ast.Ident{
+.   .   .   .   .   .   .   NamePos: token.Pos("2274-3.cue:5:11")
+.   .   .   .   .   .   .   Name: "two"
+.   .   .   .   .   .   }
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 3
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2274-3.cue:5:17")
+.   .   .   .   .   .   .   .   .   .   Text: "// comment two"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   .   *ast.BasicLit{
+.   .   .   .   .   .   ValuePos: token.Pos("2274-3.cue:6:3")
+.   .   .   .   .   .   Kind: token.Token("INT")
+.   .   .   .   .   .   Value: "3"
+.   .   .   .   .   .   Comments: []*ast.CommentGroup{
+.   .   .   .   .   .   .   *ast.CommentGroup{
+.   .   .   .   .   .   .   .   Doc: false
+.   .   .   .   .   .   .   .   Line: true
+.   .   .   .   .   .   .   .   Position: 2
+.   .   .   .   .   .   .   .   List: []*ast.Comment{
+.   .   .   .   .   .   .   .   .   *ast.Comment{
+.   .   .   .   .   .   .   .   .   .   Slash: token.Pos("2274-3.cue:6:17")
+.   .   .   .   .   .   .   .   .   .   Text: "// comment three"
+.   .   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   .   }
+.   .   .   .   .   .   .   }
+.   .   .   .   .   .   }
+.   .   .   .   .   }
+.   .   .   .   }
+.   .   .   .   Rbrack: token.Pos("2274-3.cue:7:1")
+.   .   .   }
+.   .   .   Attrs: []*ast.Attribute{
+.   .   .   }
+.   .   }
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+-- end --

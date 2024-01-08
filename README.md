@@ -31,7 +31,78 @@
 
 ## tasks and tools
 
-### work in progress
+...
+
+## cuedo-fmt cli app
+
+Various patches and observation tools have been collected under the `cuedo-fmt` cli application (this project).
+
+```
+cuedo-fmt% cuedo-fmt
+Tools for investigation of CUE issues related to formatting.
+
+ This evolving set of tools requires a compatible set of patches to the CUE source code (*).
+
+ As of 7 Jan 2024, the CUE patch extras are turned on by setting these environment variables to non-empty values:
+
+ CUEDO_AST_SPEW - turns on the AST spew mode
+ CUEDO_AST_TREE - turns on the AST tree mode
+ CUEDO_AST_TYPE - turns on the AST type mode
+ CUEDO_FBB_KLUDGE - turns on a kludge in formatter to anticipate a fix for the issue #2567
+ CUEDO_FORMATTER_HEXDUMP - turns on hex dump of the formatter's internal buffer, as each fragment is printed
+ CUEDO_FORMATTER_STACKTRACE - turns on dump of a stack trace in the formatter, as each fragment is printed
+ CUEDO_PARSER_COMMENTS_POS - adds to the parser.Trace mode data about the comment positions and texts
+ CUEDO_PARSER_DEBUG_STR - turns on the parser debug string mode
+ CUEDO_PARSER_TRACE - turns on the parser.Trace mode
+
+ Note that these patches are not part of the official CUE source code and are not supported by the CUE team.
+
+ (*) branch https://github.com/rudifa/cue/tree/change-1173870-cuedo
+
+Usage:
+  cuedo-fmt [command]
+
+Available Commands:
+  format      Parse and format a CUE file, optionally displaying the parser and formatter inner data.
+  help        Help about any command
+
+Flags:
+  -h, --help     help for cuedo-fmt
+  -t, --toggle   Help message for toggle
+
+Use "cuedo-fmt [command] --help" for more information about a command.
+
+```
+
+```
+cuedo-fmt % ./cuedo-fmt fmt -h                                                                                                                                [investigate-formatter--and-parser L|…1]
+Parse and format a CUE file, optionally displaying the parser and formatter inner data.
+
+ In the absence of any flags, the command will parse and format the CUE file and print the input and the result.
+
+ Flags -x and -s are best used together for debugging the formatter.
+
+ Add flags in any combination to display the inner data.
+
+Usage:
+  cuedo-fmt format [flags]
+
+Aliases:
+  format, fmt
+
+Flags:
+  -k, --fbb_kludge             turn on a kludge in formatter to anticipate a fix for the issue #2567
+  -x, --formatter_hexdump      turn on hex dump of the printer's internal buffer, as each fragment is printed
+  -s, --formatter_stacktrace   turn on dump of a stack trace in the printer code, as each fragment is printed
+  -f, --full_monty             turn on everything
+  -h, --help                   help for format
+  -a, --parser_ast_tree        turn on printing of the AST tree
+  -c, --parser_comments_pos    turn on the parser.Trace mode and prints the comment positions and texts
+  -d, --parser_debug_str       turn on printing the AST debug string
+  -t, --parser_trace           turn on the parser.Trace mode
+```
+
+### early investigations - mainly of historical interest (for myself)
 
 [rudifa/cue-issues-fmt-comments @ main](https://github.com/rudifa/cue-issues-fmt-comments) -  test files and programs
 
