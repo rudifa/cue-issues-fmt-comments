@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/rudifa/cuedo-fmt/inproc"
+	"github.com/rudifa/cuedo/inproc"
 )
 
 // Test2567 is a test for issue #2567

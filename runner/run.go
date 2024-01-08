@@ -18,7 +18,7 @@ import (
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/parser"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/rudifa/cuedo-fmt/inproc"
+	"github.com/rudifa/cuedo/inproc"
 	"github.com/rudifa/goutil/files"
 )
 

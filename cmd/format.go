@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rudifa/cuedo-fmt/runner"
+	"github.com/rudifa/cuedo/runner"
 	"github.com/spf13/cobra"
 )
 
