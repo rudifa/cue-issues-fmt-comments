@@ -1,3 +1,6 @@
+// Package runcue implements a function that runs  in-proces an equivalent of the cue cli.
+package runcue
+
 // Copyright 2023 Rudolf Farkas
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,8 +15,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package inproc
-
 import (
 	"context"
 
@@ -21,7 +22,7 @@ import (
 )
 
 // RunCue runs a cue command with its arguments, e.g.
-// inproc.RunCue("eval", "testdata/sample.cue")
+// runcue.RunCue("eval", "testdata/sample.cue")
 func RunCue(args ...string) {
 	// log.Printf("RunCue: %v\n", args)
 	c, _ := cmd.New(args)

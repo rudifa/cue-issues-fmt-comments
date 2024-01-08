@@ -36,7 +36,7 @@
             "args": []
         },
         {
-            "name": "cuedo-fmt fmt",
+            "name": "cuedo fmt",
             "type": "go",
             "request": "launch",
             "mode": "debug",
