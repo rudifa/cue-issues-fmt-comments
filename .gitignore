@@ -3,8 +3,8 @@
 .DS_Store
 
 main
+cuedo
 
 .env*
 
 .tmp/
-

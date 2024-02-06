@@ -1,8 +1,8 @@
 [
     // about this clause...
-    // more on this clause
+    // more about this clause
     if true // about this condition...
-    // more on this condition
+    // more about this condition
         {} // about this value...
-        // and more about this value
+        // more about this value
 ]

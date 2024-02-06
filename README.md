@@ -16,7 +16,7 @@
 - [#2423 # cmd/fmt: invalid CUE emitted when all fields are commented inside struct](https://github.com/cue-lang/cue/issues/2423) - can reproduce
 - [#2567 # Cue fmt destroys working code](https://github.com/cue-lang/cue/issues/2567) - can reproduce
 
-- [#2672 cmd/cue: fmt -s does not preserve the scope of comments which is important for tool files](<https://github.com/cue-lang/cue/issues/2672>)
+- [#2672 cmd/cue: fmt -s does not preserve the scope of comments which is important for tool files](https://github.com/cue-lang/cue/issues/2672)
 
 ### tabs and indent
 
@@ -104,7 +104,7 @@ Flags:
 
 ### early investigations - mainly of historical interest (for myself)
 
-[rudifa/cue-issues-fmt-comments @ main](https://github.com/rudifa/cue-issues-fmt-comments) -  test files and programs
+[rudifa/cue-issues-fmt-comments @ main](https://github.com/rudifa/cue-issues-fmt-comments) - test files and programs
 
 [rudifa/cue @ issues-fmt-comments](https://github.com/rudifa/cue/tree/issues-fmt-comments) - fork of cue with debug prints
 
@@ -126,13 +126,13 @@ Flags:
 
 - parser output in fmt.go:
 
-    `CUE_DEBUG_AST_STR=1` => `DebugStr(f)` with variant DebugStrLong
+  `CUE_DEBUG_AST_STR=1` => `DebugStr(f)` with variant DebugStrLong
 
-    `CUE_DEBUG_AST_SPEW=1` => `spew.Dump(f)`
+  `CUE_DEBUG_AST_SPEW=1` => `spew.Dump(f)`
 
 - formatter:
 
-    `CUE_DEBUG_AST_FMT=1` => `log.Printf("p.output (%s):\n%s\n", msg, hexdump(p.output))`
+  `CUE_DEBUG_AST_FMT=1` => `log.Printf("p.output (%s):\n%s\n", msg, hexdump(p.output))`
 
 ### identify test cases already in cue
 
@@ -382,7 +382,7 @@ Should look into the NewDecoder to see how the AST is created.
 ```
 
 ./internal/astinternal/debugstr.go:195: str += "d"
-./internal/astinternal/debugstr.go:198: str += "l"
+./internal/astinternal/debugstr.go:198: str += "s"
 
 ```
 
@@ -394,7 +394,7 @@ Should look into the NewDecoder to see how the AST is created.
             str += "d"
         }
         if v.Line {
-            str += "l"
+            str += "s"
         }
         str += strconv.Itoa(int(v.Position))
         var a = []string{}

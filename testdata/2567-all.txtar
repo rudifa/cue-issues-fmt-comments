@@ -43,7 +43,7 @@ foo: [
 bar: baz: 41
 -- 2567.got.cue --
 foo: [
-	bar["baz" //some comment],
+	bar["baz" xxx//some comment],
 ]
 bar: baz: 41
 -- 2567.0.cue --

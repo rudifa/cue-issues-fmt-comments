@@ -1,0 +1,56 @@
+# issue #2423
+
+exec cue vet 2423.cue
+exec cue fmt 2423.cue
+cmp 2423.cue 2423.got.cue   # shows the misplaced comment in ex0 and ex1
+! exec cue vet 2423.cue     # the result of cue fmt fails vet
+cmp stderr 2423.stderr
+
+-- 2423.cue --
+ex0: {
+	v: 10 // ex0: comment after a value
+} & {
+	// ex0: comment in an empty struct
+}
+
+ex1: [
+	11, // ex1: comment after a value
+] & [
+	// ex1: comment in an empty list
+	...
+]
+
+ex2: {
+	// ex2: comment in an empty struct
+}
+
+ex3: [
+	// ex3: comment in an empty list
+]
+-- 2423.got.cue --
+ex0: {
+	v: 10 // ex0: comment after a value
+}
+	// ex0: comment in an empty struct
+	& {
+	}
+
+ex1: [
+	11, // ex1: comment after a value
+]
+	// ex1: comment in an empty list
+	& [
+		...,
+	]
+
+ex2: {
+	// ex2: comment in an empty struct
+}
+
+ex3: [
+	// ex3: comment in an empty list
+]
+-- 2423.stderr --
+expected operand, found '&':
+    ./2423.cue:5:2
+-- end --

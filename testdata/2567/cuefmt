@@ -1,0 +1,5 @@
+#!/bin/bash
+for file in 2567.8*; do
+    ls "$file"
+    cat "$file" | cue fmt -
+done

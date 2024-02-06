@@ -1,0 +1,1114 @@
+1
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+2
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+3
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+4
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+5
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+
+6
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+
+7
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:645)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:696)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExprTail (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1466)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+
+8
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:645)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:696)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExprTail (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1466)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+
+9
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:696)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExprTail (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1466)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+
+10
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:696)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExprTail (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1466)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+
+11 Position: 4
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:686)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:719)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExprTail (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1466)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+
+12 Position: 4
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:686)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseIndexOrSlice (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:719)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExprTail (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1466)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1337)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+
+13 Position: 3
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseListElement.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1308)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1359)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+
+14 Position: 3
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseListElement.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1308)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseListElement (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1359)
+cuelang.org/go/cue/parser.(*parser).parseListElements (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1293)
+cuelang.org/go/cue/parser.(*parser).parseList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1262)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:626)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+
+15
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+
+16
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1032)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+
+17
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseField.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:868)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:985)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+18
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseField.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:868)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:985)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+19
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+20
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+21
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+22
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:877)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+21
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+24
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseIdent (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:594)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:620)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+25
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+26
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseLabel (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1029)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:947)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+27
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:645)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:950)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+28
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseOperand (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:645)
+cuelang.org/go/cue/parser.(*parser).parsePrimaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1424)
+cuelang.org/go/cue/parser.(*parser).parseUnaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1497)
+cuelang.org/go/cue/parser.(*parser).parseBinaryExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1527)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:950)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+
+29
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:950)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+30
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*commentState).closeExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:242)
+cuelang.org/go/cue/parser.(*parser).parseExpr.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1597)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseExpr (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1599)
+cuelang.org/go/cue/parser.(*parser).parseRHS (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1603)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:950)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+
+31
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseField.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:868)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:985)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+32
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseField.func1 (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:868)
+runtime.deferreturn (/usr/local/go1.20/src/runtime/panic.go:476)
+cuelang.org/go/cue/parser.(*parser).parseField (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:985)
+cuelang.org/go/cue/parser.(*parser).parseFieldList (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:787)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1755)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+33
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:213)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1765)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+34
+cuelang.org/go/cue/parser.(*parser).CuedoPrintNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser_debug.go:75)
+cuelang.org/go/cue/parser.(*commentState).closeNode (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:235)
+cuelang.org/go/cue/parser.(*parser).parseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/parser.go:1765)
+cuelang.org/go/cue/parser.ParseFile (/Users/rudifarkas/GitHub/golang/src/cue/cue/parser/interface.go:188)
+github.com/rudifa/cuedo/runner.runParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:50)
+github.com/rudifa/cuedo/runner.RunParseAndFormat (/Users/rudifarkas/GitHub/golang/src/cuedo/runner/run.go:30)
+github.com/rudifa/cuedo/cmd.glob..func1 (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/format.go:66)
+github.com/spf13/cobra.(*Command).execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:987)
+github.com/spf13/cobra.(*Command).ExecuteC (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1115)
+github.com/spf13/cobra.(*Command).Execute (/Users/rudifarkas/GitHub/golang/pkg/mod/github.com/spf13/cobra@v1.8.0/command.go:1039)
+github.com/rudifa/cuedo/cmd.Execute (/Users/rudifarkas/GitHub/golang/src/cuedo/cmd/root.go:50)
+main.main (/Users/rudifarkas/GitHub/golang/src/cuedo/main.go:9)
+runtime.main (/usr/local/go1.20/src/runtime/proc.go:250)
+runtime.goexit (/usr/local/go1.20/src/runtime/asm_amd64.s:1598)
+
+35
+---
+
+cuedo format testdata/2567/2567.cue -cnt
+••• runParseAndFormat ----------------------------------------
+••• input: [testdata/2567/2567.cue]
+foo: [
+	bar["baz"], //some comment
+]
+bar: baz: 41
+
+••• parse file: [testdata/2567/2567.cue]
+    0:  0: . . . .  c.commentState:  pos: -1  ‣init @ parser.go:89  0xc00045f4f0
+    1:  1: . . . .  c.commentState:  pos: 0  ‣next @ parser.go:378  0xc00045f4f0  ◁ next0
+    1:  1: . . . .  c.commentState:  pos: 0  ‣next @ parser.go:419  0xc00045f4f0
+    1:  1: File (
+    1:  1: . FieldList (
+    1:  1: . . Field (
+    1:  1: . . . Expression (
+    1:  1: . . . . BinaryExpr (
+    1:  1: . . . . . UnaryExpr (
+    1:  1: . . . . . . PrimaryExpr (
+    1:  1: . . . . . . . Operand (
+    1:  1: . . . . . . . . IDENT foo
+    1:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc000094230  ◁ next0
+    1:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc000094230
+    1:  4: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000094230  ▷ n.AddComment(cg)
+    1:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000094230  ▷ n.AddComment(cg)
+    1:  4: . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc000094320
+    1:  4: . . . . . . . . . . . .                   input[0...3]:『foo:』
+    1:  4: . . . . . . . . . . . .                   debugStr: foo
+    1:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc0000941e0
+    1:  4: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000094230  ◁ n.AddComment(cg)
+    1:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000094230  ◁ n.AddComment(cg)
+    1:  4: . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc000094320
+    1:  4: . . . . . . . . . . . .                   input[0...3]:『foo:』
+    1:  4: . . . . . . . . . . . .                   debugStr: foo
+    1:  4: . . . . . . . )
+    1:  4: . . . . . . )
+    1:  4: . . . . . )
+    1:  4: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:169  0xc0000941e0  ▷ p.comments
+    1:  4: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc000094190  ◁ p.comments
+    1:  4: . . . . )
+    1:  4: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000094190  ▷ n.AddComment(cg)
+    1:  4: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000094190  ▷ n.AddComment(cg)
+    1:  4: . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc000094320
+    1:  4: . . . . . . . .                   input[0...3]:『foo:』
+    1:  4: . . . . . . . .                   debugStr: foo
+    1:  4: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc000094140
+    1:  4: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000094190  ◁ n.AddComment(cg)
+    1:  4: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000094190  ◁ n.AddComment(cg)
+    1:  4: . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc000094320
+    1:  4: . . . . . . . .                   input[0...3]:『foo:』
+    1:  4: . . . . . . . .                   debugStr: foo
+    1:  4: . . . )
+    1:  4: . . . ":"
+    1:  6: . . . . . . .  c.commentState:  pos: 2  ‣next @ parser.go:378  0xc000094140  ◁ next0
+    1:  6: . . . . . . .  c.commentState:  pos: 2  ‣next @ parser.go:419  0xc000094140
+    1:  6: . . . Expression (
+    1:  6: . . . . BinaryExpr (
+    1:  6: . . . . . UnaryExpr (
+    1:  6: . . . . . . PrimaryExpr (
+    1:  6: . . . . . . . Operand (
+    1:  6: . . . . . . . . "["
+    2:  2: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc00045f680  ◁ next0
+    2:  2: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc00045f680
+    2:  2: . . . . . . . . ListLiteral (
+    2:  2: . . . . . . . . . ListElements (
+    2:  2: . . . . . . . . . . ListElement (
+    2:  2: . . . . . . . . . . . UnaryExpr (
+    2:  2: . . . . . . . . . . . . PrimaryExpr (
+    2:  2: . . . . . . . . . . . . . Operand (
+    2:  2: . . . . . . . . . . . . . . IDENT bar
+    2:  5: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc00045f7c0  ◁ next0
+    2:  5: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc00045f7c0
+    2:  5: . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045f7c0  ▷ n.AddComment(cg)
+    2:  5: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045f7c0  ▷ n.AddComment(cg)
+    2:  5: . . . . . . . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc00045f8b0
+    2:  5: . . . . . . . . . . . . . . . . . .                   input[8...11]:『bar[』
+    2:  5: . . . . . . . . . . . . . . . . . .                   debugStr: bar
+    2:  5: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc00045f770
+    2:  5: . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045f7c0  ◁ n.AddComment(cg)
+    2:  5: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045f7c0  ◁ n.AddComment(cg)
+    2:  5: . . . . . . . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc00045f8b0
+    2:  5: . . . . . . . . . . . . . . . . . .                   input[8...11]:『bar[』
+    2:  5: . . . . . . . . . . . . . . . . . .                   debugStr: bar
+    2:  5: . . . . . . . . . . . . . )
+    2:  5: . . . . . . . . . . . . . IndexOrSlice (
+    2:  5: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣parseIndexOrSlice @ parser.go:688  0xc00045fb30
+    2:  5: . . . . . . . . . . . . . . "["
+    2:  6: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 2  ‣next @ parser.go:378  0xc00045fb30  ◁ next0
+    2:  6: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 2  ‣next @ parser.go:419  0xc00045fb30
+    2:  6: . . . . . . . . . . . . . . Expression (
+    2:  6: . . . . . . . . . . . . . . . BinaryExpr (
+    2:  6: . . . . . . . . . . . . . . . . UnaryExpr (
+    2:  6: . . . . . . . . . . . . . . . . . PrimaryExpr (
+    2:  6: . . . . . . . . . . . . . . . . . . Operand (
+    2:  6: . . . . . . . . . . . . . . . . . . . STRING "baz"
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc00045fd10  ◁ next0
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc00045fd10
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045fd10  ▷ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045fd10  ▷ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:213  0xc000034080
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .                   input[12...17]:『"baz"]』
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .                   debugStr: "baz"
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc00045fcc0
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045fd10  ◁ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045fd10  ◁ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:235  0xc000034080
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .                   input[12...17]:『"baz"]』
+    2: 11: . . . . . . . . . . . . . . . . . . . . . . .                   debugStr: "baz"
+    2: 11: . . . . . . . . . . . . . . . . . . )
+    2: 11: . . . . . . . . . . . . . . . . . )
+    2: 11: . . . . . . . . . . . . . . . . )
+    2: 11: . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:169  0xc00045fcc0  ▷ p.comments
+    2: 11: . . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc00045fc70  ◁ p.comments
+    2: 11: . . . . . . . . . . . . . . . )
+    2: 11: . . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045fc70  ▷ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045fc70  ▷ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:213  0xc000034080
+    2: 11: . . . . . . . . . . . . . . . . . . .                   input[12...17]:『"baz"]』
+    2: 11: . . . . . . . . . . . . . . . . . . .                   debugStr: "baz"
+    2: 11: . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 3  ‣closeNode @ parser.go:221  0xc00045fb30
+    2: 11: . . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045fc70  ◁ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045fc70  ◁ n.AddComment(cg)
+    2: 11: . . . . . . . . . . . . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:235  0xc000034080
+    2: 11: . . . . . . . . . . . . . . . . . . .                   input[12...17]:『"baz"]』
+    2: 11: . . . . . . . . . . . . . . . . . . .                   debugStr: "baz"
+    2: 11: . . . . . . . . . . . . . . )
+    2: 11: . . . . . . . . . . . . . . "]"
+    2: 12: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 4  ‣next @ parser.go:378  0xc00045fb30  ◁ next0
+    2: 12: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 4  ‣next @ parser.go:419  0xc00045fb30
+    2: 12: . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 4  ‣closeNode @ parser.go:212  0xc00045fb30  ▷ n.AddComment(cg)
+    2: 12: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 4  ‣closeNode @ parser.go:212  0xc00045fb30  ▷ n.AddComment(cg)
+    2: 12: . . . . . . . . . . . . . . . . . .            node:  type: *ast.IndexExpr  ‣closeNode @ parser.go:213  0xc000094780
+    2: 12: . . . . . . . . . . . . . . . . . .                   input[8...18]:『bar["baz"],』
+    2: 12: . . . . . . . . . . . . . . . . . .                   debugStr: bar["baz"]
+    2: 12: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 2  ‣closeNode @ parser.go:221  0xc00045f770
+    2: 12: . . . . . . . . . . . . . . . . . . cp.commentState:  pos: 4  ‣closeNode @ parser.go:234  0xc00045fb30  ◁ n.AddComment(cg)
+    2: 12: . . . . . . . . . . . . . . . . . .  c.commentState:  pos: 4  ‣closeNode @ parser.go:234  0xc00045fb30  ◁ n.AddComment(cg)
+    2: 12: . . . . . . . . . . . . . . . . . .            node:  type: *ast.IndexExpr  ‣closeNode @ parser.go:235  0xc000094780
+    2: 12: . . . . . . . . . . . . . . . . . .                   input[8...18]:『bar["baz"],』
+    2: 12: . . . . . . . . . . . . . . . . . .                   debugStr: bar["baz"]
+    2: 12: . . . . . . . . . . . . . )
+    2: 12: . . . . . . . . . . . . )
+    2: 12: . . . . . . . . . . . )
+    2: 12: . . . . . . . . . . . ","
+    2: 14: . . . . . . . . . . . . . . .  c.commentState:  pos: 3  ‣next @ parser.go:378  0xc00045f770  ◁ next0
+    2: 14: . . . . . . . . . . . COMMENT
+    3:  1: . . . . . . . . . . . . . . .    CommentGroup:   Position: 0  //some comment  ‣consumeCommentGroup @ parser.go:349
+    3:  1: . . . . . . . . . . . . . . .  c.commentState:  pos: 3  Position: 3  //some comment  ‣next @ parser.go:419  0xc00045f770
+    3:  1: . . . . . . . . . . . . . . . cp.commentState:  pos: 3  Position: 3  //some comment  ‣closeNode @ parser.go:212  0xc00045f770  ▷ n.AddComment(cg)
+    3:  1: . . . . . . . . . . . . . . .  c.commentState:  pos: 3  Position: 3  //some comment  ‣closeNode @ parser.go:212  0xc00045f770  ▷ n.AddComment(cg)
+    3:  1: . . . . . . . . . . . . . . .            node:  type: *ast.IndexExpr  ‣closeNode @ parser.go:213  0xc000094780
+    3:  1: . . . . . . . . . . . . . . .                   input[8...18]:『bar["baz"],』
+    3:  1: . . . . . . . . . . . . . . .                   debugStr: bar["baz"]
+    3:  1: . . . . . . . . . . . . . . .  c.commentState:  pos: 2  ‣closeNode @ parser.go:221  0xc00045f680
+    3:  1: . . . . . . . . . . . . . . . cp.commentState:  pos: 3  ‣closeNode @ parser.go:234  0xc00045f770  ◁ n.AddComment(cg)
+    3:  1: . . . . . . . . . . . . . . .  c.commentState:  pos: 3  ‣closeNode @ parser.go:234  0xc00045f770  ◁ n.AddComment(cg)
+    3:  1: . . . . . . . . . . . . . . .            node:  type: *ast.IndexExpr  ‣closeNode @ parser.go:235  0xc000094780
+    3:  1: . . . . . . . . . . . . . . .                   input[8...18]:『bar["baz"],』
+    3:  1: . . . . . . . . . . . . . . .                   Position: 3  //some comment
+    3:  1: . . . . . . . . . . . . . . .                   debugStr: <[l3//some comment] bar["baz"]>
+    3:  1: . . . . . . . . . . )
+    3:  1: . . . . . . . . . . . . . .  c.commentState:  pos: 2  ‣closeList @ parser.go:169  0xc00045f680  ▷ p.comments
+    3:  1: . . . . . . . . . . . . . .  c.commentState:  pos: 2  ‣closeList @ parser.go:196  0xc00045f680  ◁ p.comments
+    3:  1: . . . . . . . . . )
+    3:  1: . . . . . . . . . "]"
+    3:  2: . . . . . . . . . . . . .  c.commentState:  pos: 3  ‣next @ parser.go:378  0xc00045f680  ◁ next0
+    3:  2: . . . . . . . . . . . . .  c.commentState:  pos: 3  ‣next @ parser.go:419  0xc00045f680
+    3:  2: . . . . . . . . )
+    3:  2: . . . . . . . )
+    3:  2: . . . . . . )
+    3:  2: . . . . . )
+    3:  2: . . . . . . . . .  c.commentState:  pos: 3  ‣closeList @ parser.go:169  0xc00045f680  ▷ p.comments
+    3:  2: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc00045f630  ◁ p.comments
+    3:  2: . . . . )
+    3:  2: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045f630  ▷ n.AddComment(cg)
+    3:  2: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045f630  ▷ n.AddComment(cg)
+    3:  2: . . . . . . . .            node:  type: *ast.ListLit  ‣closeNode @ parser.go:213  0xc000094e60
+    3:  2: . . . . . . . .                   input[5...36]:『[
+    3:  2: . . . . . . . .                                 	bar["baz"], //some comment
+    3:  2: . . . . . . . .                                 ]␤』
+    3:  2: . . . . . . . .                   debugStr: [<[l3//some comment] bar["baz"]>]
+    3:  2: . . . . . . . .  c.commentState:  pos: 3  ‣closeNode @ parser.go:221  0xc000094140
+    3:  2: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045f630  ◁ n.AddComment(cg)
+    3:  2: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045f630  ◁ n.AddComment(cg)
+    3:  2: . . . . . . . .            node:  type: *ast.ListLit  ‣closeNode @ parser.go:235  0xc000094e60
+    3:  2: . . . . . . . .                   input[5...36]:『[
+    3:  2: . . . . . . . .                                 	bar["baz"], //some comment
+    3:  2: . . . . . . . .                                 ]␤』
+    3:  2: . . . . . . . .                   debugStr: [<[l3//some comment] bar["baz"]>]
+    3:  2: . . . )
+    3:  2: . . . . . . .  c.commentState:  pos: 0  ‣closeList @ parser.go:169  0xc000095180  ▷ p.comments
+    3:  2: . . . . . . .  c.commentState:  pos: 4  ‣closeList @ parser.go:196  0xc000094140  ◁ p.comments
+    3:  2: . . . ","
+    4:  1: . . . . . . .  c.commentState:  pos: 5  ‣next @ parser.go:378  0xc000094140  ◁ next0
+    4:  1: . . . . . . .  c.commentState:  pos: 5  ‣next @ parser.go:419  0xc000094140
+    4:  1: . . . . . . . cp.commentState:  pos: 5  ‣closeNode @ parser.go:212  0xc000094140  ▷ n.AddComment(cg)
+    4:  1: . . . . . . .  c.commentState:  pos: 5  ‣closeNode @ parser.go:212  0xc000094140  ▷ n.AddComment(cg)
+    4:  1: . . . . . . .            node:  type: *ast.Field  ‣closeNode @ parser.go:213  0xc0000b0100
+    4:  1: . . . . . . .                   input[0...36]:『foo: [
+    4:  1: . . . . . . .                                 	bar["baz"], //some comment
+    4:  1: . . . . . . .                                 ]␤』
+    4:  1: . . . . . . .                   debugStr: foo: [<[l3//some comment] bar["baz"]>]
+    4:  1: . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc0000940f0
+    4:  1: . . . . . . . cp.commentState:  pos: 5  ‣closeNode @ parser.go:234  0xc000094140  ◁ n.AddComment(cg)
+    4:  1: . . . . . . .  c.commentState:  pos: 5  ‣closeNode @ parser.go:234  0xc000094140  ◁ n.AddComment(cg)
+    4:  1: . . . . . . .            node:  type: *ast.Field  ‣closeNode @ parser.go:235  0xc0000b0100
+    4:  1: . . . . . . .                   input[0...36]:『foo: [
+    4:  1: . . . . . . .                                 	bar["baz"], //some comment
+    4:  1: . . . . . . .                                 ]␤』
+    4:  1: . . . . . . .                   debugStr: foo: [<[l3//some comment] bar["baz"]>]
+    4:  1: . . )
+    4:  1: . . Field (
+    4:  1: . . . Expression (
+    4:  1: . . . . BinaryExpr (
+    4:  1: . . . . . UnaryExpr (
+    4:  1: . . . . . . PrimaryExpr (
+    4:  1: . . . . . . . Operand (
+    4:  1: . . . . . . . . IDENT bar
+    4:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc000095630  ◁ next0
+    4:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc000095630
+    4:  4: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095630  ▷ n.AddComment(cg)
+    4:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095630  ▷ n.AddComment(cg)
+    4:  4: . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc000095720
+    4:  4: . . . . . . . . . . . .                   input[37...40]:『bar:』
+    4:  4: . . . . . . . . . . . .                   debugStr: bar
+    4:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc0000955e0
+    4:  4: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095630  ◁ n.AddComment(cg)
+    4:  4: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095630  ◁ n.AddComment(cg)
+    4:  4: . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc000095720
+    4:  4: . . . . . . . . . . . .                   input[37...40]:『bar:』
+    4:  4: . . . . . . . . . . . .                   debugStr: bar
+    4:  4: . . . . . . . )
+    4:  4: . . . . . . )
+    4:  4: . . . . . )
+    4:  4: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:169  0xc0000955e0  ▷ p.comments
+    4:  4: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc000095590  ◁ p.comments
+    4:  4: . . . . )
+    4:  4: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095590  ▷ n.AddComment(cg)
+    4:  4: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095590  ▷ n.AddComment(cg)
+    4:  4: . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc000095720
+    4:  4: . . . . . . . .                   input[37...40]:『bar:』
+    4:  4: . . . . . . . .                   debugStr: bar
+    4:  4: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc000095540
+    4:  4: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095590  ◁ n.AddComment(cg)
+    4:  4: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095590  ◁ n.AddComment(cg)
+    4:  4: . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc000095720
+    4:  4: . . . . . . . .                   input[37...40]:『bar:』
+    4:  4: . . . . . . . .                   debugStr: bar
+    4:  4: . . . )
+    4:  4: . . . ":"
+    4:  6: . . . . . . .  c.commentState:  pos: 2  ‣next @ parser.go:378  0xc000095540  ◁ next0
+    4:  6: . . . . . . .  c.commentState:  pos: 2  ‣next @ parser.go:419  0xc000095540
+    4:  6: . . . Expression (
+    4:  6: . . . . BinaryExpr (
+    4:  6: . . . . . UnaryExpr (
+    4:  6: . . . . . . PrimaryExpr (
+    4:  6: . . . . . . . Operand (
+    4:  6: . . . . . . . . IDENT baz
+    4:  9: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc000095db0  ◁ next0
+    4:  9: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc000095db0
+    4:  9: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095db0  ▷ n.AddComment(cg)
+    4:  9: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095db0  ▷ n.AddComment(cg)
+    4:  9: . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc000095ea0
+    4:  9: . . . . . . . . . . . .                   input[42...45]:『baz:』
+    4:  9: . . . . . . . . . . . .                   debugStr: baz
+    4:  9: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc000095d60
+    4:  9: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095db0  ◁ n.AddComment(cg)
+    4:  9: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095db0  ◁ n.AddComment(cg)
+    4:  9: . . . . . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc000095ea0
+    4:  9: . . . . . . . . . . . .                   input[42...45]:『baz:』
+    4:  9: . . . . . . . . . . . .                   debugStr: baz
+    4:  9: . . . . . . . )
+    4:  9: . . . . . . )
+    4:  9: . . . . . )
+    4:  9: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:169  0xc000095d60  ▷ p.comments
+    4:  9: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc000095d10  ◁ p.comments
+    4:  9: . . . . )
+    4:  9: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095d10  ▷ n.AddComment(cg)
+    4:  9: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000095d10  ▷ n.AddComment(cg)
+    4:  9: . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:213  0xc000095ea0
+    4:  9: . . . . . . . .                   input[42...45]:『baz:』
+    4:  9: . . . . . . . .                   debugStr: baz
+    4:  9: . . . . . . . .  c.commentState:  pos: 3  ‣closeNode @ parser.go:221  0xc000095540
+    4:  9: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095d10  ◁ n.AddComment(cg)
+    4:  9: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000095d10  ◁ n.AddComment(cg)
+    4:  9: . . . . . . . .            node:  type: *ast.Ident  ‣closeNode @ parser.go:235  0xc000095ea0
+    4:  9: . . . . . . . .                   input[42...45]:『baz:』
+    4:  9: . . . . . . . .                   debugStr: baz
+    4:  9: . . . )
+    4:  9: . . . ":"
+    4: 11: . . . . . . .  c.commentState:  pos: 4  ‣next @ parser.go:378  0xc000095540  ◁ next0
+    4: 11: . . . . . . .  c.commentState:  pos: 4  ‣next @ parser.go:419  0xc000095540
+    4: 11: . . . Expression (
+    4: 11: . . . . BinaryExpr (
+    4: 11: . . . . . UnaryExpr (
+    4: 11: . . . . . . PrimaryExpr (
+    4: 11: . . . . . . . Operand (
+    4: 11: . . . . . . . . INT 41
+    4: 13: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:378  0xc0001351d0  ◁ next0
+    4: 13: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣next @ parser.go:419  0xc0001351d0
+    4: 13: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc0001351d0  ▷ n.AddComment(cg)
+    4: 13: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc0001351d0  ▷ n.AddComment(cg)
+    4: 13: . . . . . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:213  0xc0000340c0
+    4: 13: . . . . . . . . . . . .                   input[47...49]:『41␤』
+    4: 13: . . . . . . . . . . . .                   debugStr: 41
+    4: 13: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:221  0xc000135180
+    4: 13: . . . . . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc0001351d0  ◁ n.AddComment(cg)
+    4: 13: . . . . . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc0001351d0  ◁ n.AddComment(cg)
+    4: 13: . . . . . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:235  0xc0000340c0
+    4: 13: . . . . . . . . . . . .                   input[47...49]:『41␤』
+    4: 13: . . . . . . . . . . . .                   debugStr: 41
+    4: 13: . . . . . . . )
+    4: 13: . . . . . . )
+    4: 13: . . . . . )
+    4: 13: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:169  0xc000135180  ▷ p.comments
+    4: 13: . . . . . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc000135130  ◁ p.comments
+    4: 13: . . . . )
+    4: 13: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000135130  ▷ n.AddComment(cg)
+    4: 13: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc000135130  ▷ n.AddComment(cg)
+    4: 13: . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:213  0xc0000340c0
+    4: 13: . . . . . . . .                   input[47...49]:『41␤』
+    4: 13: . . . . . . . .                   debugStr: 41
+    4: 13: . . . . . . . .  c.commentState:  pos: 5  ‣closeNode @ parser.go:221  0xc000095540
+    4: 13: . . . . . . . . cp.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000135130  ◁ n.AddComment(cg)
+    4: 13: . . . . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc000135130  ◁ n.AddComment(cg)
+    4: 13: . . . . . . . .            node:  type: *ast.BasicLit  ‣closeNode @ parser.go:235  0xc0000340c0
+    4: 13: . . . . . . . .                   input[47...49]:『41␤』
+    4: 13: . . . . . . . .                   debugStr: 41
+    4: 13: . . . )
+    4: 13: . . . . . . .  c.commentState:  pos: 0  ‣closeList @ parser.go:169  0xc0001358b0  ▷ p.comments
+    4: 13: . . . . . . .  c.commentState:  pos: 6  ‣closeList @ parser.go:196  0xc000095540  ◁ p.comments
+    4: 13: . . . ","
+    4: 14: . . . . . . .  c.commentState:  pos: 7  ‣next @ parser.go:378  0xc000095540  ◁ next0
+    4: 14: . . . . . . .  c.commentState:  pos: 7  ‣next @ parser.go:419  0xc000095540
+    4: 14: . . . . . . . cp.commentState:  pos: 7  ‣closeNode @ parser.go:212  0xc000095540  ▷ n.AddComment(cg)
+    4: 14: . . . . . . .  c.commentState:  pos: 7  ‣closeNode @ parser.go:212  0xc000095540  ▷ n.AddComment(cg)
+    4: 14: . . . . . . .            node:  type: *ast.Field  ‣closeNode @ parser.go:213  0xc0000b1300
+    4: 14: . . . . . . .                   input[37...49]:『bar: baz: 41␤』
+    4: 14: . . . . . . .                   debugStr: bar: {baz: 41}
+    4: 14: . . . . . . .  c.commentState:  pos: 2  ‣closeNode @ parser.go:221  0xc0000940f0
+    4: 14: . . . . . . . cp.commentState:  pos: 7  ‣closeNode @ parser.go:234  0xc000095540  ◁ n.AddComment(cg)
+    4: 14: . . . . . . .  c.commentState:  pos: 7  ‣closeNode @ parser.go:234  0xc000095540  ◁ n.AddComment(cg)
+    4: 14: . . . . . . .            node:  type: *ast.Field  ‣closeNode @ parser.go:235  0xc0000b1300
+    4: 14: . . . . . . .                   input[37...49]:『bar: baz: 41␤』
+    4: 14: . . . . . . .                   debugStr: bar: {baz: 41}
+    4: 14: . . )
+    4: 14: . . . . . .  c.commentState:  pos: 2  ‣closeList @ parser.go:169  0xc0000940f0  ▷ p.comments
+    4: 14: . . . . . .  c.commentState:  pos: 2  ‣closeList @ parser.go:196  0xc0000940f0  ◁ p.comments
+    4: 14: . )
+    4: 14: . EOF
+    4: 14: . . . . .  c.commentState:  pos: 3  ‣next @ parser.go:378  0xc0000940f0  ◁ next0
+    4: 14: . . . . .  c.commentState:  pos: 3  ‣next @ parser.go:419  0xc0000940f0
+    4: 14: . . . . .  c.commentState:  pos: 3  ‣closeList @ parser.go:169  0xc0000940f0  ▷ p.comments
+    4: 14: . . . . .  c.commentState:  pos: 1  ‣closeList @ parser.go:196  0xc00045f4f0  ◁ p.comments
+    4: 14: . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:212  0xc00045f4f0  ▷ n.AddComment(cg)
+    4: 14: . . . . .            node:  type: *ast.File  ‣closeNode @ parser.go:213  0xc00049f1a0
+    4: 14: . . . . .                   input[0...49]:『foo: [
+    4: 14: . . . . .                                 	bar["baz"], //some comment
+    4: 14: . . . . .                                 ]
+    4: 14: . . . . .                                 bar: baz: 41␤』
+    4: 14: . . . . .                   debugStr: foo: [<[l3//some comment] bar["baz"]>], bar: {baz: 41}
+    4: 14: . . . . .  c.commentState:  pos: 1  ‣closeNode @ parser.go:234  0xc00045f4f0  ◁ n.AddComment(cg)
+    4: 14: . . . . .            node:  type: *ast.File  ‣closeNode @ parser.go:235  0xc00049f1a0
+    4: 14: . . . . .                   input[0...49]:『foo: [
+    4: 14: . . . . .                                 	bar["baz"], //some comment
+    4: 14: . . . . .                                 ]
+    4: 14: . . . . .                                 bar: baz: 41␤』
+    4: 14: . . . . .                   debugStr: foo: [<[l3//some comment] bar["baz"]>], bar: {baz: 41}
+    4: 14: )
+••• format.Node(f)
+••• output format.Node(f):
+ foo: [
+	bar["baz" //some comment],
+]
+bar: baz: 41
+
+cuedo %                                                                                                                               [investigate-formatter-and-parser ↑8|✔]
+
+
+
+
+

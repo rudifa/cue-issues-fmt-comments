@@ -1,0 +1,70 @@
+# almost-empty-2.txtar
+
+exec cuedo fmt empty.cue -a
+cmp stdout empty.got
+
+exec cuedo fmt single-comment.cue -a
+cmp stdout single-comment.got
+
+
+
+-- empty.cue --
+-- empty.got --
+cuedo format empty.cue -a
+••• runParseAndFormat ----------------------------------------
+••• input: [empty.cue]
+
+••• parse file: [empty.cue]
+••• parser out DebugAstStr(f):
+ *ast.File{
+.   Filename: "empty.cue"
+.   Decls: []ast.Decl{
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+}
+
+••• format.Node(f)
+••• output format.Node(f):
+ 
+
+-- single-comment.cue --
+// a single comment
+-- single-comment.got --
+cuedo format single-comment.cue -a
+••• runParseAndFormat ----------------------------------------
+••• input: [single-comment.cue]
+// a single comment
+
+••• parse file: [single-comment.cue]
+••• parser out DebugAstStr(f):
+ *ast.File{
+.   Filename: "single-comment.cue"
+.   Decls: []ast.Decl{
+.   }
+.   Imports: []*ast.ImportSpec{
+.   }
+.   Comments: []*ast.CommentGroup{
+.   .   *ast.CommentGroup{
+.   .   .   Doc: false
+.   .   .   Line: false
+.   .   .   Position: 0
+.   .   .   List: []*ast.Comment{
+.   .   .   .   *ast.Comment{
+.   .   .   .   .   Slash: token.Pos("single-comment.cue:1:1")
+.   .   .   .   .   Text: "// a single comment"
+.   .   .   .   }
+.   .   .   }
+.   .   }
+.   }
+}
+
+••• format.Node(f)
+••• output format.Node(f):
+ // a single comment
+
+-- end --
+
+
+
+

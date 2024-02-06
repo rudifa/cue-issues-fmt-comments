@@ -12,26 +12,9 @@ import (
 )
 
 // Test2567 is a test for issue #2567
+// it demonstrates running the regular cue fmt command in-process
 func Test2567(t *testing.T) {
-	const file = "testdata/2567-1.cue"
-	runcue.RunCue("fmt", file)
-	restore(file)
-}
-
-func Test2567_2(t *testing.T) {
-	const file = "testdata/2567-3a.cue"
-	runcue.RunCue("fmt", file)
-	restore(file)
-}
-
-func Test2274_01s(t *testing.T) {
-	const file = "testdata/2274-01s.cue"
-	runcue.RunCue("fmt", file)
-	restore(file)
-}
-
-func Test2274_01n(t *testing.T) {
-	const file = "testdata/2274-01n.cue"
+	const file = "testdata/2567/2567.cue"
 	runcue.RunCue("fmt", file)
 	restore(file)
 }
