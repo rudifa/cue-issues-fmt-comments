@@ -1,0 +1,26 @@
+# script 2567-misplaced-comments.slice.txtar
+# state with cue v0.7.0
+# the .got.cue file shows the bad results of cue fmt
+
+exec cue fmt 2567.slice.cue
+cmp 2567.slice.cue 2567.slice.got.cue
+! exec cue vet 2567.slice.cue         # result fails the cue vet
+
+
+-- 2567.slice.cue --
+a: [1,2,3,4,5]
+b:[
+    a[2:3],  // first slice
+    a[:2],   // second slice
+    a[2:],   // third slice
+]
+-- 2567.slice.got.cue --
+a: [1, 2, 3, 4, 5]
+b: [
+	a[2 // first slice
+	:3],
+	a[:2 // second slice],
+	a[2  // third slice
+	:],
+]
+-- end --

@@ -5,15 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "CUEDO_AST_DEBUGSTR",
+            "name": "cuedo fmt 2567.8.slice.at.top.cue",
             "type": "go",
             "request": "launch",
             "mode": "debug",
             "program": "main.go",
-            "env": {
-                "CUEDO_AST_DEBUGSTR": "1"
-            },
-            "args": []
+            "env": {},
+            "args": [
+                "fmt",
+                "testdata/2567/2567.8.slice.at.top.cue",
+                "-b"
+            ]
+        },
+        {
+            "name": "cuedo fmt 2567.8.indexexpr.etc.in.list.BAD.cue",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "main.go",
+            "env": {},
+            "args": [
+                "fmt",
+                "testdata/2567/2567.8.indexexpr.etc.in.list.BAD.cue",
+                "-cnpost"
+            ]
         },
         {
             "name": "CUEDO_FORMATTER_HEXDUMP",
@@ -36,7 +51,7 @@
             "args": []
         },
         {
-            "name": "cuedo fmt",
+            "name": "cuedo fmt 2567.cue",
             "type": "go",
             "request": "launch",
             "mode": "debug",
@@ -44,10 +59,59 @@
             "env": {},
             "args": [
                 "fmt",
-                "testdata/2567/2567-fbb+2.cue",
-                "-d",
-                "-v",
+                "testdata/2567/2567.cue",
+                "-cntv",
             ]
+        },
+        {
+            "name": "cuedo fmt 2567-comprehension.cue",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "main.go",
+            "env": {},
+            "args": [
+                "fmt",
+                "testdata/2567/2567-comprehension.cue",
+                "-cntv",
+            ]
+        },
+        {
+            "name": "cuedo fmt 2567.slice.1.cue",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "main.go",
+            "env": {},
+            "args": [
+                "fmt",
+                "testdata/2567/2567.slice.1.cue",
+                "-a",
+            ]
+        },
+        {
+            "name": "cuedo fmt BAD",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "main.go",
+            "env": {},
+            "args": [
+                "fmt",
+                "testdata/2567/2567.n.fbb.s.BAD.cue",
+                "-n",
+            ]
+        },
+        {
+            "name": "CUEDO_AST_DEBUGSTR",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "main.go",
+            "env": {
+                "CUEDO_AST_DEBUGSTR": "1"
+            },
+            "args": []
         },
     ]
 }

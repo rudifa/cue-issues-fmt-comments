@@ -1,0 +1,73 @@
+# list-and-slice.txtar
+
+
+exec cue vet list-slice.cue
+exec cuedo fmt list-slice.cue
+cmp stdout list-slice.got
+
+# exec cue vet list-sublist.cue
+# exec cuedo fmt list-sublist.cue
+# cmp stdout list-sublist.got
+
+
+-- list-slice.cue --
+b:[
+    a[0:] // a slice
+]
+a:[1,2,3]
+-- list-sublist.cue --
+[
+    [] // empty sublist
+]
+-- end-of.cue --
+
+
+-- list-slice.got --
+cuedo format list-slice.cue 
+••• runParseAndFormat ----------------------------------------
+••• input: [list-slice.cue]
+b:[
+    a[0:] // a slice
+]
+a:[1,2,3]
+
+••• parse file: [list-slice.cue]
+••• format.Node(f)
+••• output format.Node(f):
+ b: [
+	a[0 // a slice
+	:],
+]
+a: [1, 2, 3]
+
+-- list-sublist.got --
+cuedo format list-sublist.cue
+••• runParseAndFormat ----------------------------------------
+••• input: [list-sublist.cue]
+[
+    [] // empty sublist
+]
+
+••• parse file: [list-sublist.cue]
+••• format.Node(f)
+••• output format.Node(f):
+ [
+	[], // empty sublist
+]
+
+
+cuedo format list-slice.cue
+••• runParseAndFormat ----------------------------------------
+••• input: [list-slice.cue]
+[
+    [:] // empty slice
+]
+
+
+••• parse file: [list-slice.cue]
+••• format.Node(f)
+••• output format.Node(f):
+ [
+	[_|_, // empty slice]]
+
+-- end-of.got --

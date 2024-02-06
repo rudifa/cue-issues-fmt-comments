@@ -7,88 +7,101 @@ Copyright © 2024 Rudolf Farkas @rudifa rudi.farkas@gmail.com
 
 import (
 	"fmt"
-	"os"
-
-	// "go/format"
-	"strings"
-
-	// "go/parser"
 	"log"
+	"os"
 	"os/exec"
+	"strings"
+	"time"
 
-	"cuelang.org/go/cmd/cuedo/util"
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/parser"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/rudifa/cuedo/runcue"
+	"github.com/rudifa/goutil/ffmt"
 	"github.com/rudifa/goutil/files"
 )
 
 // RunParseAndFormat runs the parser and formatter on the given file
 func RunParseAndFormat(file string) {
-
 	runParseAndFormat(file)
 }
 
 // ----------------------------------------------------------
 func runParseAndFormat(filename string) {
 
+	const threeBlack = "•••"
+	const threeWhite = "○○○"
 	fmt.Println("••• runParseAndFormat ----------------------------------------")
 
-	fmt.Printf("••• input: [%s]\n", filename)
+	fmt.Println("•••", time.Now().Format("2006-01-02 15:04:05"))
+
+	fmt.Printf("••• input: %s\n", filename)
 	files.CatFile(filename)
 
 	content, _ := files.ReadString(filename)
 
-	options := []parser.Option{parser.ParseComments}
-	if os.Getenv("CUEDO_PARSER_TRACE") != "" {
-		options = append(options, parser.Trace)
+
+	parseComments := []bool{true}
+	if os.Getenv("CUEDO_PROCESS_BOTH_WITH_AND_WITHOUT_COMMENTS") != "" {
+		parseComments = append(parseComments, false)
 	}
 
-	fmt.Printf("••• parse file: [%s]\n", filename)
-	f, err := parser.ParseFile(filename, content, options...)
+	for _, withComments := range parseComments {
+		options := []parser.Option{}
 
-	if err != nil {
-		log.Printf("unexpected error: %v\n", err)
+		var three string
+		if withComments {
+			options = append(options, parser.ParseComments)
+			three = threeBlack
+		} else {
+			three = threeWhite
+		}
+
+		if os.Getenv("CUEDO_PARSER_TRACE") != "" {
+			options = append(options, parser.Trace)
+		}
+
+		fmt.Printf(three + " parse file: %s\n", filename)
+		f, err := parser.ParseFile(filename, content, options...)
+		if err != nil {
+			log.Printf("unexpected error: %v\n", err)
+		}
+
+		if os.Getenv("CUEDO_PARSER_DEBUG_STR") != "" {
+			dbs := parser.DebugStr(f)
+			dbs, _ = ffmt.IndentNestedBrackets(dbs, "<>", "  ")
+			fmt.Println(three + " parser out DebugStr(f):\n", dbs)
+		}
+
+		if os.Getenv("CUEDO_AST_TREE") != "" {
+			debugAstStr := parser.DebugAstTree(f)
+
+			fmt.Println(three + " parser out DebugAstTree(f):\n", debugAstStr)
+		}
+
+		if os.Getenv("CUEDO_AST_NODE_SPEW") != "" {
+			fmt.Println(three + " parser out spew.Dump(f):")
+			spew.Dump(f)
+		}
+
+		fmt.Printf(three + " format.Node(f)\n")
+		outbytes, err := format.Node(f)
+		if err != nil {
+			log.Printf("unexpected error: %v\n", err)
+		}
+
+		// dbs := parser.DebugStrLong("f", f)
+		// fmt.Println("••• parser.DebugStrLong(f):\n", dbs)
+
+		// dbs := parser.DebugStrIndent(false, "f", f)
+		// fmt.Println("••• parser.DebugStrIndent(f):\n", dbs)
+
+		// dbs = parser.DebugStrIndent(true, "f", f)
+		// fmt.Println("••• parser.DebugStrIndent(f):\n", dbs)
+
+		outstring := string(outbytes)
+		fmt.Println(three + " output format.Node(f):\n", outstring)
 	}
-
-	// dospew := true
-	// if dospew {
-	// 	fmt.Printf("••• spew.Dump:\n")
-	// 	spew.Dump(f)
-	// 	spd := spew.Sdump(f)
-	// 	fmt.Printf("••• spew.Sdump:\n%s\n", spd)
-	// }
-
-	if os.Getenv("CUEDO_PARSER_DEBUG_STR") != "" {
-		dbs := util.DebugStr(f)
-		fmt.Println("••• parser out DebugStr(f):\n", dbs)
-	}
-
-	if os.Getenv("CUEDO_AST_TREE") != "" {
-		debugAstStr := util.DebugAstStr(f)
-
-		fmt.Println("••• parser out DebugAstStr(f):\n", debugAstStr)
-	}
-
-	fmt.Printf("••• format.Node(f)\n")
-	outbytes, err := format.Node(f)
-	if err != nil {
-		log.Printf("unexpected error: %v\n", err)
-	}
-
-	// dbs := parser.DebugStrLong("f", f)
-	// fmt.Println("••• parser.DebugStrLong(f):\n", dbs)
-
-	// dbs := parser.DebugStrIndent(false, "f", f)
-	// fmt.Println("••• parser.DebugStrIndent(f):\n", dbs)
-
-	// dbs = parser.DebugStrIndent(true, "f", f)
-	// fmt.Println("••• parser.DebugStrIndent(f):\n", dbs)
-
-	outstring := string(outbytes)
-	fmt.Println("••• output format.Node(f):\n", outstring)
-
 }
 
 // ----------------------------------------------------------
@@ -108,24 +121,19 @@ func runParseAndFormat2672() {
 }
 
 func runParseCueString1() {
-
 	// runParseCueString("a:1")
 	// runParseCueString("abra:1 // comment")
 	// runParseCueString("foo:bar:baz:123")
 	runParseCueString("{foo:1, bar:2, baz:3}")
-
 }
 
 func runParserWithNode1() {
-
 	sampleFile := "testdata/2567-compr+comment.cue"
 
 	runParseAndFormat(sampleFile)
-
 }
 
 func runCueFmt2567() {
-
 	sampleFile := "testdata/2567-3.cue"
 
 	runCueFmt(sampleFile)
@@ -136,13 +144,11 @@ func runCueFmt2567() {
 }
 
 func runCueFmt2672() {
-
 	sampleFile := "testdata/2672/make_tool.cue"
 	runCueFmt(sampleFile)
 }
 
 func runCueFmt(filename string) {
-
 	log.Println("----------------------------------------")
 	log.Printf("runCueFmt: [%s]\n", filename)
 
@@ -162,7 +168,6 @@ func runCueFmt(filename string) {
 }
 
 func runCueCommands(filename string) {
-
 	log.Println("----------------------------------------")
 	log.Printf("cueTestCase: [%s]\n", filename)
 
@@ -195,7 +200,6 @@ func runParseFile(filename string) {
 	content, _ := files.ReadString(filename)
 
 	f, err := parser.ParseFile(filename, content, parser.ParseComments)
-
 	if err != nil {
 		log.Printf("unexpected error: %v\n", err)
 	}
@@ -212,7 +216,6 @@ func runParseFile(filename string) {
 	spew.Printf("f: %+v\n", f)
 
 	spew.Printf("f: %#v\n", f)
-
 }
 
 func runParseCueString(cuestring string) {
@@ -220,7 +223,6 @@ func runParseCueString(cuestring string) {
 	fmt.Printf("••• cuestring: |%s|\n", cuestring)
 
 	f, err := parser.ParseFile("cuestring", cuestring, parser.ParseComments)
-
 	if err != nil {
 		log.Printf("unexpected error: %v\n", err)
 	}
@@ -249,7 +251,6 @@ func runParseCueString(cuestring string) {
 	outstring := string(outbytes)
 
 	fmt.Println("••• format.Node(f):\n", outstring)
-
 }
 
 func restoreFile(filename string) error {

@@ -1,0 +1,342 @@
+[
+	{
+		"Desc": "ellipsis in structs",
+		"In": "#Def: {\n\t\t\tb: \"2\"\n\t\t\t...\n\t\t}\n\t\t...\n\n\t\t#Def2: {\n\t\t\t...\n\t\t\tb: \"2\"\n\t\t}\n\t\t#Def3: {...\n\t\t_}\n\t\t...\n\t\t",
+		"Out": "#Def: {b: \"2\", ...}, ..., #Def2: {..., b: \"2\"}, #Def3: {..., _}, ..."
+	},
+	{
+		"Desc": "empty file",
+		"In": "",
+		"Out": ""
+	},
+	{
+		"Desc": "empty struct",
+		"In": "{}",
+		"Out": "{}"
+	},
+	{
+		"Desc": "empty structs",
+		"In": "{},{},",
+		"Out": "{}, {}"
+	},
+	{
+		"Desc": "empty structs; elided comma",
+		"In": "{}\n{}",
+		"Out": "{}, {}"
+	},
+	{
+		"Desc": "basic lits",
+		"In": "\"a\",\"b\", 3,3.4,5,2_3",
+		"Out": "\"a\", \"b\", 3, 3.4, 5, 2_3"
+	},
+	{
+		"Desc": "keyword basic lits",
+		"In": "true,false,null,for,in,if,let,if",
+		"Out": "true, false, null, for, in, if, let, if"
+	},
+	{
+		"Desc": "keyword basic newline",
+		"In": "\n\t\ttrue\n\t\tfalse\n\t\tnull\n\t\tfor\n\t\tin\n\t\tif\n\t\tlet\n\t\tif\n\t\t",
+		"Out": "true, false, null, for, in, if, let, if"
+	},
+	{
+		"Desc": "keywords as labels",
+		"In": "if: 0, for: 1, in: 2, where: 3, div: 4, quo: 5, func: 6\n\t\tfor: if: func: let: 3\n\t\t",
+		"Out": "if: 0, for: 1, in: 2, where: 3, div: 4, quo: 5, func: 6, for: {if: {func: {let: 3}}}"
+	},
+	{
+		"Desc": "keywords as alias",
+		"In": "if=foo: 0\n\t\tfor=bar: 2\n\t\tlet=bar: 3\n\t\tfunc=baz: 4\n\t\t",
+		"Out": "if=foo: 0, for=bar: 2, let=bar: 3, func=baz: 4"
+	},
+	{
+		"Desc": "json",
+		"In": "{\n\t\t\t\"a\": 1,\n\t\t\t\"b\": \"2\",\n\t\t\t\"c\": 3\n\t\t}",
+		"Out": "{\"a\": 1, \"b\": \"2\", \"c\": 3}"
+	},
+	{
+		"Desc": "json:extra comma",
+		"In": "{\n\t\t\t\"a\": 1,\n\t\t\t\"b\": \"2\",\n\t\t\t\"c\": 3,\n\t\t}",
+		"Out": "{\"a\": 1, \"b\": \"2\", \"c\": 3}"
+	},
+	{
+		"Desc": "json:simplified",
+		"In": "{\n\t\t\ta: 1\n\t\t\tb: \"2\"\n\t\t\tc: 3\n\t\t}",
+		"Out": "{a: 1, b: \"2\", c: 3}"
+	},
+	{
+		"Desc": "attributes",
+		"In": "a: 1 @xml(,attr)\n\t\t b: 2 @foo(a,b=4) @go(Foo)\n\t\t c: {\n\t\t\t d: \"x\" @go(D) @json(,omitempty)\n\t\t\t e: \"y\" @ts(,type=string,\"str\")\n\t\t }",
+		"Out": "a: 1 @xml(,attr), b: 2 @foo(a,b=4) @go(Foo), c: {d: \"x\" @go(D) @json(,omitempty), e: \"y\" @ts(,type=string,\"str\")}"
+	},
+	{
+		"Desc": "not emitted",
+		"In": "a: true\n\t\t b?: \"2\"\n\t\t c?: 3\n\n\t\t d!: 2\n\t\t e: f!: 3\n\n\t\t \"g\\(\"en\")\"?: 4\n\t\t \"h\\(\"en\")\"!: 4\n\t\t",
+		"Out": "a: true, b?: \"2\", c?: 3, d!: 2, e: {f!: 3}, \"g\\(\"en\")\"?: 4, \"h\\(\"en\")\"!: 4"
+	},
+	{
+		"Desc": "definition",
+		"In": "#Def: {\n\t\t\t b: \"2\"\n\t\t\t c: 3\n\n\t\t\t embedding\n\t\t}\n\t\t#Def: {}\n\t\t",
+		"Out": "#Def: {b: \"2\", c: 3, embedding}, #Def: {}"
+	},
+	{
+		"Desc": "one-line embedding",
+		"In": "{ V1, V2 }",
+		"Out": "{V1, V2}"
+	},
+	{
+		"Desc": "selectors",
+		"In": "a.b. \"str\"",
+		"Out": "a.b.\"str\""
+	},
+	{
+		"Desc": "selectors",
+		"In": "a.b. \"str\"",
+		"Out": "a.b.\"str\""
+	},
+	{
+		"Desc": "faulty bytes selector",
+		"In": "a.b.'str'",
+		"Out": "a.b._\nexpected selector, found 'STRING' 'str'"
+	},
+	{
+		"Desc": "faulty multiline string selector",
+		"In": "a.b.\"\"\"\n\t\t\t\"\"\"",
+		"Out": "a.b._\nexpected selector, found 'STRING' \"\"\"\n\t\t\t\"\"\""
+	},
+	{
+		"Desc": "expression embedding",
+		"In": "#Def: {\n\t\t\ta.b.c\n\t\t\ta \u003e b \u003c c\n\t\t\t-1\u003c2\n\n\t\t\tfoo: 2\n\t\t}",
+		"Out": "#Def: {a.b.c, a\u003eb\u003cc, -1\u003c2, foo: 2}"
+	},
+	{
+		"Desc": "ellipsis in structs",
+		"In": "#Def: {\n\t\t\tb: \"2\"\n\t\t\t...\n\t\t}\n\t\t...\n\n\t\t#Def2: {\n\t\t\t...\n\t\t\tb: \"2\"\n\t\t}\n\t\t#Def3: {...\n\t\t_}\n\t\t...\n\t\t",
+		"Out": "#Def: {b: \"2\", ...}, ..., #Def2: {..., b: \"2\"}, #Def3: {..., _}, ..."
+	},
+	{
+		"Desc": "emitted referencing non-emitted",
+		"In": "a: 1\n\t\t b: \"2\"\n\t\t c: 3\n\t\t{ name: b, total: a + b }",
+		"Out": "a: 1, b: \"2\", c: 3, {name: b, total: a+b}"
+	},
+	{
+		"Desc": "package file",
+		"In": "package k8s\n\t\t {}\n\t\t",
+		"Out": "package k8s, {}"
+	},
+	{
+		"Desc": "imports group",
+		"In": "package k8s\n\n\t\timport (\n\t\t\ta \"foo\"\n\t\t\t\"bar/baz\"\n\t\t)\n\t\t",
+		"Out": "package k8s, import ( a \"foo\", \"bar/baz\" )"
+	},
+	{
+		"Desc": "imports single",
+		"In": "package k8s\n\n\t\timport a \"foo\"\n\t\timport \"bar/baz\"\n\t\t\t",
+		"Out": "package k8s, import a \"foo\", import \"bar/baz\""
+	},
+	{
+		"Desc": "collapsed fields",
+		"In": "a: #b: c?: [Name=_]: d: 1\n\t\t\"g\\(\"en\")\"?: 4\n\t\t // job foo { bar: 1 } // TODO error after foo\n\t\t job: \"foo\": [_]: { bar: 1 }\n\t\t",
+		"Out": "a: {#b: {c?: {[Name=_]: {d: 1}}}}, \"g\\(\"en\")\"?: 4, job: {\"foo\": {[_]: {bar: 1}}}"
+	},
+	{
+		"Desc": "identifiers",
+		"In": "// \t$_: 1,\n\t\t\ta: {b: {c: d}}\n\t\t\tc: a\n\t\t\td: a.b\n\t\t\t// e: a.\"b\" // TODO: is an error\n\t\t\te: a.b.c\n\t\t\t\"f\": f,\n\t\t\t[X=_]: X\n\t\t",
+		"Out": "a: {b: {c: d}}, c: a, d: a.b, e: a.b.c, \"f\": f, [X=_]: X"
+	},
+	{
+		"Desc": "empty fields",
+		"In": "\n\t\t\"\": 3\n\t\t",
+		"Out": "\"\": 3"
+	},
+	{
+		"Desc": "expressions",
+		"In": "\ta: (2 + 3) * 5\n\t\t\tb: (2 + 3) + 4\n\t\t\tc: 2 + 3 + 4\n\t\t\td: -1\n\t\t\te: !foo\n\t\t\tf: _|_\n\t\t",
+		"Out": "a: (2+3)*5, b: (2+3)+4, c: 2+3+4, d: -1, e: !foo, f: _|_"
+	},
+	{
+		"Desc": "pseudo keyword expressions",
+		"In": "\ta: (2 div 3) mod 5\n\t\t\tb: (2 quo 3) rem 4\n\t\t\tc: 2 div 3 div 4\n\t\t",
+		"Out": "a: (2 div 3) mod 5, b: (2 quo 3) rem 4, c: 2 div 3 div 4"
+	},
+	{
+		"Desc": "ranges",
+		"In": "\ta: \u003e=1 \u0026 \u003c=2\n\t\t\tb: \u003e2.0  \u0026 \u003c= 40.0\n\t\t\tc: \u003e\"a\" \u0026 \u003c=\"b\"\n\t\t\tv: (\u003e=1 \u0026 \u003c=2) \u0026 \u003c=(\u003e=5 \u0026 \u003c=10)\n\t\t\tw: \u003e1 \u0026 \u003c=2 \u0026 \u003c=3\n\t\t\td: \u003e=3T \u0026 \u003c=5M\n\t\t",
+		"Out": "a: \u003e=1\u0026\u003c=2, b: \u003e2.0\u0026\u003c=40.0, c: \u003e\"a\"\u0026\u003c=\"b\", v: (\u003e=1\u0026\u003c=2)\u0026\u003c=(\u003e=5\u0026\u003c=10), w: \u003e1\u0026\u003c=2\u0026\u003c=3, d: \u003e=3T\u0026\u003c=5M"
+	},
+	{
+		"Desc": "indices",
+		"In": "{\n\t\t\ta: b[2]\n\t\t\tb: c[1:2]\n\t\t\tc: \"asdf\"\n\t\t\td: c [\"a\"]\n\t\t}",
+		"Out": "{a: b[2], b: c[1:2], c: \"asdf\", d: c[\"a\"]}"
+	},
+	{
+		"Desc": "calls",
+		"In": "{\n\t\t\ta: b(a.b, c.d)\n\t\t\tb: a.b(c)\n\t\t}",
+		"Out": "{a: b(a.b, c.d), b: a.b(c)}"
+	},
+	{
+		"Desc": "lists",
+		"In": "{\n\t\t\ta: [ 1, 2, 3, b, c, ... ]\n\t\t\tb: [ 1, 2, 3, ],\n\t\t\tc: [ 1,\n\t\t\t 2,\n\t\t\t 3\n\t\t\t ],\n\t\t\td: [ 1+2, 2, 4,]\n\t\t}",
+		"Out": "{a: [1, 2, 3, b, c, ...], b: [1, 2, 3], c: [1, 2, 3], d: [1+2, 2, 4]}"
+	},
+	{
+		"Desc": "list types",
+		"In": "{\n\t\t\ta: 4*[int]\n\t\t\tb: \u003c=5*[{a: 5}]\n\t\t\tc1: [...int]\n\t\t\tc2: [...]\n\t\t\tc3: [1, 2, ...int,]\n\t\t}",
+		"Out": "{a: 4*[int], b: \u003c=5*[{a: 5}], c1: [...int], c2: [...], c3: [1, 2, ...int]}"
+	},
+	{
+		"Desc": "list comprehensions",
+		"In": "{\n\t\t\t\ty: [1,2,3]\n\t\t\t\tb: [for x in y if x == 1 { x }],\n\t\t\t}",
+		"Out": "{y: [1, 2, 3], b: [for x in y if x==1 {x}]}"
+	},
+	{
+		"Desc": "field comprehensions",
+		"In": "{\n\t\t\t\ty: { a: 1, b: 2}\n\t\t\t\ta: {\n\t\t\t\t\tfor k, v in y if v \u003e 2 {\n\t\t\t\t\t\t\"\\(k)\": v\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t }",
+		"Out": "{y: {a: 1, b: 2}, a: {for k: v in y if v\u003e2 {\"\\(k)\": v}}}"
+	},
+	{
+		"Desc": "nested comprehensions",
+		"In": "{\n\t\t\ty: { a: 1, b: 2}\n\t\t\ta: {\n\t\t\t\tfor k, v in y let x = v+2 if x \u003e 2 {\n\t\t\t\t\t\"\\(k)\": v\n\t\t\t\t}\n\t\t\t}\n\t\t}",
+		"Out": "{y: {a: 1, b: 2}, a: {for k: v in y let x=v+2 if x\u003e2 {\"\\(k)\": v}}}"
+	},
+	{
+		"Desc": "let declaration",
+		"In": "{\n\t\t\tlet X = 42\n\t\t\tlet Y = \"42\",\n\t\t\tlet Z = 10 + 12\n\t\t}",
+		"Out": "{let X=42, let Y=\"42\", let Z=10+12}"
+	},
+	{
+		"Desc": "duplicates allowed",
+		"In": "{\n\t\t\ta: b: 3\n\t\t\ta: { b: 3 }\n\t\t}",
+		"Out": "{a: {b: 3}, a: {b: 3}}"
+	},
+	{
+		"Desc": "templates",
+		"In": "{\n\t\t\t[foo=_]: { a: int }\n\t\t\ta:     { a: 1 }\n\t\t}",
+		"Out": "{[foo=_]: {a: int}, a: {a: 1}}"
+	},
+	{
+		"Desc": "value alias",
+		"In": "\n\t\t{\n\t\t\ta: X=foo\n\t\t\tb: Y={foo}\n\t\t\tc: d: e: X=5\n\t\t}\n\t\t",
+		"Out": "{a: X=foo, b: Y={foo}, c: {d: {e: X=5}}}"
+	},
+	{
+		"Desc": "dynamic labels",
+		"In": "{\n\t\t\t(x): a: int\n\t\t\tx:   \"foo\"\n\t\t\ta: {\n\t\t\t\t(a.b)\n\t\t\t}\n\n\t\t\t(x)?: 1\n\t\t\ty: (x)!: 2\n\t\t}",
+		"Out": "{(x): {a: int}, x: \"foo\", a: {(a.b)}, (x)?: 1, y: {(x)!: 2}}"
+	},
+	{
+		"Desc": "foo",
+		"In": "[\n\t\t\t[1],\n\t\t\t[1, 2],\n\t\t\t[1, 2, 3],\n\t\t]",
+		"Out": "[[1], [1, 2], [1, 2, 3]]"
+	},
+	{
+		"Desc": "interpolation",
+		"In": "a: \"foo \\(ident)\"\n\t\t b: \"bar \\(bar)  $$$ \"\n\t\t c: \"nest \\(   { a: \"\\( nest ) \"}.a ) \\(5)\"\n\t\t m1: \"\"\"\n\t\t\t multi \\(bar)\n\t\t\t \"\"\"\n\t\t m2: '''\n\t\t\t \\(bar) multi\n\t\t\t '''",
+		"Out": "a: \"foo \\(ident)\", b: \"bar \\(bar)  $$$ \", c: \"nest \\({a: \"\\(nest) \"}.a) \\(5)\", m1: \"\"\"\n\t\t\t multi \\(bar)\n\t\t\t \"\"\", m2: '''\n\t\t\t \\(bar) multi\n\t\t\t '''"
+	},
+	{
+		"Desc": "file comments",
+		"In": "// foo\n\n\t\t// uni\n\t\tpackage foo // uniline\n\n\t\t// file.1\n\t\t// file.2\n\n\t\t",
+		"Out": "\u003c[0// foo] \u003c[d0// uni] [l3// uniline] [3// file.1 // file.2] package foo\u003e\u003e"
+	},
+	{
+		"Desc": "line comments",
+		"In": "// doc\n\t\t a: 5 // line\n\t\t b: 6 // lineb\n\t\t\t  // next\n\t\t\t",
+		"Out": "\u003c[d0// doc] [l5// line] a: 5\u003e, \u003c[l5// lineb] [5// next] b: 6\u003e"
+	},
+	{
+		"Desc": "alt comments",
+		"In": "// a ...\n\t\ta: 5 // line a\n\n\t\t// about a\n\n\t\t// b ...\n\t\tb: // lineb\n\t\t  6\n\n\t\t// about b\n\n\t\tc: 7\n\n\t\t// about c\n\n\t\t// about d\n\t\td:\n\t\t\t// about e\n\t\t\te: 3\n\t\t",
+		"Out": "\u003c[d0// a ...] [l5// line a] [5// about a] a: 5\u003e, \u003c[d0// b ...] [l2// lineb] [5// about b] b: 6\u003e, \u003c[5// about c] c: 7\u003e, \u003c[d0// about d] d: {\u003c[d0// about e] e\u003e: 3}\u003e"
+	},
+	{
+		"Desc": "expr comments",
+		"In": "\n\t\ta: 2 +  // 2 +\n\t\t   3 +  // 3 +\n\t\t   4    // 4\n\t\t   ",
+		"Out": "\u003c[l5// 4] a: \u003c[l2// 3 +] \u003c[l2// 2 +] 2+3\u003e+4\u003e\u003e"
+	},
+	{
+		"Desc": "composit comments",
+		"In": "a : {\n\t\t\ta: 1, b: 2, c: 3, d: 4\n\t\t\t// end\n\t\t}\n\t\tb: [\n\t\t\t1, 2, 3, 4, 5,\n\t\t\t// end\n\t\t]\n\t\tc: [ 1, 2, 3, 4, // here\n\t\t\t{ a: 3 }, // here\n\t\t\t5, 6, 7, 8 // and here\n\t\t]\n\t\td: {\n\t\t\ta: 1 // Hello\n\t\t\t// Doc\n\t\t\tb: 2\n\t\t}\n\t\te1: [\n\t\t\t// comment in list body\n\t\t]\n\t\te2: {\n\t\t\t// comment in struct body\n\t\t}\n\t\t",
+		"Out": "a: {a: 1, b: 2, c: 3, \u003c[d5// end] d: 4\u003e}, b: [1, 2, 3, 4, \u003c[d2// end] 5\u003e], c: [1, 2, 3, \u003c[l2// here] 4\u003e, \u003c[l4// here] {a: 3}\u003e, 5, 6, 7, \u003c[l2// and here] 8\u003e], d: {\u003c[l5// Hello] a: 1\u003e, \u003c[d0// Doc] b: 2\u003e}, e1: \u003c[d1// comment in list body] []\u003e, e2: \u003c[d1// comment in struct body] {}\u003e"
+	},
+	{
+		"Desc": "attribute comments",
+		"In": "\n\t\ta: 1 @a() @b() // d\n\t\t",
+		"Out": "\u003c[l5// d] a: 1 @a() @b()\u003e"
+	},
+	{
+		"Desc": "attribute declarations",
+		"In": "\n\t\t@foo()\n\n\t\tpackage bar\n\n\t\t@bar()\n\n\t\timport \"strings\"\n\n\t\t@baz()\n\t\t\t",
+		"Out": "@foo(), package bar, @bar(), import \"strings\", @baz()"
+	},
+	{
+		"Desc": "comprehension comments",
+		"In": "\n\t\tif X {\n\t\t\t// Comment 1\n\t\t\tField: 2\n\t\t\t// Comment 2\n\t\t}\n\t\t",
+		"Out": "if X \u003c[d2// Comment 2] {\u003c[d0// Comment 1] Field: 2\u003e}\u003e"
+	},
+	{
+		"Desc": "let comments",
+		"In": "let X = foo // Comment 1",
+		"Out": "\u003c[5// Comment 1] let X=foo\u003e"
+	},
+	{
+		"Desc": "emit comments",
+		"In": "// a comment at the beginning of the file\n\n\t\t// a second comment\n\n\t\t// comment\n\t\ta: 5\n\n\t\t{}\n\n\t\t// a comment at the end of the file\n\t\t",
+		"Out": "\u003c[0// a comment at the beginning of the file] [0// a second comment] \u003c[d0// comment] a: 5\u003e, \u003c[2// a comment at the end of the file] {}\u003e\u003e"
+	},
+	{
+		"Desc": "composite comments 2",
+		"In": "\n\t{\n// foo\n\n// fooo\nfoo: 1\n\nbar: 2\n\t}\n\n[\n\t{\"name\": \"value\"}, // each element has a long\n\t{\"name\": \"next\"}   // optional next element\n]\n",
+		"Out": "{\u003c[0// foo] [d0// fooo] foo: 1\u003e, bar: 2}, [\u003c[l4// each element has a long] {\"name\": \"value\"}\u003e, \u003c[l4// optional next element] {\"name\": \"next\"}\u003e]"
+	},
+	{
+		"Desc": "field aliasing",
+		"In": "\n\t\tI=\"\\(k)\": v\n\t\tS=\"foo-bar\": w\n\t\tL=foo: x\n\t\tX=[0]: {\n\t\t\tfoo: X | null\n\t\t}\n\t\t[Y=string]: { name: Y }\n\t\tX1=[X2=\u003c\"d\"]: { name: X2 }\n\t\tY1=foo: Y2=bar: [Y1, Y2]\n\t\t",
+		"Out": "I=\"\\(k)\": v, S=\"foo-bar\": w, L=foo: x, X=[0]: {foo: X|null}, [Y=string]: {name: Y}, X1=[X2=\u003c\"d\"]: {name: X2}, Y1=foo: {Y2=bar: [Y1, Y2]}"
+	},
+	{
+		"Desc": "allow keyword in expression",
+		"In": "\n\t\tfoo: in \u0026 2\n\t\t",
+		"Out": "foo: in\u00262"
+	},
+	{
+		"Desc": "dot import",
+		"In": "\n\t\timport . \"foo\"\n\t\t",
+		"Out": "import , \"foo\"\nexpected 'STRING', found '.'"
+	},
+	{
+		"Desc": "attributes",
+		"In": "\n\t\tpackage name\n\n\t\t@t1(v1)\n\n\t\t{\n\t\t\t@t2(v2)\n\t\t}\n\t\ta: {\n\t\t\ta: 1\n\t\t\t@t3(v3)\n\t\t\t@t4(v4)\n\t\t\tc: 2\n\t\t}\n\t\t",
+		"Out": "package name, @t1(v1), {@t2(v2)}, a: {a: 1, @t3(v3), @t4(v4), c: 2}"
+	},
+	{
+		"Desc": "Issue #276",
+		"In": "\n\t\ta: int=\u003e2\n\t\t",
+		"Out": "a: int=\u003e2"
+	},
+	{
+		"Desc": "struct comments",
+		"In": "\n\t\tstruct: {\n\t\t\t// This is a comment\n\n\t\t\t// This is a comment\n\n\t\t\t// Another comment\n\t\t\tsomething: {\n\t\t\t}\n\n\t\t\t// extra comment\n\t\t}",
+		"Out": "struct: {\u003c[0// This is a comment] [0// This is a comment] [d0// Another comment] [d5// extra comment] something: {}\u003e}"
+	},
+	{
+		"Desc": "list comments",
+		"In": "\n\t\tlist: [\n\t\t\t// Comment1\n\n\t\t\t// Comment2\n\n\t\t\t// Another comment\n\t\t\t{\n\t\t\t},\n\n\t\t\t// Comment 3\n\t\t]",
+		"Out": "list: [\u003c[0// Comment1] [0// Comment2] [d0// Another comment] [d3// Comment 3] {}\u003e]"
+	},
+	{
+		"Desc": "call comments",
+		"In": "\n\t\tfuncArg1: foo(\n\t\t\t{},\n\n\t\t\t// Comment1\n\n\t\t\t// Comment2\n\t\t\t{}\n\n\t\t\t// Comment3\n\t\t)",
+		"Out": "funcArg1: foo(\u003c[1// Comment1] {}\u003e, \u003c[d0// Comment2] [d1// Comment3] {}\u003e)"
+	},
+	{
+		"Desc": "front-style commas",
+		"In": "\n\t\t\tfrontStyle: { \"key\": \"value\"\n\t\t\t\t, \"key2\": \"value2\"\n\t\t\t\t, \"foo\" : bar\n\t\t\t}\n\t\t\t",
+		"Out": "frontStyle: {\"key\": \"value\", \"key2\": \"value2\", \"foo\": bar}"
+	},
+	{
+		"Desc": "function types",
+		"In": "\n\t\t\tf0: func(): int\n\t\t\tf1: func(int): int\n\t\t\tf2: func(int, string): int\n\t\t\tf3: func({a: int, b: string}): bool\n\t\t\tf4: func(bool, func(int, string): int): string\n\t\t\tf5: func(int, int): func(bool, bool): bool\n\t\t\tf6: func(func(bool, bool): bool, func(string, string): string): func(int, func(int, string): int): func(int, string): int\n\t\t",
+		"Out": "f0: func(): int, f1: func(int): int, f2: func(int, string): int, f3: func({a: int, b: string}): bool, f4: func(bool, func(int, string): int): string, f5: func(int, int): func(bool, bool): bool, f6: func(func(bool, bool): bool, func(string, string): string): func(int, func(int, string): int): func(int, string): int"
+	}
+]

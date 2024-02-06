@@ -1,0 +1,73 @@
+### cuedo fmt 2423.comment.in.empty.struct.x8.BAD.cue -d | indent_nested_lt_gt -
+cuedo format 2423.comment.in.empty.struct.x8.BAD.cue -d
+••• runParseAndFormat ----------------------------------------
+••• 2024-02-05 22:35:37
+••• input: 2423.comment.in.empty.struct.x8.BAD.cue
+// 2423/2423.comment.in.empty.struct.BAD.cue
+ex0: {
+        // empty a
+} & {
+        // empty b
+} & {
+        // empty c
+} & {
+        // empty d
+} & {
+        // empty e
+} & {
+        // empty f
+} & {
+        // empty g
+} & {
+        // empty h
+}
+
+
+••• parse file: 2423.comment.in.empty.struct.x8.BAD.cue
+••• parser out DebugStr(f):
+ <
+  [d0// 2423/2423.comment.in.empty.struct.BAD.cue] ex0: <
+    [d1// empty h] <
+      [d1// empty g] <
+        [d1// empty f] <
+          [d1// empty e] <
+            [d1// empty d] <
+              [d1// empty c] <
+                [d0// empty a] [d1// empty b] {}&{}
+              >&{}
+            >&{}
+          >&{}
+        >&{}
+      >&{}
+    >&{}
+  >
+>
+••• format.Node(f)
+••• output format.Node(f):
+ // 2423/2423.comment.in.empty.struct.BAD.cue
+ex0:
+	// empty a
+	{
+	}
+	// empty b
+	& {
+	}
+	// empty c
+	& {
+	}
+	// empty d
+	& {
+	}
+	// empty e
+	& {
+	}
+	// empty f
+	& {
+	}
+	// empty g
+	& {
+	}
+	// empty h
+	& {
+	}
+2423 %                                                                                                                                      [investigate-formatter-and-parser ↑29|…1]
