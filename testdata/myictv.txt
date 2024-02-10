@@ -1,0 +1,73 @@
+go mod tidy
+go run main.go
+cmp stdout stdout.txt
+
+-- go.mod --
+module example.com
+
+go 1.20
+
+require cuelang.org/go v0.5.0
+-- main.go --
+package main
+
+import (
+    "fmt"
+    "log"
+
+    "cuelang.org/go/cue"
+    "cuelang.org/go/cue/cuecontext"
+    "cuelang.org/go/cue/format"
+)
+
+func main() {
+    ctx := cuecontext.New()
+    v1 := ctx.CompileString(schema1)
+
+    // Need to load schema2 using a scope for the resolving of #Conn and lossy
+    v2 := ctx.CompileString(schema2, cue.Scope(v1))
+
+    res := v1.Unify(v2).LookupPath(cue.ParsePath(expr))
+    syn := res.Syntax()
+    byts, err := format.Node(syn)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%s\n", byts)
+}
+
+const schema1 = `
+package defs
+#Conn: {
+    address:  string
+    port:     int
+    protocol: string
+}
+lossy: #Conn & {
+    address:  "1.2.3.4"
+    port:     8888
+    protocol: "udp"
+}
+`
+const schema2 = `
+package defs
+#Out: #Conn & lossy
+`
+const expr = `#Out`
+
+-- stdout.txt --
+{
+	_#def
+	_#def: CONN.#x & (CONN.#x & {
+		address:  "1.2.3.4"
+		port:     8888
+		protocol: "udp"
+	})
+
+	//cue:path: #Conn
+	let CONN = {
+		#x: {
+			address: string, port: int, protocol: string
+		}
+	}
+}
