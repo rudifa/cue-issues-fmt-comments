@@ -1,9 +1,9 @@
 // 2567.8.comprehension.in.X.BAD.cue
 
 x: [
-    if true // about this condition
+    if true // about this condition MISPLACED
     {}
-    if false // about that condition
+    if false // about that condition BADLY MISPLACED
     {}]
 
 y: {

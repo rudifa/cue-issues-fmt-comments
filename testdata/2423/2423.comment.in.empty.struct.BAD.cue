@@ -2,13 +2,13 @@
 ex0: {
 	v: 10 // ex0: comment after a value
 } & {
-	// ex0: comment in an empty struct
+	// ex0: comment in an empty struct MISPLACED
 }
 
 ex1: [
 	11, // ex1: comment after a value
 ] & [
-	// ex1: comment in an empty list
+	// ex1: comment in an empty list MISPLACED
 	...
 ]
 
