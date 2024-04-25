@@ -44,6 +44,8 @@ github.com/rogpeppe/go-internal v1.12.0 h1:exVL4IDcn6na9z1rAb56Vxr+CgyK3nn3O+epU
 github.com/rogpeppe/go-internal v1.12.0/go.mod h1:E+RYuTGaKKdloAfM02xzb0FW3Paa99yedzYV+kq4uf4=
 github.com/rudifa/goutil v0.4.9 h1:Vg49N+lidn2iCQQcWO+9/GQjr+t++Ic529QyKrVsRVw=
 github.com/rudifa/goutil v0.4.9/go.mod h1:WMTd/PMZVuDKs8TnkuSXB260j2EqzoAhxt0HJRNWLG0=
+github.com/rudifa/goutil v0.4.10 h1:ciRpybp8eEces3p+Kf/LMEh4etu+wXvz7lq1VUhLG0w=
+github.com/rudifa/goutil v0.4.10/go.mod h1:IxoPL6+mb3RlbPsLDshrHQTKSXwBma1iW7X5mAW/UfM=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/spf13/cobra v1.8.0 h1:7aJaZx1B85qltLMc546zn58BxxfZdR/W22ej9CFoEf0=
 github.com/spf13/cobra v1.8.0/go.mod h1:WXLWApfZ71AjXPya3WOlMsY9yMs7YeiHhFVlvLyhcho=

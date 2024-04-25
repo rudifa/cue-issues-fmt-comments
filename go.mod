@@ -4,12 +4,14 @@ go 1.21
 
 replace cuelang.org/go => ../cue // must use the local patched version of cue
 
+// replace github.com/rudifa/goutil => ../goutil // must use the local version of goutil
+
 // replace cuelang.org/go => github.com/rudifa/cue v0.0.0-20240108165701-3a9556d56f39 // must be exact - go mod tidy advises
 
 require (
 	cuelang.org/go v0.5.0
 	github.com/davecgh/go-spew v1.1.1
-	github.com/rudifa/goutil v0.4.9
+	github.com/rudifa/goutil v0.4.10
 	github.com/spf13/cobra v1.8.0
 )
 

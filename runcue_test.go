@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/rudifa/cuedo/runcue"
+	"github.com/rudifa/goutil/runcue"
 )
 
 // Test2567 is a test for issue #2567
