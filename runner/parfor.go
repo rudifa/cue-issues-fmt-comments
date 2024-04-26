@@ -16,9 +16,9 @@ import (
 	"cuelang.org/go/cue/format"
 	"cuelang.org/go/cue/parser"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/rudifa/cuedo/runcue"
 	"github.com/rudifa/goutil/ffmt"
 	"github.com/rudifa/goutil/files"
+	"github.com/rudifa/goutil/runcue"
 )
 
 // RunParseAndFormat runs the parser and formatter on the given file
